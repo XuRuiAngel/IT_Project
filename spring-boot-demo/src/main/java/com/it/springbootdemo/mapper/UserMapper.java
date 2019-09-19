@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper {
 
-    @Select("select name from user1 where id=#{id}")
+    @Select("select name from user where id=#{id}")
     String findUserByName(@Param("id") int id);
 
-    @Select("select * from user1 where id=#{id}")
+    @Select("select * from user where id=#{id}")
     User findUserByName2(@Param("id") int id);
 }
