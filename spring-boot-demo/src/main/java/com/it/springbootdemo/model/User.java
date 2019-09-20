@@ -1,22 +1,23 @@
 package com.it.springbootdemo.model;
 
 public class User {
-    private int id;
-    private String name;
-    private String passWord;
-    private String eMail;
-    private String account;
-    public User(int id,String name,String passWord,String eMail,String account)
+    private int UserId;
+    private String password;
+    private String e_mail;
+    private String tele;
+    private int flag;
+    private String registerdate;
+    public User(int UserId,String password,String e_mail,String tele,int flag,String registerdate)
     {
-          this.id=id;
-          this.name=name;
-          this.passWord=passWord;
-          this.eMail=eMail;
-          this.account=account;
+          this.UserId=UserId;
+          this.password=password;
+          this.e_mail=e_mail;
+          this.flag=flag;
+          this.registerdate=registerdate
     }
 
     public String toString()
     {
-        return this.id+" "+this.name+" "+this.passWord+" "+this.eMail+" "+this.account;
+        return this.UserId+" "+this.password+" "+this.e_mail+" "+this.flag+" "+this.registerdate;
     }
 }
