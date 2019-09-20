@@ -13,11 +13,10 @@ public class User {
           this.password=password;
           this.e_mail=e_mail;
           this.flag=flag;
-          this.registerdate=registerdate
+          this.registerdate=registerdate;
     }
 
-    public String toString()
-    {
-        return this.UserId+" "+this.password+" "+this.e_mail+" "+this.flag+" "+this.registerdate;
+    public String toString() {
+        return super.toString();
     }
 }
