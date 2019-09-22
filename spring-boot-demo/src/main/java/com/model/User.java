@@ -7,16 +7,28 @@ public class User {
     private String tele;
     private int flag;
     private String registerdate;
-    public User(int UserId,String password,String e_mail,String tele,int flag,String registerdate)
-    {
-          this.UserId=UserId;
-          this.password=password;
-          this.e_mail=e_mail;
-          this.flag=flag;
-          this.registerdate=registerdate;
+    private double balance;
+
+    public User(int userId, String password, String e_mail, String tele, int flag, String registerdate, double balance) {
+        this.UserId = userId;
+        this.password = password;
+        this.e_mail = e_mail;
+        this.tele = tele;
+        this.flag = flag;
+        this.registerdate = registerdate;
+        this.balance = balance;
     }
 
+    @Override
     public String toString() {
-        return super.toString();
+        return "User{" +
+                "UserId=" + UserId +
+                ", password='" + password + '\'' +
+                ", e_mail='" + e_mail + '\'' +
+                ", tele='" + tele + '\'' +
+                ", flag=" + flag +
+                ", registerdate='" + registerdate + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }
