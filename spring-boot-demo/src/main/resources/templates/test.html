@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="../static/js/test.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.js"></script>
 </head>
-<body>
-  <h1>测试</h1>
-  <a href="/getUser?name=张三">123</a>
 
- <input/>
+<body >
+<div class="row">
+    <div class="col-xs-6 pull_left">
+        <div class="form-group">
+            <input class="form-control" type="tel" id="verify_input" placeholder="请输入验证码" maxlength="4">
+        </div>
+    </div>
+    <div class="col-xs-6 pull_left">
+        <a href="javascript:void(0);" rel="external nofollow" title="点击更换验证码">
+            <img id="imgVerify" src="http://localhost/getVerify?158" alt="更换验证码" height="28" width="10%" onclick="getVerify()">
+
+        </a>
+        <button  onclick="check()">提交</button>
+    </div>
+</div>
 </body>
 </html>
