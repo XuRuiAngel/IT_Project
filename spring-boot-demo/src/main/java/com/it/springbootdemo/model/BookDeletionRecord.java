@@ -14,6 +14,18 @@ public class BookDeletionRecord {
         this.UserId = userId;
     }
 
+    public int getUserId() {
+        return this.UserId;
+    }
+
+    public int getBookId() {
+        return this.BookId;
+    }
+
+    public Date getTime() {
+        return this.time;
+    }
+
     @Override
     public String toString() {
         return "BookDeletionRecord{" +

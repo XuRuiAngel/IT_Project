@@ -18,6 +18,26 @@ public class Reservation {
         this.Validity = validity;
     }
 
+    public Date getTime() {
+        return this.Time;
+    }
+
+    public String getISBN() {
+        return this.ISBN;
+    }
+
+    public String getRecordId() {
+        return this.RecordId;
+    }
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public String getValidity() {
+        return this.Validity;
+    }
+
     @Override
     public String toString() {
         return "Reservation{" +

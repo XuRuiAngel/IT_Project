@@ -20,6 +20,30 @@ public class Record {
         this.fine = fine;
     }
 
+    public Date getBorrowTime() {
+        return this.BorrowTime;
+    }
+
+    public Date getReturnTime() {
+        return this.ReturnTime;
+    }
+
+    public double getFine() {
+        return this.fine;
+    }
+
+    public int getBookId() {
+        return this.BookId;
+    }
+
+    public int getRecordId() {
+        return this.RecordId;
+    }
+
+    public int getUserId() {
+        return this.UserId;
+    }
+
     @Override
     public String toString() {
         return "Record{" +

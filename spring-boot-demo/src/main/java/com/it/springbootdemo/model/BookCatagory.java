@@ -11,6 +11,14 @@ public class BookCatagory {
         this.TypeName=TypeName;
     }
 
+    public String getISBN() {
+        return this.ISBN;
+    }
+
+    public String getTypeName() {
+        return this.TypeName;
+    }
+
     @Override
     public String toString() {
         return super.toString();

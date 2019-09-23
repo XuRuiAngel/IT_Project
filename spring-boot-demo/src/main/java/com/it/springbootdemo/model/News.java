@@ -14,6 +14,18 @@ public class News {
         this.content = content;
     }
 
+    public String getISBN() {
+        return this.ISBN;
+    }
+
+    public String getContent() {
+        return this.content;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
     @Override
     public String toString() {
         return "News{" +

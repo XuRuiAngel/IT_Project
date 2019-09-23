@@ -27,6 +27,32 @@ public class User {
         this.balance = balance;
     }
 
+    public int getFlag(){
+        return this.flag;
+    }
+    public String getPassword(){
+        return this.password;
+    }
+    public String getUsername(){
+        return this.username;
+    }
+    public String getE_mail(){
+        return this.e_mail;
+    }
+    public String getTele(){
+        return this.tele;
+    }
+    public int getUserId(){
+        return this.userId;
+    }
+    public Date getRegisterdate() {
+        return this.registerdate;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+
     @Override
     public String toString() {
         return "User{" +

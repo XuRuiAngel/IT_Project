@@ -28,6 +28,50 @@ public class Book {
         this.copyNumbers = copyNumbers;
     }
 
+    public String getISBN() {
+        return this.ISBN;
+    }
+
+    public int getBookId() {
+        return this.BookId;
+    }
+
+    public int getCopyNumbers() {
+        return this.copyNumbers;
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public String getBookName() {
+        return this.bookName;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    public String getPress() {
+        return this.press;
+    }
+
+    public String getPrice() {
+        return this.price;
+    }
+
+    public String getPublishYear() {
+        return this.publishYear;
+    }
+
+    public String getTextLanguage() {
+        return this.textLanguage;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
