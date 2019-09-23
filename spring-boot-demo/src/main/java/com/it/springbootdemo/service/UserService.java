@@ -9,4 +9,6 @@ public interface UserService {
     public String test(int id);
 
     public User test2(int id);
+
+    public int login(String username,String password);
 }

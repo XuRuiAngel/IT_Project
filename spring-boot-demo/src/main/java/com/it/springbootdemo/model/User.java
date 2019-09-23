@@ -1,17 +1,23 @@
 package com.it.springbootdemo.model;
 
+import lombok.Getter;
+
+import java.util.Date;
+
 public class User {
-    private int UserId;
+    private int userId;
+    @Getter
     private String password;
     private String username;
     private String e_mail;
     private String tele;
+    @Getter
     private int flag;
-    private String registerdate;
+    private Date registerdate;
     private double balance;
 
-    public User(int userId, String password, String username, String e_mail, String tele, int flag, String registerdate, double balance) {
-        this.UserId = userId;
+    public User(int userId, String username,double balance, String e_mail,String password, int flag,String tele,  Date registerdate) {
+        this.userId = userId;
         this.password = password;
         this.username = username;
         this.e_mail = e_mail;
@@ -24,7 +30,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "UserId=" + UserId +
+                "UserId=" + userId +
                 ", password='" + password + '\'' +
                 ", username='" + username + '\'' +
                 ", e_mail='" + e_mail + '\'' +
