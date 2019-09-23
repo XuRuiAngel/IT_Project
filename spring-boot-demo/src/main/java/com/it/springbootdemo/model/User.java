@@ -3,15 +3,17 @@ package com.it.springbootdemo.model;
 public class User {
     private int UserId;
     private String password;
+    private String username;
     private String e_mail;
     private String tele;
     private int flag;
     private String registerdate;
     private double balance;
 
-    public User(int userId, String password, String e_mail, String tele, int flag, String registerdate, double balance) {
+    public User(int userId, String password, String username, String e_mail, String tele, int flag, String registerdate, double balance) {
         this.UserId = userId;
         this.password = password;
+        this.username = username;
         this.e_mail = e_mail;
         this.tele = tele;
         this.flag = flag;
@@ -24,6 +26,7 @@ public class User {
         return "User{" +
                 "UserId=" + UserId +
                 ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
                 ", e_mail='" + e_mail + '\'' +
                 ", tele='" + tele + '\'' +
                 ", flag=" + flag +
