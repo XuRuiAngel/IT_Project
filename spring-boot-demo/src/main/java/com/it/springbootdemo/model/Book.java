@@ -72,6 +72,50 @@ public class Book {
         return this.textLanguage;
     }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setBookId(int bookId) {
+        BookId = bookId;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public void setCopyNumbers(int copyNumbers) {
+        this.copyNumbers = copyNumbers;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public void setPublishYear(String publishYear) {
+        this.publishYear = publishYear;
+    }
+
+    public void setTextLanguage(String textLanguage) {
+        this.textLanguage = textLanguage;
+    }
+
     @Override
     public String toString() {
         return "Book{" +

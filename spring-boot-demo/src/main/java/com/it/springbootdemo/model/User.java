@@ -60,9 +60,40 @@ public class User {
     public String getRegisterdate() {
         return this.registerdate;
     }
-
     public double getBalance() {
         return this.balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void setE_mail(String e_mail) {
+        this.e_mail = e_mail;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRegisterdate(String registerdate) {
+        this.registerdate = registerdate;
+    }
+
+    public void setTele(String tele) {
+        this.tele = tele;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
