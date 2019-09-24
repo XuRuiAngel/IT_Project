@@ -7,11 +7,11 @@ public class Record {
     private int RecordId;
     private int UserId;
     private int BookId;
-    private Date BorrowTime;
-    private Date ReturnTime;
+    private String BorrowTime;
+    private String ReturnTime;
     private double fine;
 
-    public Record(int recordId, int userId, int bookId, Date borrowTime, Date returnTime, double fine) {
+    public Record(int recordId, int userId, int bookId, String borrowTime, String returnTime, double fine) {
         this.RecordId = recordId;
         this.UserId = userId;
         this.BookId = bookId;
@@ -20,11 +20,11 @@ public class Record {
         this.fine = fine;
     }
 
-    public Date getBorrowTime() {
+    public String getBorrowTime() {
         return this.BorrowTime;
     }
 
-    public Date getReturnTime() {
+    public String getReturnTime() {
         return this.ReturnTime;
     }
 

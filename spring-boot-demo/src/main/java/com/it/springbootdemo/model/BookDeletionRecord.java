@@ -5,10 +5,10 @@ import java.util.Date;
 public class BookDeletionRecord {
 
     private int BookId;
-    private Date time;
+    private String time;
     private int UserId;
 
-    public BookDeletionRecord(int bookId, Date time, int userId) {
+    public BookDeletionRecord(int bookId, String time, int userId) {
         this.BookId = bookId;
         this.time = time;
         this.UserId = userId;
@@ -22,7 +22,7 @@ public class BookDeletionRecord {
         return this.BookId;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return this.time;
     }
 

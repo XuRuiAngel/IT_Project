@@ -6,17 +6,17 @@ import java.util.Date;
 
 public class User {
     private int userId;
-    @Getter
+
     private String password;
     private String username;
     private String e_mail;
     private String tele;
-    @Getter
+
     private int flag;
-    private Date registerdate;
+    private String registerdate;
     private double balance;
 
-    public User(int userId, String username,double balance, String e_mail,String password, int flag,String tele,  Date registerdate) {
+    public User(int userId, String username,double balance, String e_mail,String password, int flag,String tele,  String registerdate) {
         this.userId = userId;
         this.password = password;
         this.username = username;
@@ -26,6 +26,18 @@ public class User {
         this.registerdate = registerdate;
         this.balance = balance;
     }
+    public User(String username,double balance,String e_mail,String password, int flag,String tele,  String registerdate) {
+
+        this.password = password;
+        this.username = username;
+        this.e_mail = e_mail;
+        this.tele = tele;
+        this.flag = flag;
+        this.registerdate = registerdate;
+        this.balance = balance;
+
+    }
+
 
     public int getFlag(){
         return this.flag;
@@ -45,7 +57,7 @@ public class User {
     public int getUserId(){
         return this.userId;
     }
-    public Date getRegisterdate() {
+    public String getRegisterdate() {
         return this.registerdate;
     }
 

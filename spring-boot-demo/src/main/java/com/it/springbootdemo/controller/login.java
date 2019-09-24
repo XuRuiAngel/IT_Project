@@ -25,5 +25,19 @@ public class login {
         else return result+"";
     }
 
+    @PostMapping("/registAdmin")
+    @ResponseBody
+    public String registAdmin(@RequestParam("username") String username,
+                               @RequestParam("password") String password,
+                               @RequestParam("e_mail") String e_mail){
+        int result;
+        result=userService.registAdmin(username,password,e_mail);
+         if(result==0)
+         {
+             return "Please change username!";
+         }
+         else return "success!";
+    }
+
 
 }
