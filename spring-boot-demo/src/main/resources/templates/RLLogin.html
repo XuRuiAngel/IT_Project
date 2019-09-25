@@ -3,13 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Reader and Librarian Login</title>
-    <link href="css/login.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
+    <link href="../static/css/login.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
-    <script type="text/javascript" src="../staticjs/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="../staticjs/jquery1.42.min.js"></script>
-    <script type="text/javascript" src="../staticjs/jquery.SuperSlide.js"></script>
-    <script type="text/javascript" src="../staticjs/Validform_v5.3.2_min.js"></script>
-    <script type="text/javascript" src="../staticjs/RLlogin.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
     <script type="text/javascript">
 $(document).ready(function(){
 	var $tab_li = $('#tab ul li');
@@ -115,6 +114,7 @@ $(".sec_login_error").Validform({
 });
 });
 </script>
+    <script type="text/javascript" src="../static/js/RLlogin.js"></script>
 </head>
 
 <body>
@@ -128,24 +128,24 @@ $(".sec_login_error").Validform({
         <div>
             <div class="stu_error_box"></div>
             <form action="" method="post" class="stu_login_error">
-                <div id="username">
+                <div id="Rusername">
                     <label>Reader's ID:</label>
-                    <input class="text" type="text" id="stu_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="s6-18" errormsg="ID ranges from 6 to 18 characters!" sucmsg="ID verification passed!"/>
+                    <input class="text" type="text" id="stu_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="m" errormsg="Incorrect ID format!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
-                <div id="password">
+                <div id="Rpassword">
                     <label> &nbsp;&nbsp;&nbsp;Password:</label>
                     <input class="text" type="password" id="stu_password_hide" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
                 </div>
-                <div id="code">
+                <div id="Rcode">
                     <label>Verification code:</label>
                     <input class="text" type="text" id="stu_code_hide" name="code"  placeholder="Input code" nullmsg="Captcha cannot be empty!" datatype="*4-4" errormsg="The captcha has four digits!" sucmsg="Verification code verification passed!"/>
-                    <img src="images/captcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
-                <div id="remember">
+                    <img src="../static/images/Logincaptcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
+                <div id="Rremember">
                     <input type="checkbox" name="remember">
                     <label>Remember the password</label>
                 </div>
-                <div id="login">
+                <div id="Rlogin">
                     <button type="submit">Login</button>
                 </div>
             </form>
@@ -155,24 +155,24 @@ $(".sec_login_error").Validform({
         <div class="hide">
             <div class="sec_error_box"></div>
             <form action="" method="post" class="sec_login_error">
-                <div id="username">
+                <div id="Lusername">
                     <label>Librarian's ID:</label>
-                    <input class="text" type="text" id="sec_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="s6-18" errormsg="ID ranges from 6 to 18 characters!" sucmsg="ID verification passed!"/>
+                    <input class="text" type="text" id="sec_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="m" errormsg="Incorrect ID format!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
-                <div id="password">
+                <div id="Lpassword">
                     <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:</label>
                     <input class="text" type="password" id="sec_password_hide" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
                 </div>
-                <div id="code">
+                <div id="Lcode">
                     <label>Verification code:</label>
                     <input class="text" type="text" id="sec_code_hide" name="code"  placeholder="Input code" nullmsg="Captcha cannot be empty!" datatype="*4-4" errormsg="The captcha has four digits!" sucmsg="Verification code verification passed!"/>
-                    <img src="images/captcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
-                <div id="remember">
+                    <img src="../static/images/Logincaptcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
+                <div id="Lremember">
                     <input type="checkbox" name="remember">
                     <label>Remember the password</label>
                 </div>
-                <div id="login">
+                <div id="Llogin">
                     <button type="submit">Login</button>
                 </div>
             </form>
@@ -183,10 +183,10 @@ $(".sec_login_error").Validform({
 <div class="bottom"><a href="##################">Return to the home page</a></div>
 <div class="screenbg">
     <ul>
-        <li><a href="javascript:;"><img src="images/Login0.jpg"></a></li>
-        <li><a href="javascript:;"><img src="images/Login1.jpg"></a></li>
-        <li><a href="javascript:;"><img src="images/Login2.jpg"></a></li>
-        <li><a href="javascript:;"><img src="images/Login3.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../static/images/Login0.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../static/images/Login1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../static/images/Login2.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../static/images/Login3.jpg"></a></li>
     </ul>
 </div>
 </body>

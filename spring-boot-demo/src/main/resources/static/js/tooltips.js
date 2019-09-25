@@ -52,7 +52,7 @@ function show_msg(msg,url){
 function show_loading()
 {
 	var str='<div class="msg_bg" style="background:#000;opacity:0.5;filter:alpha(opacity=50);z-index:99998;width:100%;position:absolute;left:0;top:0"></div>';
-	str+='<div class="msg_bg" style="z-index:99999;width:100%;position:absolute;left:0;top:0;text-align:center;"><img src="images/loading.gif" alt="" class="loading"></div>'
+	str+='<div class="msg_bg" style="z-index:99999;width:100%;position:absolute;left:0;top:0;text-align:center;"><img src="../static/images/Loginloading.gif" alt="" class="loading"></div>'
 	$('body').append(str);
 	var scroll_height=$(document).scrollTop();
 	$('.msg_bg').height($(document).height());
