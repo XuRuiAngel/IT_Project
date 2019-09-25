@@ -12,12 +12,12 @@ public class login {
     UserService userService;
     @GetMapping("/login")
     @ResponseBody
-    public String login(@RequestParam("username") String username,
+    public String login(@RequestParam("tele") String tele,
                         @RequestParam("password") String password){
         int result;
-        result=userService.login(username,password);
+        result=userService.login(tele,password);
         if(result==4){
-            return "Username is not exist!";
+            return "Account does not exist!";
         }
         else if(result==5){
             return "Password error!";
@@ -25,19 +25,40 @@ public class login {
         else return result+"";
     }
 
-    @PostMapping("/registAdmin")
+    @PostMapping("/registLibrarian")
     @ResponseBody
-    public String registAdmin(@RequestParam("username") String username,
-                               @RequestParam("password") String password,
+    public String registAdmin(@RequestParam("tele") String tele,
+                               @RequestParam("username") String username,
                                @RequestParam("e_mail") String e_mail){
         int result;
-        result=userService.registAdmin(username,password,e_mail);
+        result=userService.registLibrarian(tele,username,e_mail);
          if(result==0)
          {
-             return "Please change username!";
+             return "The account has been registered!";
          }
          else return "success!";
     }
 
-
-}
+    @PostMapping("/registReader")
+    @ResponseBody
+    public String registReader(
+            @RequestParam("tele") String tele,
+            @RequestParam("username") String username,
+            @RequestParam("e_mail") String e_mail,
+            @RequestParam("balance") double balance){
+                if(balance<300)
+                {
+                    return "not enough money";
+                }
+                else
+                {
+                    int result;
+                    result=userService.registReader(tele,username,e_mail,balance);
+                    if(result==0)
+                    {
+                        return "The account has been registered!";
+                    }
+                    else return "success!";
+                }
+                }
+    }
