@@ -21,6 +21,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             //添加视图映射
             public void addViewControllers(ViewControllerRegistry registry){
                 registry.addViewController("/11").setViewName("test");
+                registry.addViewController("/ALogin").setViewName("ALogin");
             }
         };
         return adapter;
