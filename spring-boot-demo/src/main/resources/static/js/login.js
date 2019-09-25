@@ -26,10 +26,10 @@
 					show_err_msg('Password cannot be empty!');
 					$('#password').focus();
 				}else if(!mypass.test($('#password').val())){
-					show_err_msg('Incorrect ID format!');
+					show_err_msg('Incorrect password format!');
 				    $('#password').focus();
 				}else{
-					show_msg('Login successful','/');
+					show_msg('Login successful!','/');
 				}
 			});
 		});
