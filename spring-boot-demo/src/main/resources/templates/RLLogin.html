@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Reader and Librarian Login</title>
+    <link href="css/login.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
+    <script type="text/javascript" src="../staticjs/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../staticjs/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../staticjs/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="../staticjs/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="../staticjs/RLlogin.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+	var $tab_li = $('#tab ul li');
+	$tab_li.hover(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
+		var index = $tab_li.index(this);
+		$('div.tab_box > div').eq(index).show().siblings().hide();
+	});
+});
+</script>
+    <script type="text/javascript">
+$(function(){
+/*读者登录信息验证*/
+$("#stu_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='Enter ID'){
+ $(this).val('');
+ }
+});
+$("#stu_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('Enter ID');
+ }
+});
+$("#stu_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='Enter password'){
+ $(this).val('');
+ }
+});
+$("#stu_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('Enter password');
+ }
+});
+$("#stu_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='Input code'){
+ $(this).val('');
+ }
+});
+$("#stu_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('Input code');
+ }
+});
+$(".stu_login_error").Validform({
+	tiptype:function(msg,o,cssctl){
+		var objtip=$(".stu_error_box");
+		cssctl(objtip,o.type);
+		objtip.text(msg);
+	},
+	ajaxPost:true
+});
+
+/*图书管理员登录信息验证*/
+$("#sec_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='Enter ID'){
+ $(this).val('');
+ }
+});
+$("#sec_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('Enter ID');
+ }
+});
+$("#sec_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='Enter password'){
+ $(this).val('');
+ }
+});
+$("#sec_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('Enter password');
+ }
+});
+$("#sec_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='Input code'){
+ $(this).val('');
+ }
+});
+$("#sec_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('Input code');
+ }
+});
+$(".sec_login_error").Validform({
+	tiptype:function(msg,o,cssctl){
+		var objtip=$(".sec_error_box");
+		cssctl(objtip,o.type);
+		objtip.text(msg);
+	},
+	ajaxPost:true
+});
+});
+</script>
+</head>
+
+<body>
+<div id="tab">
+    <ul class="tab_menu">
+        <li class="selected">Reader Login</li>
+        <li>Librarian Login</li>
+    </ul>
+    <div class="tab_box">
+        <!-- 读者登录开始 -->
+        <div>
+            <div class="stu_error_box"></div>
+            <form action="" method="post" class="stu_login_error">
+                <div id="username">
+                    <label>Reader's ID:</label>
+                    <input class="text" type="text" id="stu_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="s6-18" errormsg="ID ranges from 6 to 18 characters!" sucmsg="ID verification passed!"/>
+                    <!--ajaxurl="demo/valid.jsp"-->
+                </div>
+                <div id="password">
+                    <label> &nbsp;&nbsp;&nbsp;Password:</label>
+                    <input class="text" type="password" id="stu_password_hide" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
+                </div>
+                <div id="code">
+                    <label>Verification code:</label>
+                    <input class="text" type="text" id="stu_code_hide" name="code"  placeholder="Input code" nullmsg="Captcha cannot be empty!" datatype="*4-4" errormsg="The captcha has four digits!" sucmsg="Verification code verification passed!"/>
+                    <img src="images/captcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
+                <div id="remember">
+                    <input type="checkbox" name="remember">
+                    <label>Remember the password</label>
+                </div>
+                <div id="login">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <!-- 读者登录结束-->
+        <!-- 图书管理员登录开始-->
+        <div class="hide">
+            <div class="sec_error_box"></div>
+            <form action="" method="post" class="sec_login_error">
+                <div id="username">
+                    <label>Librarian's ID:</label>
+                    <input class="text" type="text" id="sec_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="s6-18" errormsg="ID ranges from 6 to 18 characters!" sucmsg="ID verification passed!"/>
+                    <!--ajaxurl="demo/valid.jsp"-->
+                </div>
+                <div id="password">
+                    <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:</label>
+                    <input class="text" type="password" id="sec_password_hide" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
+                </div>
+                <div id="code">
+                    <label>Verification code:</label>
+                    <input class="text" type="text" id="sec_code_hide" name="code"  placeholder="Input code" nullmsg="Captcha cannot be empty!" datatype="*4-4" errormsg="The captcha has four digits!" sucmsg="Verification code verification passed!"/>
+                    <img src="images/captcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
+                <div id="remember">
+                    <input type="checkbox" name="remember">
+                    <label>Remember the password</label>
+                </div>
+                <div id="login">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <!-- 图书管理员登录结束-->
+    </div>
+</div>
+<div class="bottom"><a href="##################">Return to the home page</a></div>
+<div class="screenbg">
+    <ul>
+        <li><a href="javascript:;"><img src="images/Login0.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/Login1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/Login2.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/Login3.jpg"></a></li>
+    </ul>
+</div>
+</body>
+</html>

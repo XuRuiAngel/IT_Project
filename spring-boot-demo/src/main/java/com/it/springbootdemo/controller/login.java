@@ -47,7 +47,7 @@ public class login {
             @RequestParam("username") String username,
             @RequestParam("e_mail") String e_mail,
             @RequestParam("balance") double balance){
-                if(balance <300)
+                if(balance<300)
                 {
                     return "not enough money";
                 }
