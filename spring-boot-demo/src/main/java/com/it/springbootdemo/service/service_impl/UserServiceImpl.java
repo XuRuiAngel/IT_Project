@@ -35,9 +35,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int registAdmin(String username, String password, String e_mail) {
+    public int registLibrarian(String tele, String password, String e_mail) {
         User user_check;
-       user_check= userMapper.findUserByName(username);
+       user_check= userMapper.login(tele);
        if(user_check!=null)
        {
            return 0;
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
        else{
            TimeUtil timeUtil = new TimeUtil();
            String nowdate= timeUtil.getFormatDateForFive();
-           User user=new User(username,0,e_mail,password,0,123456+"",nowdate);
+           User user=new User(tele,0,e_mail,password,0,tele+"",nowdate);
            userMapper.insertUser(user);
            return 1;
        }

@@ -12,6 +12,6 @@ public interface UserService {
 
     public int login(String username,String password);
 
-    public int registAdmin(String username,String password,String e_mail);
+    public int registLibrarian(String tele,String password,String e_mail);
 
 }

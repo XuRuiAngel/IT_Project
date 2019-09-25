@@ -25,16 +25,16 @@ public class login {
         else return result+"";
     }
 
-    @PostMapping("/registAdmin")
+    @PostMapping("/registLibrarian")
     @ResponseBody
-    public String registAdmin(@RequestParam("username") String username,
+    public String registAdmin(@RequestParam("tele") String tele,
                                @RequestParam("password") String password,
                                @RequestParam("e_mail") String e_mail){
         int result;
-        result=userService.registAdmin(username,password,e_mail);
+        result=userService.registLibrarian(tele,password,e_mail);
          if(result==0)
          {
-             return "Please change username!";
+             return "The account has been registered!";
          }
          else return "success!";
     }
