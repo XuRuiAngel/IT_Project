@@ -16,4 +16,6 @@ public interface UserService {
 
     public int registReader(String tele,String username,String e_mail,double balance);
 
+    public int resetPassword(String tele,String e_mail);
+
 }

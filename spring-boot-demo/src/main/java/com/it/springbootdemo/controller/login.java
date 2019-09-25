@@ -63,4 +63,21 @@ public class login {
                 }
                 }
 
-    }
+    @GetMapping("/resetPassword")
+    @ResponseBody
+    public String resetPassword(@RequestParam("tele") String tele,
+                                @RequestParam("e_mail") String e_mail){
+        int result=0;
+        result=userService.resetPassword(tele,e_mail);
+        if(result==0){
+            return "Account does not exist!";
+        }
+        else if (result==1){
+            return "Success";
+        }
+        else {
+            return "Error e_mail!";
+        }
+     }
+
+}

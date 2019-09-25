@@ -68,4 +68,17 @@ public class UserServiceImpl implements UserService {
             return 1;
         }
     }
+
+    @Override
+    public int resetPassword(String tele, String e_mail) {
+        User user;
+        user=userMapper.login(tele);
+        if(user==null) return 0;
+        else if(user.getE_mail().equals(e_mail)){
+           userMapper.resetPassword(tele);
+            return 1;
+        }
+        else  return 2;
+
+    }
 }
