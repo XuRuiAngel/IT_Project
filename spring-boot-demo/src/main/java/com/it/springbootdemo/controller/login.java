@@ -25,6 +25,7 @@ public class login {
         else return result+"";
     }
 
+
     @PostMapping("/registLibrarian")
     @ResponseBody
     public String registAdmin(@RequestParam("tele") String tele,
@@ -61,4 +62,5 @@ public class login {
                     else return "success!";
                 }
                 }
+
     }
