@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int login(String username, String password) {
+    public int login(String tele, String password) {
         User user;
-        user=userMapper.login(username);
+        user=userMapper.login(tele);
         if(user==null){
             return 4;
         }

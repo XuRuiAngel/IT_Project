@@ -12,12 +12,12 @@ public class login {
     UserService userService;
     @GetMapping("/login")
     @ResponseBody
-    public String login(@RequestParam("username") String username,
+    public String login(@RequestParam("tele") String tele,
                         @RequestParam("password") String password){
         int result;
-        result=userService.login(username,password);
+        result=userService.login(tele,password);
         if(result==4){
-            return "Username is not exist!";
+            return "Account does not exist!";
         }
         else if(result==5){
             return "Password error!";
