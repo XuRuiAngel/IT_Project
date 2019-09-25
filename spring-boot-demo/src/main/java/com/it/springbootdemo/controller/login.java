@@ -39,5 +39,26 @@ public class login {
          else return "success!";
     }
 
-
-}
+    @PostMapping("/registReader")
+    @ResponseBody
+    public String registReader(
+            @RequestParam("tele") String tele,
+            @RequestParam("username") String username,
+            @RequestParam("e_mail") String e_mail,
+            @RequestParam("balance") double balance){
+                if(balance <300)
+                {
+                    return "not enough money";
+                }
+                else
+                {
+                    int result;
+                    result=userService.registLibrarian(tele,username,e_mail);
+                    if(result==0)
+                    {
+                        return "The account has been registered!";
+                    }
+                    else return "success!";
+                }
+                }
+    }

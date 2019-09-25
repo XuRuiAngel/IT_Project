@@ -54,6 +54,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int registReader(String tele, String username, String e_mail, double balance) {
-        return 0;
+        User user_check;
+        user_check = userMapper.login(tele);
+        if(user_check!=null)
+        {
+            return 0;
+        }
+        else {
+            TimeUtil timeUtil = new TimeUtil();
+            String nowdate = timeUtil.getFormatDateForFive();
+            User user = new User(username, balance, e_mail, 123456 + "", 2, tele + "", nowdate);
+            userMapper.insertReader(user);
+            return 1;
+        }
     }
 }
