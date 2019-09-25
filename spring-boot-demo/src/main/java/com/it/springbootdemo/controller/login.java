@@ -53,7 +53,7 @@ public class login {
                 else
                 {
                     int result;
-                    result=userService.registLibrarian(tele,username,e_mail);
+                    result=userService.registReader(tele,username,e_mail,balance);
                     if(result==0)
                     {
                         return "The account has been registered!";
