@@ -14,4 +14,6 @@ public interface UserService {
 
     public int registAdmin(String username,String password,String e_mail);
 
+    public int registReader(String tele,String username,String e_mail,double balance);
+
 }
