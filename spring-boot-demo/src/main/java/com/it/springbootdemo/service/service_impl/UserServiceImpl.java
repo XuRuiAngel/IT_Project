@@ -22,6 +22,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String findUsernameByTele(String tele) {
+        return userMapper.findUsernameByTele(tele);
+    }
+
+    @Override
     public int login(String tele, String password) {
         User user;
         user=userMapper.login(tele);

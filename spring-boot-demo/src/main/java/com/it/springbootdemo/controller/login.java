@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class login {
 
@@ -13,7 +15,8 @@ public class login {
     @GetMapping("/login")
     @ResponseBody
     public String login(@RequestParam("tele") String tele,
-                        @RequestParam("password") String password){
+                        @RequestParam("password") String password,
+                        HttpSession session){
         int result;
         result=userService.login(tele,password);
         if(result==4){
@@ -22,7 +25,11 @@ public class login {
         else if(result==5){
             return "Password error!";
         }
-        else return result+"";
+        else {
+            String username=userService.findUsernameByTele(tele);
+            session.setAttribute("username",username);
+            return result+"";
+        }
     }
 
 

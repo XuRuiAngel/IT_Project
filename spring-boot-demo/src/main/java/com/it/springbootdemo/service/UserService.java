@@ -10,6 +10,8 @@ public interface UserService {
 
     public User test2(int id);
 
+    public String findUsernameByTele(String tele);
+
     public int login(String username,String password);
 
     public int registLibrarian(String tele,String username,String e_mail);
