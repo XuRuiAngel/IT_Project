@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.it.springbootdemo.service.BookService;
 import com.it.springbootdemo.utils.EmailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework. stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import net.sf.json.JSONObject;
 
@@ -22,15 +22,16 @@ public class book {
         return bookService.searchBook(key,text);
     }
 
-    @GetMapping("/sendEmail")
+  /*  @GetMapping("/sendEmail")
     @ResponseBody
     public String sendEmail() throws JsonProcessingException {
         boolean isSend = EmailUtils.sendEmail("这是一封测试邮件", new String[]{"693502886@qq.com"}, null, "<h3><a href='http://www.baidu.com'>百度一下，你就知道</a></h3>", null);
         return "发送邮件:" + isSend;
-    }
+    }*/
 
 
     /*@PostMapping("/insertBook")
     @ResponseBody
     public int insertBook(@)*/
+
 }

@@ -29,4 +29,9 @@ public interface UserMapper {
 
     @Select("select username from user where tele=#{tele}")
     String findUsernameByTele(@Param("tele") String tele);
+
+    @Select("select password from user where tele=#{tele}")
+    String getPasswordByTele(@Param("tele") String tele);
+
+
 }

@@ -62,7 +62,7 @@ public class EmailUtils {
      * @param content 邮件内容
      * @param attachfiles 附件列表  List<Map<String, String>> key: name && file
      */
-    public static boolean sendEmail(String subject, String[] toUsers, String[] ccUsers, String content, List<Map<String, String>> attachfiles) {
+    public static boolean sendEmail(String subject, String toUsers, String[] ccUsers, String content, List<Map<String, String>> attachfiles) {
         boolean flag = true;
         try {
             JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();

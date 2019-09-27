@@ -68,7 +68,7 @@ public class login {
                     }
                     else return "success!";
                 }
-                }
+    }
 
     @GetMapping("/resetPassword")
     @ResponseBody
@@ -80,11 +80,13 @@ public class login {
             return "Account does not exist!";
         }
         else if (result==1){
+
             return "Success";
         }
-        else {
+        else if(result==2){
             return "Error e_mail!";
         }
+        else return "Failed to send mail!";
      }
 
 }

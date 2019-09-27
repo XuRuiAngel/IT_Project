@@ -5,6 +5,7 @@ package com.it.springbootdemo.service.service_impl;
 import com.it.springbootdemo.mapper.UserMapper;
 import com.it.springbootdemo.model.User;
 import com.it.springbootdemo.service.UserService;
+import com.it.springbootdemo.utils.EmailUtils;
 import com.it.springbootdemo.utils.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,7 +51,7 @@ public class UserServiceImpl implements UserService {
        else{
            TimeUtil timeUtil = new TimeUtil();
            String nowdate= timeUtil.getFormatDateForFive();
-           User user=new User(username,0,e_mail,12345678+"",1,tele+"",nowdate);
+           User user=new User(username,0,e_mail,00010001+"",1,tele+"",nowdate);
            userMapper.insertUser(user);
            return 1;
        }
@@ -68,7 +69,7 @@ public class UserServiceImpl implements UserService {
         else {
             TimeUtil timeUtil = new TimeUtil();
             String nowdate = timeUtil.getFormatDateForFive();
-            User user = new User(username, balance, e_mail, 123456 + "", 2, tele + "", nowdate);
+            User user = new User(username, balance, e_mail, 12345678 + "", 2, tele + "", nowdate);
             userMapper.insertReader(user);
             return 1;
         }
@@ -80,8 +81,11 @@ public class UserServiceImpl implements UserService {
         user=userMapper.login(tele);
         if(user==null) return 0;
         else if(user.getE_mail().equals(e_mail)){
-           userMapper.resetPassword(tele);
-            return 1;
+            String password=userMapper.getPasswordByTele(tele);
+            String content="Your password is "+password+" , please keep your password properly.";
+            boolean isSend = EmailUtils.sendEmail("Get back password.", e_mail, null, "<h3>"+content+"</h3>", null);
+            if(isSend==true) return 1;
+            else return 3;
         }
         else  return 2;
 
