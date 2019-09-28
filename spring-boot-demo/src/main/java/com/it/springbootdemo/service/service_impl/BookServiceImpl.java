@@ -42,4 +42,16 @@ public class BookServiceImpl implements BookService {
         return jsonObject;
 
     }
+
+    @Override
+    public int insertBookWithoutISBN(String price, String location, String bookname, String author, String press) {
+        bookMapper.insertBookWithoutISBN(price,location,bookname,author,press);
+        return 1;
+    }
+
+    @Override
+    public int insertBookWithISBN(String ISBN, String price, String location, String bookname, String author, String press) {
+        bookMapper.insertBookWithISBN(ISBN,price,location,bookname,author,press);
+        return 1;
+    }
 }

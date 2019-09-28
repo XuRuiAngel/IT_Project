@@ -30,8 +30,29 @@ public class book {
     }*/
 
 
-    /*@PostMapping("/insertBook")
+    @GetMapping("/insertBookWithoutISBN")
     @ResponseBody
-    public int insertBook(@)*/
+    public int insertBookWithoutISBN(@RequestParam("price")String price,
+                                     @RequestParam("location")String location,
+                                     @RequestParam("bookname") String bookname,
+                                     @RequestParam("author")String author,
+                                     @RequestParam("press")String press
+                                     ){
+        return bookService.insertBookWithoutISBN(price,location,bookname,author,press);
+
+    }
+
+    @GetMapping("/insertBookWithISBN")
+    @ResponseBody
+    public int insertBookWithISBN(   @RequestParam("ISBN") String ISBN,
+                                     @RequestParam("price")String price,
+                                     @RequestParam("location")String location,
+                                     @RequestParam("bookname") String bookname,
+                                     @RequestParam("author")String author,
+                                     @RequestParam("press")String press
+    ){
+        return bookService.insertBookWithISBN(ISBN,price,location,bookname,author,press);
+
+    }
 
 }
