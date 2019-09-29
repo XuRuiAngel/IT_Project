@@ -8,17 +8,41 @@ function searchBook() {
             type: "GET",
             url:"/searchBook?key="+key+"&text="+text,
             data:{},
-            dataType: "text",
+            dataType: "JSON",
             success: function (data) {
-                pager.init(1);
-                pager.setLayout('pagerDiv', data, 100, function () {
-                    $('#tbody').html('');
-                    for (var i = pager.start() - 1; i < pager.end(); i++) {
-                        if (data[i]) {
-                            $('#tbody').append('<tr><td>' + data[i].BookId + '</td>' + '<td>'+ data[i].ISBN+ '</td>' + '<td>'+data[i].Price + '</td>'+ '<td>'+data[i].Location + '</td>'+  '<td>'+data[i].BookName + '</td>'+  '</td>'+data[i].Author + '</td>'+ '<td>'+data[i].Press + '</td>'+'<td>'+data[i].Author + '</td>'+'<td>'+data[i].Description + '</td>'+'<td>'+data[i].PublishYear + '</td>'+'<td>'+data[i].TextLanguage + '</td>'+'<td>'+data[i].CopyNumbers +'</td></tr>');
-                        }
-                    }
-                });
+                var i;
+                var a=JSON.stringify(data);
+                var b=eval("("+a+")");
+
+                var result=b.result;
+
+                //用一个变量来存储json中的数据
+                for (i = 0; i < result.length; i++) { //用for循环遍历数组将数据存入html变量中
+                    var id=result[i].BookId;
+                    var isbn=result[i].ISBN;
+                    var pri=result[i].price;
+                    var loa=result[i].location;
+                    var bn=result[i].bookname;
+                    var aut=result[i].author;
+                    var pre=result[i].press;
+                    var des=result[i].description;
+                    var pub=result[i].publishYear;
+                    var tex=result[i].textLanguage;
+                    var cop=result[i].copyNumbers;
+                   var html = "\t<th>"+id+"</th>\n" +
+                        "\t\t\t<th>"+isbn+"</th>\n" +
+                        "\t\t\t<th>"+pri+"</th>\n" +
+                        "\t\t\t<th>"+loa+"</th>\n" +
+                        "\t\t\t<th>"+bn+"</th>\n" +
+                        "\t\t\t<th>"+aut+"</th>\n"
+                       // + "\t\t\t<th>"+pre+"</th>\n"
+                       + "\t\t\t<th>"+des+"</th>\n" +
+                        // "\t\t\t<th>"+pub+"</th>\n" +
+                        // "\t\t\t<th>"+tex+"</th>\n" +
+                        "\t\t\t<th>"+cop+"</th>";
+                    document.getElementById("tbody").innerHTML =document.getElementById("tbody").innerHTML+ html;
+                }
+
             }
 
         })
