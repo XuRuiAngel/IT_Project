@@ -18,6 +18,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="../static/css/CreateReader_font2.css" rel="stylesheet" type="text/css" />
 
 <!-- /font files -->
+	<script type="text/javascript" src="../static/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
+	<script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
+	<script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
+	<script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
+	<script type="text/javascript" src="../static/js/functions.js"></script>
 </head>
 <body>
 <h1 class="header-agileits w3 w3l agile-info">Create Reader</h1>
@@ -25,35 +32,61 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="content-w3ls">
 	<div class="form-w3layouts">
-		<form action="#" method="post">
+		<form>
 			<div class="form-control"> 
 				<label class="header">Reader Name <span>:</span></label>
-				<input type="text" id="name" name="name" placeholder="Reader's Name" title="Please enter reader Full Name" required="">
+				<input type="text" id="rname" name="name" placeholder="Reader's Name" title="Please enter reader Full Name" required="">
 			</div>
 		
 			<div class="form-control">	
 				<label class="header">Email Address <span>:</span></label>
-				<input type="email" id="email" name="email" placeholder="Mail@example.com" title="Please enter a Valid Email Address" required="">
+				<input type="email" id="remail" name="email" placeholder="Mail@example.com" title="Please enter a Valid Email Address" required="">
 			</div>
 		
 			<div class="form-control">	
 				<label class="header">Phone Number <span>:</span></label>
-				<input type="text" id="bill" name="bill" placeholder="Reader's Phone Number" title="Please enter Reader's Phone Number" required="">
+				<input type="text" id="rtel" name="tel" placeholder="Reader's Phone Number" title="Please enter Reader's Phone Number" required="">
 			</div>
 		
 			<div class="form-control">	
 				<label class="header">Balance <span>:</span></label>	
-				<input type="text" id="usrtel" name="usrtel" placeholder="Reader's Balance" title="Please enter Reader's balance" required="">
+				<input type="text" id="rbalance" name="balance" placeholder="Reader's Balance" title="Please enter Reader's balance" required="">
 			</div>	
 			
 			
 			
 			<div class="form-control">
 				<input type="reset" class="reset" value="Reset">
-				<input type="submit" class="register" value="Submit">
+				<input type="button" class="register" value="Submit" onclick="alogin()">
 				<div class="clear"></div>
 			</div>	
 		</form>
+		<script type="text/javascript">
+			function Areg(rname, remail, rbalance, rtel){
+
+				$.ajax({
+					type:"POST",
+					url:"/registReader?tele="+rtel+"&username="+rname+"&e_mail="+remail+"&balance="+rbalance,
+					async:false,
+					data:{},
+					datatype:"string",
+					success:function(msg) {
+						if(msg=="success!")  {
+							alert(msg);
+							window.location.href="librarian";
+						}
+						else  alert("msg");
+					}
+				})
+			}
+			function alogin(){
+				var rname=$('#rtel').val();
+				var remail=$('#remail').val();
+				var rbalance=$('#rbalance').val();
+				var rtel=$('#rtel').val();
+				Areg(rname, remail, rbalance, rtel);
+			}
+		</script>
 	</div>
 </div>
 

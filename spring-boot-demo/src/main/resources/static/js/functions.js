@@ -34,6 +34,24 @@ function registerR(tel, username, email){
         }
     })
 }
+
+// function Areg(rname, remail, rbalance, rtel){
+//
+//     $.ajax({
+//         type:"POST",
+//         url:"/registReader?tele="+rtel+"&username="+rname+"&e_mail="+remail+"&balance="+rbalance,
+//         async:false,
+//         data:{},
+//         datatype:"string",
+//         success:function(msg) {
+//             if(msg=="success!")  {
+//                 alert(msg);
+//                 window.location.href="librarian";
+//             }
+//             else  alert("msg");
+//         }
+//     })
+// }
 // function rCpsw(rtele, remail){
 //     var msg;
 //     $.ajax({
