@@ -12,6 +12,8 @@ public interface UserService {
 
     public int login(String tele,String password);
 
+    public String findUsernameByTele(String tele);
+
     public int registLibrarian(String tele,String username,String e_mail);
 
     public int registReader(String tele,String username,String e_mail,double balance);

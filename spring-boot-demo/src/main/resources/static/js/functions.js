@@ -18,12 +18,12 @@ function RLlogin(tele, password){
 }
 
 function registerR(tel, username, email){
-    var msg;
+
     $.ajax({
         type:"POST",
         url:"/registLibrarian?tele="+tel+"&username="+username+"&e_mail="+email,
         async:false,
-        // data:{},
+         data:{},
         datatype:"string",
         success:function(msg) {
             if(msg=="success!")  {
