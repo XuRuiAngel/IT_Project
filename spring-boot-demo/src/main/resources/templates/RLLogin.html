@@ -9,6 +9,7 @@
     <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
     <script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
     <script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="../static/js/functions.js"></script>
     <script type="text/javascript">
 $(document).ready(function(){
 	var $tab_li = $('#tab ul li');
@@ -127,15 +128,15 @@ $(".sec_login_error").Validform({
         <!-- 读者登录开始 -->
         <div>
             <div class="stu_error_box"></div>
-            <form action="" method="post" class="stu_login_error">
+            <form action="" method="post" class="stu_login_error" onsubmit="rlogin()">
                 <div id="Rusername">
                     <label>Reader's ID:</label>
-                    <input class="text" type="text" id="stu_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="m" errormsg="Incorrect ID format!" sucmsg="ID verification passed!"/>
+                    <input class="text" type="text" id="rtele" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="m" errormsg="Incorrect ID format!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
                 <div id="Rpassword">
                     <label> &nbsp;&nbsp;&nbsp;Password:</label>
-                    <input class="text" type="password" id="stu_password_hide" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
+                    <input class="text" type="password" id="rpassword" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
                 </div>
                 <div id="Rcode">
                     <label>Verification:</label>
@@ -150,19 +151,26 @@ $(".sec_login_error").Validform({
                 </div>
             </form>
         </div>
+        <script type="text/javascript">
+            function rlogin(){
+                var tele=$('#rtele').val();
+                var psw= $('#rpassword').val();
+                RLlogin(tele,psw);
+            }
+        </script>
         <!-- 读者登录结束-->
         <!-- 图书管理员登录开始-->
         <div class="hide">
             <div class="sec_error_box"></div>
-            <form action="" method="post" class="sec_login_error">
+            <form action="" method="post" class="sec_login_error" onsubmit="logins()">
                 <div id="Lusername">
                     <label>Librarian's ID:</label>
-                    <input class="text" type="text" id="sec_username_hide" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" datatype="m" errormsg="Incorrect ID format!" sucmsg="ID verification passed!"/>
+                    <input class="text" type="text" id="tele" name="username" placeholder="Enter Telephone" nullmsg="Phone No. cannot be empty!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
                 <div id="Lpassword">
                     <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:</label>
-                    <input class="text" type="password" id="sec_password_hide" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
+                    <input class="text" type="password" id="password" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
                 </div>
                 <div id="Lcode">
                     <label>Verification:</label>
@@ -173,13 +181,21 @@ $(".sec_login_error").Validform({
                     <label>Remember the password</label>
                 </div>
                 <div id="Llogin">
-                    <button type="submit">Login</button>
+                    <button type="submit" >Login</button>
                 </div>
             </form>
         </div>
         <!-- 图书管理员登录结束-->
     </div>
 </div>
+<script type="text/javascript">
+    function logins(){
+
+        var tele=$('#tele').val();
+        var psw= $('#password').val();
+        RLlogin(tele,psw);
+    }
+</script>
 <div class="bottom"><a href="##################">Return to the home page</a></div>
 <div class="screenbg">
     <ul>

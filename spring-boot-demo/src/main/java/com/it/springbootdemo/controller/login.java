@@ -10,7 +10,7 @@ public class login {
 
     @Autowired
     UserService userService;
-    @GetMapping("/login")
+    @PostMapping("/login")
     @ResponseBody
     public String login(@RequestParam("tele") String tele,
                         @RequestParam("password") String password){

@@ -12,6 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<script type="text/javascript" src="../static/js/functions.js"></script>
 <!-- css files -->
 <link href="../static/css/createListl.css" rel='stylesheet' type='text/css' media="all" />
 <!-- /css files -->
@@ -26,7 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="content-w3ls">
 	<div class="form-w3layouts">
-		<form action="#" method="post">
+		<form   >
 			<div class="form-control"> 
 				<label class="header">Librarian Name <span>:</span></label>
 				<input type="text" id="name" name="name" placeholder="Librarian's Name" title="Please enter Librarian's Full Name" required="">
@@ -41,19 +42,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 			<div class="form-control">	
 				<label class="header">Phone Number <span>:</span></label>	
-				<input type="tel" id="usrtel" name="usrtel" placeholder="Librarian's Phone Number" title="Please enter Librarian's Phone Number" required="">
+				<input type="tel" id="tel" name="usrtel" placeholder="Librarian's Phone Number" title="Please enter Librarian's Phone Number" required="">
 			</div>	
 			
 			
 			
 			<div class="form-control">
 				<input type="reset" class="reset" value="Reset">
-				<input type="submit" class="register" value="Submit">
+				<button type="submit" onclick="lCreate()">SUBMIT</button>
 				<div class="clear"></div>
 			</div>	
 		</form>
 	</div>
 </div>
+
+<script type="text/javascript">
+	function lCreate(){
+		var username=$("form input[name='name']").val();
+		var email=$('#email').val();
+		var tel= $('#tel').val();
+		alert("username");
+		// registerR(tel,username,email);
+		// return false;
+	}
+</script>
+
 
 <p class="copyright agileits-w3layouts agile w3-agile">© 2019  All Rights Reserved | Design by <a href="https://www.xmoban.cn/" target="_blank">NPUERS</a></p>
 </body>
