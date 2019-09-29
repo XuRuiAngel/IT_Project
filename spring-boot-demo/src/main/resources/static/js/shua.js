@@ -1,15 +1,19 @@
-$("#btn").click(function(){
-	var y=$("#iform").serialize();
-console.log(y);
+function searchBook() {
+
+    var key=$('#choose').val();
+    var text=$('#keyboard').val();
 	
         $.ajax({
             async: false,
-            type: "POST",
-            url:'${pageContext.request.contextPath}/link/apply',
-            contentType : "application/x-www-form-urlencoded; charset=utf-8",
-            data:$("#iform").serialize(),
-            dataType: "text",			
+            type: "GET",
+            url:"/searchBook?key="+key+"&text="+text,
+            data:{},
+            dataType: "text",
+            success: function (data) {
+                alert(key);
+                alert(data);
+            }
 
         })
-});
+}
 
