@@ -1,0 +1,13 @@
+form {margin: 10px 0;}
+table {border-width: 1px; border-style: solid; width: 600px;}
+td {border-width: 1px; border-style: solid; padding: 3px 5px;}
+thead {font-weight: bold; background-color: #F0F0F0;}
+
+#list_input_pagesize_container {margin: 10px 0;}
+#list_input_pagesize {width: 50px;}
+#list_next {float: right;}
+#list_previous {float: left;}
+#list_td_foot {text-align: center;}
+#list_td_task {width: 50%}
+#list_td_time {width: 20%}
+#list_td_location {width: 30%}
