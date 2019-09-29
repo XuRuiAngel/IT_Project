@@ -28,7 +28,6 @@ function registerR(tel, username, email){
         success:function(msg) {
             if(msg=="success!")  {
                 alert(msg);
-                window.location.href="admin";
             }
             else  alert("msg");
         }
