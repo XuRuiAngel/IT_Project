@@ -27,23 +27,44 @@ function registerR(tel, username, email){
         datatype:"string",
         success:function(msg) {
             if(msg=="success!")  {
-                //alert(msg);
-                window.location.href="admin";
+                alert(msg);
             }
             else  alert("msg");
         }
     })
 }
-function recoverpsw(psw){
-    $.ajax({
-        type:"POST",
-        url:"/resetpassword?id="+str,
-        data:{},
-        datatype:"string",
-        success:function() {
-        }
-    })
-}
+
+// function Areg(rname, remail, rbalance, rtel){
+//
+//     $.ajax({
+//         type:"POST",
+//         url:"/registReader?tele="+rtel+"&username="+rname+"&e_mail="+remail+"&balance="+rbalance,
+//         async:false,
+//         data:{},
+//         datatype:"string",
+//         success:function(msg) {
+//             if(msg=="success!")  {
+//                 alert(msg);
+//                 window.location.href="librarian";
+//             }
+//             else  alert("msg");
+//         }
+//     })
+// }
+// function rCpsw(rtele, remail){
+//     var msg;
+//     $.ajax({
+//         type:"GET",
+//         url:"/resetPassword?tele="+rtele+"&e_mail="+remail,
+//         data:{},
+//         datatype:"string",
+//         async:false,
+//         success:function(msg) {
+//             if(msg=="Success") alert("Success! Please check your email to get the password!");
+//             else alert(msg);
+//         }
+//     })
+// }
 
 function getid(str) {
 

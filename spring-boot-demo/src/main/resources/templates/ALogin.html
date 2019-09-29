@@ -17,6 +17,8 @@
     <!--[if lt IE 9]>
     <script src="../static/js/html5.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="../static/js/test.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="../static/js/jquery.form.js"></script>
     <script type="text/javascript" src="../static/js/tooltips.js"></script>
@@ -30,25 +32,27 @@
     <div class="main_box">
         <div class="login_box">
             <div class="login_logo">
-                <img src="../static/images/Loginlogo.png" >
+                <img src="../static/images/logo1.png" >
             </div>
 
             <div class="login_form">
-                <form action="index.html" id="login_form" method="post">
-                    <div class="form-group">
-                        <label for="j_username" class="t">Account:</label>
-                        <input id="ID" value="" name="ID" type="text" class="form-control x319 in"
+                <form>
+                    <div align="center" class="form-group">
+                        <label for="j_username" class="t">Tele:</label>
+                        <input id="atele" value="" name="ID" type="text" class="form-control x319 in"
                                autocomplete="off">
                     </div>
-                    <div class="form-group">
+                    <div align="center" class="form-group">
                         <label for="j_password" class="t">password:</label>
-                        <input id="password" value="" name="password" type="password"
+                        <input id="apassword" value="" name="password" type="password"
                                class="password form-control x319 in">
                     </div>
-                    <div class="form-group">
+                    <div align="center" class="form-group">
                         <label for="j_captcha" class="t">Verification:</label>
-                        <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
-                        <img id="captcha_img" alt="Click on the change" title="Click on the change" src="../static/images/Logincaptcha.jpeg" class="m">
+                        <input class="form-control x319 in" type="tel" id="verify_input" maxlength="4">
+                        <a href="javascript:void(0);" rel="external nofollow" title="Click to replace the verification code">
+                            <img id="imgVerify" src="http://localhost/getVerify?158" alt="Replace verification code" height="35" width="35%" onclick="getVerify()">
+                        </a>
                     </div>
                     <div class="form-group">
                         <label class="t"></label>
@@ -57,11 +61,36 @@
                     </div>
                     <div class="form-group space">
                         <label class="t"></label>　　　
-                        <button type="button"  id="submit_btn"
-                                class="btn btn-primary btn-lg">Login </button>
+                        <input type="button" class="btn btn-primary btn-lg" value="Login" onclick="enterA()" >
                         <input type="reset" value="Reset" class="btn btn-default btn-lg">
                     </div>
                 </form>
+                <script type="text/javascript">
+                    function enterA(){
+                        var atele=$('#atele').val();
+                        var apassword= $('#apassword').val();
+                        var yzm;
+                        $.ajax({
+                            type:"POST",
+                            datatype:"string",
+                            url:"/login?tele="+atele+"&password="+apassword,
+                            // data: JSON.stringify(data),
+                            // headers	:{'Content-Type': 'application/json'},
+                            async:false,
+                            success:function(msg) {
+                                yzm=check();
+                               // alert(yzm);
+                                if(msg=="Password error!") alert("Your password is incorrect, please check again!");
+                                else{
+                                    if(yzm=="fail") alert("the valid code is wrong!");
+                                    else if(msg==0) window.location.href="admin";
+                                    else if(msg==2) alert("Reader is developing.");
+                                    else if(msg==1) alert("please use Librarian window to login!");
+                                    else alert(msg);}
+                            }
+                        })
+                    }
+                </script>
             </div>
         </div>
         <div class="bottom"><a href="##################">Return to the home page</a></div>

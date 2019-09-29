@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
        else{
            TimeUtil timeUtil = new TimeUtil();
            String nowdate= timeUtil.getFormatDateForFive();
-           User user=new User(username,0,e_mail,00010001+"",1,tele+"",nowdate);
+           User user=new User(username,0,e_mail,"00010001",1,tele+"",nowdate);
            userMapper.insertUser(user);
            return 1;
        }

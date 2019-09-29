@@ -7,6 +7,13 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Recover Password</title>
 
+    <script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="../static/js/functions.js"></script>
+
 <style>
 * {
 	padding: 0;
@@ -109,15 +116,37 @@ input:focus {
     <div class="center"></div> 
 	<div class="cms_login_text">Recover Password</div>
 	<div class="cms_login_table">
-		<form action="">
-			<div class="divBox"><span class="margin_right10">&nbsp User ID</span><input type="text" placeholder="Please enter the ID"
+		<form >
+			<div class="divBox"><span class="margin_right10">&nbsp Tele</span><input type="text" id="rtele" placeholder="Please enter the tele"
 					class="cms_login_ipt"></div>
-			<div class="divBox"><span class="margin_right10">Password</span><input type="text" placeholder="Please enter the new password"
+			<div class="divBox"><span class="margin_right10">&nbsp email</span><input type="text" id="remail" placeholder="Please enter the email"
 					class="cms_login_ipt"></div>
-			<div class="divBox margin_top60">
-				<button class="login_btn">Submit & SendMail</button>
+			<div >
+				<input type="button" class="login_btn" onclick="recoverpsw()" value="Submit & SendMail"></input>
 			</div>
 		</form>
+		<script type="text/javascript">
+			function rCpsw(rtele, remail){
+				var msg;
+				$.ajax({
+					type:"GET",
+					url:"/resetPassword?tele="+rtele+"&e_mail="+remail,
+					data:{},
+					datatype:"string",
+					async:false,
+					success:function(msg) {
+						if(msg=="Success") alert("Success! Please check your email to get the password!");
+						else alert(msg);
+					}
+				})
+			}
+			function recoverpsw(){
+				var rtele=$('#rtele').val();
+				var remail=$('#remail').val();
+				rCpsw(rtele, remail);
+			}
+
+		</script>
 	</div>
 </div>
 </div>
