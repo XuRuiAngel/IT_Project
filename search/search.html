@@ -1,0 +1,91 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuer</title>
+
+<link href="css/base.css" type="text/css" rel="stylesheet" />
+	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+<style type="text/css">
+/* search */
+.search{border:2px solid #f58400;height:35px;margin:40px auto 0 auto;width:525px;}
+.search select{display:none;}
+.search .select_box{font-size:12px;color:#999999;width:100px;line-height:35px;float:left;position:relative;}
+.search .select_showbox{height:35px;background:url(images/search_ico.png) no-repeat 80px center;text-indent:1.5em;}
+.search .select_showbox.active{background:url(images/search_ico_hover.png) no-repeat 80px center;}
+.search .select_option{border:2px solid #f58400;border-top:none;display:none;left:-2px;top:35px;position:absolute;z-index:99;background:#fff;}
+.search .select_option li{text-indent:1.5em;width:90px;cursor:pointer;}
+.search .select_option li.selected{background-color:#F3F3F3;color:#999;}
+.search .select_option li.hover{background:#BEBEBE;color:#fff;}
+
+.search input.inp_srh,.search input.btn_srh{border:none;background:none;height:35px;line-height:35px;float:left;color:white;margin-bottom: 30px;}
+.search input.inp_srh{outline:none;width:365px;}
+.search input.btn_srh{background:#f58400;color:#FFF;font-family:"微软雅黑";font-size:15px;width:60px;}
+</style>
+
+</head>
+
+
+<body>
+
+
+<br><br>
+<img src="images/mandarinlogo.png" id="mandarinlogo" width="200">
+<img src="images/welcome.jpg" id="welcome" width="300">
+<h1><a href="http://www.baidu.com" id="log_in_button">登陆</a></h1>
+<br><br>
+
+
+<div id="middle">
+<br><br>
+<div class="search radius6">
+	<form name="searchform" method="post" action="后台地址">
+		<input name='ecmsfrom' type='hidden' value='9'>
+		<input type="hidden" name="show" value="title,newstext">
+		<select name="classid" id="choose">
+			<option value="0">All</option>
+			<option value="1">Book Name</option>
+			<option value="2">ISBN</option>
+			<option value="3">BookID</option>
+			<option value="4">Author</option>
+			<option value="5">Type</option>
+		</select> 
+		<input class="inp_srh" name="keyboard" placeholder="Please input..." >
+		<input class="btn_srh" type="submit" name="submit" value="Search">
+	</form>
+</div>
+
+	<body>
+	<div class="mainDiv">
+		<table class="table">
+			<th>BookId</th>
+			<th>ISBN</th>
+			<th>Price</th>
+			<th>Location</th>
+			<th>BookName</th>
+			<th>Author</th>
+			<th>Press</th>
+			<th>Description</th>
+			<th>PublishYear</th>
+			<th>TextLanguage</th>
+			<th>CopyNumbers</th>
+			<tbody id='tbody'></tbody>
+		</table>
+		<div id="pagerDiv"></div>
+	</div>
+	</body>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.select.js"></script>
+
+
+</div>
+
+<img src="images/yejiao.png" width="400" id="yejiao">
+<br><br><br><br><br><br>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script src="js/pager.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>
