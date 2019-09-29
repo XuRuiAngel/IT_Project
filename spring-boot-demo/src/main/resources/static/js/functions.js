@@ -27,13 +27,12 @@ function registerR(tel, username, email){
         datatype:"string",
         success:function(msg) {
             if(msg=="success!")  {
-                alert(msg);
-                //window.location.href="admin";
+                //alert(msg);
+                window.location.href="admin";
             }
-            else  alert(msg);
+            else  alert("msg");
         }
     })
-    return false;
 }
 function recoverpsw(psw){
     $.ajax({

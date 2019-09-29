@@ -21,6 +21,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
 <!-- /font files -->
 	<script type="text/javascript" src="../static/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
+	<script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
+	<script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
+	<script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
+	<script type="text/javascript" src="../static/js/functions.js"></script>
 </head>
 <body>
 <h1 class="header-agileits w3 w3l agile-info">Create Librarian</h1>
@@ -28,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="content-w3ls">
 	<div class="form-w3layouts">
-		<form   >
+		<form action="/" method="post" onsubmit="lCreate()">
 			<div class="form-control"> 
 				<label class="header">Librarian Name <span>:</span></label>
 				<input type="text" id="name" name="name" placeholder="Librarian's Name" title="Please enter Librarian's Full Name" required="">
@@ -38,19 +44,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<label class="header">Email Address <span>:</span></label>
 				<input type="email" id="email" name="email" placeholder="Mail@example.com" title="Please enter a Valid Email Address" required="">
 			</div>
-		
-			
-		
-			<div class="form-control">	
-				<label class="header">Phone Number <span>:</span></label>	
-				<input type="tel" id="tel" name="usrtel" placeholder="Librarian's Phone Number" title="Please enter Librarian's Phone Number" required="">
-			</div>	
+
+			<div class="form-control">
+				<label class="header">Librarian Name <span>:</span></label>
+				<input type="text" id="tel" name="tel" placeholder="Librarian's phone" title="Please enter Librarian's phone" required="">
+			</div>
+
 			
 			
 			
 			<div class="form-control">
 				<input type="reset" class="reset" value="Reset">
-				<button type="submit" onclick="lCreate()">SUBMIT</button>
+				<input type="submit" class="register" value="Submit">
 				<div class="clear"></div>
 			</div>	
 		</form>
@@ -62,9 +67,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		var username=$('#name').val();
 		var email=$('#email').val();
 		var tel= $('#tel').val();
-		alert("username");
 		 registerR(tel,username,email);
-
 	}
 </script>
 
