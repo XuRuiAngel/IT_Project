@@ -34,6 +34,7 @@ public class test {
 
         }
     }
+
     @PostMapping("/check")
     @ResponseBody
     public String check(@RequestParam("result") String result,HttpSession session){

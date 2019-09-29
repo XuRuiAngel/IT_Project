@@ -26,4 +26,12 @@ public interface UserMapper {
 
     @Update("update user set password='12345678' where tele=#{tele}")
     void resetPassword(@Param("tele") String tele);
+
+    @Select("select username from user where tele=#{tele}")
+    String findUsernameByTele(@Param("tele") String tele);
+
+    @Select("select password from user where tele=#{tele}")
+    String getPasswordByTele(@Param("tele") String tele);
+
+
 }

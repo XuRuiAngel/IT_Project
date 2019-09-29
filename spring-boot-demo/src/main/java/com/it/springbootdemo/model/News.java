@@ -4,18 +4,23 @@ import javax.lang.model.element.NestingKind;
 
 public class News {
 
-    private String ISBN;
+    private int newsId;
     private String title;
     private String content;
 
-    public News(String ISBN, String title, String content) {
-        this.ISBN = ISBN;
+    public News(int newsId, String title, String content) {
+        this.newsId = newsId;
         this.title = title;
         this.content = content;
     }
 
-    public String getISBN() {
-        return this.ISBN;
+    public News( String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    public int getNewsId() {
+        return this.newsId;
     }
 
     public String getContent() {
@@ -29,7 +34,7 @@ public class News {
     @Override
     public String toString() {
         return "News{" +
-                "ISBN='" + ISBN + '\'' +
+                "ISBN='" + newsId + '\'' +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';

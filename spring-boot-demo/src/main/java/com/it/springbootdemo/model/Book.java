@@ -28,6 +28,20 @@ public class Book {
         this.copyNumbers = copyNumbers;
     }
 
+    public Book( String ISBN, String price, String location, String bookname, String author,
+                String press, String description, String publishYear, String textLanguage, int copyNumbers) {
+        this.ISBN = ISBN;
+        this.price = price;
+        this.location = location;
+        this.bookName = bookname;
+        this.author = author;
+        this.press = press;
+        this.description = description;
+        this.publishYear = publishYear;
+        this.textLanguage = textLanguage;
+        this.copyNumbers = copyNumbers;
+    }
+
     public String getISBN() {
         return this.ISBN;
     }
