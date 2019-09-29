@@ -18,7 +18,16 @@ function searchBook() {
 
                 //用一个变量来存储json中的数据
                 for (i = 0; i < result.length; i++) { //用for循环遍历数组将数据存入html变量中
+<<<<<<< HEAD
                     var id=result[i].BookId;
+=======
+                    var id=result[i].bookId;
+                    var len=length(id);
+                    for(var j=0;j<8-len;j++)
+                    {
+                        id="0"+id;
+                    }
+>>>>>>> 7a6118317e48492176e216be43ca001b57fad86a
                     var isbn=result[i].ISBN;
                     var pri=result[i].price;
                     var loa=result[i].location;
@@ -48,3 +57,10 @@ function searchBook() {
         })
 }
 
+function length(str){
+    var i = 0;
+    while(str[i] !== undefined){
+        i++;
+    }
+    return i;
+}
