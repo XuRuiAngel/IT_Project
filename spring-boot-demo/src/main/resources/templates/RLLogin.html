@@ -232,8 +232,9 @@ $(".sec_login_error").Validform({
                     // alert(yzm);
                     if(msg=="Password error!") alert("Your password is incorrect, please check again!");
                     else{
-                        if(yzm=="fail") alert("the valid code is wrong!");
-                        else if(msg==1) window.location.href="librarian";
+                        // if(yzm=="fail") alert("the valid code is wrong!");
+                        // else
+                        if(msg==1) window.location.href="librarian";
                         else if(msg==2) alert("please use Reader window to login!");
                         else if(msg==0) alert("please use Admin window to login!");
                         else alert(msg);}

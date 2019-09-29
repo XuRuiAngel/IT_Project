@@ -27,17 +27,21 @@
 </head>
 
 
-<body>
-
-
-<br><br>
-<img src="../static/images/mandarinlogo.png" id="mandarinlogo" width="200">
-<img src="../static/images/welcome.jpg" id="welcome" width="300">
-<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>
-<br><br>
-
+<body onload="myFunction()">
 
 <div id="middle">
+<br><br>
+<img src="../static/images/logo1.png" id="mandarinlogo" width="300">
+    <div id="log_in_button">
+		<a href="ALogin"><input type="button" value="AdminLogin"/></a> <br><br><br>
+		<a href="RLLogin"> <input type="button" value="Login"/></a>
+    </div>
+<!--<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>-->
+<br><br>
+
+
+
+
 <br><br>
 <div class="search radius6">
 	<form id="iform">
@@ -46,40 +50,47 @@
 		<input type="hidden" name="show" value="title,newstext">
 -->
 		<select name="classid" id="choose"   >
-			<option value="0">All</option>
 			<option value="bookname">Book Name</option>
 			<option value="ISBN">ISBN</option>
 			<option value="bookid">BookID</option>
-			<option value="Author">Author</option>
-			<option value="5">Type</option>
-		</select> 
+			<option value="author">Author</option>
+<!--			<option value="5">Type</option>-->
+		</select>
 		<input class="inp_srh" name="keyboard"  id="keyboard" type="text" placeholder="Please input..." value="" >
-		<input class="btn_srh" type="submit" name="submit" id="btn" value="Search" onclick="searchBook()">
-		
+		<input class="btn_srh" type="button" name="submit" id="btn" value="Search" onclick="searchBook()">
+
 	</form>
 </div>
 
 	<body>
 	<div class="mainDiv">
-		<table class="table">
-			<th>BookId</th>
-			<th>ISBN</th>
-			<th>Price</th>
-			<th>Location</th>
-			<th>BookName</th>
-			<th>Author</th>
-			<th>Press</th>
-			<th>Description</th>
-			<th>PublishYear</th>
-			<th>TextLanguage</th>
-			<th>CopyNumbers</th>
-			<tbody id='tbody'></tbody>
+		<table class="table" width="50%">
+			<th width="100">BookId</th>
+			<th width="100">ISBN</th>
+			<th width="170">Price</th>
+			<th width="170">Location</th>
+			<th width="170">BookName</th>
+			<th width="170">Author</th>
+
+			<th width="170">Description</th>
+
+
+			<th width="50">CopyNumbers</th>
+			<tbody id="tbody">
+            </tbody>
 		</table>
 		<div id="pagerDiv"></div>
 	</div>
 	</body>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class=news>
+        <h2 id="bg">NEWS</h2>
+        <hr size="1px" noshade=true />
+        <table id="box"></table>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
 <!--<script type="text/javascript" src="../static/js/jquery.select.js"></script>-->
 
@@ -90,7 +101,7 @@
 <br><br><br><br><br><br>
 </body>
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script src="../static/js/getnewsdata.js"></script>
 <script src="../static/js/pager.js"></script>
 <script type="text/javascript" src="../static/js/shua.js"></script>
-<script type="text/javascript" src="../static/js/index.js"></script>
 </html>

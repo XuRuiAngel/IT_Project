@@ -7,7 +7,25 @@ body
  background:#FFF;
  font:12px/1.6 Verdana, Helvetica, sans-serif;
  text-align:center;
+
 }
+#welcome{
+ padding-left: 360px;
+ width:600px;
+ height:300px;
+ padding-top: 20px;
+}
+.news{
+ border-style:groove;
+ border-color: #F58400;
+ float:right;
+  /*width: 500px;*/
+ height: 168px;
+ text-align: center;
+ border-width: thin;
+
+}
+
 *{margin:0;padding:0;}
 input,select{font-size:12px;vertical-align:middle;}
 body div{text-align:left;}
@@ -20,31 +38,34 @@ a:link, a:visited{color:#333;text-decoration: none;outline: none;}
 a:hover{color:#0E4470;text-decoration: none;}
 #yemei
 {
-margin-left:100px;
-margin-right:100px;
+ margin-left:100px;
+ margin-right:100px;
 }
 #middle
 {
-background:url('../images/book.jpg') no-repeat fixed;
-background-size:100% 100%; 
+ background:url('../images/book.jpg') no-repeat fixed;
+ background-size:100% 100%;
+ margin-top: 70px;
 }
 #mandarinlogo
 {
-position:absolute;
-left:50px;
+ position:absolute;
+ left:50px;
 }
 
 #welcome
 {
-margin-left:0;
+ margin-left:0;
 }
 #log_in_button
 {
-margin-left:900px;
+ margin-left:900px;
+ color:#F3F3F3;
+
 }
 #yejiao
 {
-margin-left:30px;
+ margin-left:30px;
 }
 
 .search{
@@ -55,10 +76,12 @@ table,th,td{
  border: 1px lightblue solid;
  border-collapse: collapse;
 }
-table{
+.table{
  padding-top: 25px;
- width:80%;
+ width:50%;
  margin: 0px auto;
+ position:absolute;
+ right:0px;
 }
 th,td{
  padding: 10px;
@@ -69,4 +92,15 @@ tr{
 }
 .info{
  background-color: cadetblue;
+}
+
+.mainDiv{
+ width:50%;
+}
+#bg{
+ color:white;
+}
+#log_in_button
+{
+ margin-left: 1500px;
 }
