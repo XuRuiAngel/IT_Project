@@ -34,13 +34,17 @@ function registerR(tel, username, email){
         }
     })
 }
-function recoverpsw(psw){
+function rCpsw(rtele, remail){
+    var msg;
     $.ajax({
-        type:"POST",
-        url:"/resetpassword?id="+str,
+        type:"GET",
+        url:"/resetPassword?tele="+rtele+"&e_mail="+remail,
         data:{},
         datatype:"string",
-        success:function() {
+        async:false,
+        success:function(msg) {
+            if(msg=="Success") alert("Success! Please check your email to get the password!");
+            else alert(msg);
         }
     })
 }
