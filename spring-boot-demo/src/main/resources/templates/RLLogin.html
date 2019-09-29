@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Reader and Librarian Login</title>
     <link href="../static/css/login.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../static/js/test.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
     <script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
@@ -130,7 +132,7 @@ $(".sec_login_error").Validform({
             <div class="stu_error_box"></div>
             <form action="/" method="post" class="stu_login_error" onsubmit="rlogin()">
                 <div id="Rusername">
-                    <label>Reader's ID:</label>
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone:</label>
                     <input class="text" type="text" id="rtele" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
@@ -138,10 +140,13 @@ $(".sec_login_error").Validform({
                     <label> &nbsp;&nbsp;&nbsp;Password:</label>
                     <input class="text" type="password" id="rpassword" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
                 </div>
-                <div id="Rcode">
+                <div id="Rcode"  class="form-group">
                     <label>Verification:</label>
-                    <input class="text" type="text" id="stu_code_hide" name="code"  placeholder="Input code" nullmsg="Captcha cannot be empty!" datatype="*4-4" errormsg="The captcha has four digits!" sucmsg="Verification code verification passed!"/>
-                    <img src="../static/images/Logincaptcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
+                    <input class="text" type="text" id="verify_input" placeholder="Input code" maxlength="4">
+                    <a href="javascript:void(0);" rel="external nofollow" title="Click to replace the verification code">
+                        <img id="imgVerify" src="http://localhost/getVerify?158" alt="Replace verification code" height="35" width="35%" onclick="getVerify()">
+                    </a>
+                </div>
                 <div id="Rremember">
                     <input type="checkbox" name="remember">
                     <label>Remember the password</label>
@@ -154,8 +159,27 @@ $(".sec_login_error").Validform({
         <script type="text/javascript">
             function rlogin(){
                 var tele=$('#rtele').val();
-                var psw= $('#rpassword').val();
-                RLlogin(tele,psw);
+                var password= $('#rpassword').val();
+                var yzm;
+                $.ajax({
+                    type:"POST",
+                    datatype:"string",
+                    url:"/login?tele="+tele+"&password="+password,
+                    // data: JSON.stringify(data),
+                    // headers	:{'Content-Type': 'application/json'},
+                    async:false,
+                    success:function(msg) {
+                        yzm=check();
+                        // alert(yzm);
+                        if(msg=="Password error!") alert("Your password is incorrect, please check again!");
+                        else{
+                            if(yzm=="fail") alert("the valid code is wrong!");
+                            else if(msg==1) alert("please use Librarian window to login!");
+                            else if(msg==2) alert("Reader is developing.");
+                            else if(msg==0) alert("please use Admin window to login!");
+                            else alert(msg);}
+                    }
+                })
             }
         </script>
         <!-- 读者登录结束-->
@@ -164,7 +188,7 @@ $(".sec_login_error").Validform({
             <div class="sec_error_box"></div>
             <form action="/" method="post" class="sec_login_error" onsubmit="logins()">
                 <div id="Lusername">
-                    <label>Librarian's ID:</label>
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:</label>
                     <input class="text" type="text" id="tele" name="username" placeholder="Enter Telephone" nullmsg="Phone No. cannot be empty!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
@@ -172,11 +196,14 @@ $(".sec_login_error").Validform({
                     <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:</label>
                     <input class="text" type="password" id="password" name="password" placeholder="Enter password" nullmsg="Password cannot be empty!" datatype="*6-16" errormsg="Password ranges in 6~16 bits!" sucmsg="Password verification passed!"/>
                 </div>
-                <div id="Lcode">
+                <div id="Rcode1"  class="form-group">
                     <label>Verification:</label>
-                    <input class="text" type="text" id="sec_code_hide" name="code"  placeholder="Input code" nullmsg="Captcha cannot be empty!" datatype="*4-4" errormsg="The captcha has four digits!" sucmsg="Verification code verification passed!"/>
-                    <img src="../static/images/Logincaptcha.jpg" title="Click on the change" alt="Captcha placeholder map"/> </div>
-                <div id="Lremember">
+                    <input class="text" type="text" id="verify_input1" placeholder="Input code" maxlength="4">
+                    <a href="javascript:void(0);" rel="external nofollow" title="Click to replace the verification code">
+                        <img id="imgVerify1" src="http://localhost/getVerify?158" alt="Replace verification code" height="35" width="35%" onclick="getVerify()">
+                    </a>
+                </div>
+                         <div id="Lremember">
                     <input type="checkbox" name="remember">
                     <label>Remember the password</label>
                 </div>
@@ -189,11 +216,31 @@ $(".sec_login_error").Validform({
     </div>
 </div>
 <script type="text/javascript">
-    function logins(){
-        var tele=$('#tele').val();
-        var psw= $('#password').val();
-        RLlogin(tele,psw);
-    }
+        function logins(){
+            var tele=$('#tele').val();
+            var password= $('#password').val();
+            var yzm;
+            $.ajax({
+                type:"POST",
+                datatype:"string",
+                url:"/login?tele="+tele+"&password="+password,
+                // data: JSON.stringify(data),
+                // headers	:{'Content-Type': 'application/json'},
+                async:false,
+                success:function(msg) {
+                    yzm=check();
+                    // alert(yzm);
+                    if(msg=="Password error!") alert("Your password is incorrect, please check again!");
+                    else{
+                        if(yzm=="fail") alert("the valid code is wrong!");
+                        else if(msg==1) window.location.href="librarian";
+                        else if(msg==2) alert("please use Reader window to login!");
+                        else if(msg==0) alert("please use Admin window to login!");
+                        else alert(msg);}
+                }
+            })
+        }
+
 </script>
 <div class="bottom"><a href="##################">Return to the home page</a></div>
 <div class="screenbg">
