@@ -34,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="content-w3ls">
 	<div class="form-w3layouts">
-		<form action="/" method="post" onsubmit="lCreate()">
+		<form>
 			<div class="form-control"> 
 				<label class="header">Librarian Name <span>:</span></label>
 				<input type="text" id="name" name="name" placeholder="Librarian's Name" title="Please enter Librarian's Full Name" required="">
@@ -54,7 +54,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			<div class="form-control">
 				<input type="reset" class="reset" value="Reset">
-				<input type="submit" class="register" value="Submit">
+				<input type="button" class="register" onclick="lCreate()" value="Submit">
 				<div class="clear"></div>
 			</div>	
 		</form>

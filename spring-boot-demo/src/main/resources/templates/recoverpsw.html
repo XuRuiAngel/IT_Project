@@ -121,16 +121,31 @@ input:focus {
 					class="cms_login_ipt"></div>
 			<div class="divBox"><span class="margin_right10">&nbsp email</span><input type="text" id="remail" placeholder="Please enter the email"
 					class="cms_login_ipt"></div>
-			<div class="divBox margin_top60">
-				<input type="button" class="login_btn" onclick="recoverpsw()">Submit & SendMail</input>
+			<div >
+				<input type="button" class="login_btn" onclick="recoverpsw()" value="Submit & SendMail"></input>
 			</div>
 		</form>
 		<script type="text/javascript">
+			function rCpsw(rtele, remail){
+				var msg;
+				$.ajax({
+					type:"GET",
+					url:"/resetPassword?tele="+rtele+"&e_mail="+remail,
+					data:{},
+					datatype:"string",
+					async:false,
+					success:function(msg) {
+						if(msg=="Success") alert("Success! Please check your email to get the password!");
+						else alert(msg);
+					}
+				})
+			}
 			function recoverpsw(){
 				var rtele=$('#rtele').val();
 				var remail=$('#remail').val();
 				rCpsw(rtele, remail);
 			}
+
 		</script>
 	</div>
 </div>

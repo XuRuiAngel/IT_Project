@@ -27,27 +27,27 @@ function registerR(tel, username, email){
         datatype:"string",
         success:function(msg) {
             if(msg=="success!")  {
-                //alert(msg);
+                alert(msg);
                 window.location.href="admin";
             }
             else  alert("msg");
         }
     })
 }
-function rCpsw(rtele, remail){
-    var msg;
-    $.ajax({
-        type:"GET",
-        url:"/resetPassword?tele="+rtele+"&e_mail="+remail,
-        data:{},
-        datatype:"string",
-        async:false,
-        success:function(msg) {
-            if(msg=="Success") alert("Success! Please check your email to get the password!");
-            else alert(msg);
-        }
-    })
-}
+// function rCpsw(rtele, remail){
+//     var msg;
+//     $.ajax({
+//         type:"GET",
+//         url:"/resetPassword?tele="+rtele+"&e_mail="+remail,
+//         data:{},
+//         datatype:"string",
+//         async:false,
+//         success:function(msg) {
+//             if(msg=="Success") alert("Success! Please check your email to get the password!");
+//             else alert(msg);
+//         }
+//     })
+// }
 
 function getid(str) {
 
