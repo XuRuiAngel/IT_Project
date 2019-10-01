@@ -1,6 +1,6 @@
 package com.it.springbootdemo.model;
 
-import lombok.Getter;
+
 
 import java.util.Date;
 
