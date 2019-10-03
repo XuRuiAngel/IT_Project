@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html >
+<html  xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <link href="../static/css/public.css" type="text/css" rel="stylesheet">
@@ -69,7 +69,7 @@
                         <div class="ad-top-right">
                             <div class="ad-welcom">
                                 <div class="ad-wel-text">
-                                    <div class="font-wel">Welcome! <a href="search"><strong>【Exit】</strong></a></div>
+                                    <div class="font-wel">[[${session.tele}]] <a href="search"><strong>【Exit】</strong></a></div>
                                 </div>
                             </div>
                         </div>

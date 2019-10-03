@@ -164,7 +164,7 @@ $(".sec_login_error").Validform({
                 $.ajax({
                     type:"POST",
                     datatype:"string",
-                    url:"/login?tele="+tele+"&password="+password,
+                    url:"/login?tele="+tele+"&amp;password="+password,
                     // data: JSON.stringify(data),
                     // headers	:{'Content-Type': 'application/json'},
                     async:false,

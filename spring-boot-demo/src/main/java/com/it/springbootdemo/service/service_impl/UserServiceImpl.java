@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService {
             return 4;
         }
         else if(user.getPassword().equals(password)){
+            //登录成功啦！
             return user.getFlag();
         }
         else  return 5;

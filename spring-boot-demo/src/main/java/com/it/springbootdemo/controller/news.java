@@ -28,5 +28,4 @@ public class news {
         newsService.addNews(title,content);
         return "success!";
     }
-
 }
