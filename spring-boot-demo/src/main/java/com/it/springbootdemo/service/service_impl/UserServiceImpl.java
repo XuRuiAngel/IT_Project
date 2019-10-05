@@ -32,9 +32,11 @@ public class UserServiceImpl implements UserService {
         User user;
         user=userMapper.login(tele);
         if(user==null){
+            //用户不存在
             return 4;
         }
         else if(user.getPassword().equals(password)){
+            //密码正确，允许登录
             return user.getFlag();
         }
         else  return 5;
