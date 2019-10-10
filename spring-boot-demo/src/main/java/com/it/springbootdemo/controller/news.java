@@ -6,6 +6,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,4 +29,14 @@ public class news {
         newsService.addNews(title,content);
         return "success!";
     }
+
+    @PostMapping("/deleteNews")
+    @ResponseBody
+    public String deleteNews(@RequestParam("newsId") String newsId){
+        int result=newsService.deleteNews(newsId);
+        if(result==1)
+            return "success!";
+        else return "error!";
+    }
+
 }

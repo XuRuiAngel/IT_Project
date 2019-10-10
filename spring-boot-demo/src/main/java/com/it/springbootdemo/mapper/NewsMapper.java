@@ -3,10 +3,7 @@ package com.it.springbootdemo.mapper;
 
 import com.it.springbootdemo.model.News;
 import net.sf.json.JSONObject;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,4 +17,7 @@ public interface NewsMapper {
 
     @Insert("insert into news(title,content) values (#{title},#{content})")
     void addNews(@Param("title") String title,@Param("content") String content);
+
+    @Delete("delete from news where newsId=#{newsId}")
+    void deleteNews(@Param("newsId") String newsId);
 }
