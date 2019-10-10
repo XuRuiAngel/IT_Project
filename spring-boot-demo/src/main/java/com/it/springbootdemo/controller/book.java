@@ -54,12 +54,5 @@ public class book {
         return bookService.insertBookWithISBN(ISBN,price,location,bookname,author,press);
 
     }
-    @GetMapping("/deleteBook")
-    @ResponseBody
-    public int deleteBook(
-                              @RequestParam("bookid") String bookid
-    ){
 
-        return;
-    }
 }
