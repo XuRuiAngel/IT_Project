@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
     <script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
     <script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="../static/js/setThree.js"></script>
 
     <style>
         * {
@@ -109,7 +110,7 @@
     </style>
 </head>
 
-<body>
+<body onload="loadPeriod()">
 <div class="cms_login">
     <div class="cms_login_container">
         <div class="center"></div>
@@ -120,30 +121,11 @@
                                                                                          class="cms_login_ipt"></div>
 
                 <div >
-                    <input type="button" class="login_btn" onclick="recoverpsw()" value="confirm" ></input>
+                    <input type="button" class="login_btn" onclick="setPeriod()" value="confirm" ></input>
                 </div>
             </form>
-            <script type="text/javascript">
-                function seta(b){
-                    var msg;
-                    $.ajax({
-                        type:"GET",
-                        url:"/0000000?period="+b,
-                        data:{},
-                        datatype:"string",
-                        async:false,
-                        success:function(msg) {
-                            if(msg=="Success") alert("Success!");
-                            else alert(msg);
-                        }
-                    })
-                }
-                function recoverpsw(){
-                    var b=$('#b').val();
-                    seta(b);
-                }
 
-            </script>
+
         </div>
     </div>
 </div>

@@ -9,23 +9,23 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface SetMapper {
 
-    @Select("select fine from change")
+    @Select("select fine from changes")
      double getFine();
 
-    @Select("select period from change")
+    @Select("select period from changes")
      double getPeriod();
 
-    @Select("select deposit from change")
+    @Select("select deposit from changes")
      double getDeposit();
 
 
-    @Update("update change set fine=#{fine}")
+    @Update("update changes set fine=#{fine}")
     void setFine(@Param("fine") double fine);
 
-    @Update("update change set period=#{period}")
+    @Update("update changes set period=#{period}")
     void setPeriod(@Param("period") double period);
 
-    @Update("update change set deposit=#{deposit}")
+    @Update("update changes set deposit=#{deposit}")
     void setDeposit(@Param("deposit") double deposit);
 
 }
