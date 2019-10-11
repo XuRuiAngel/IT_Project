@@ -1,9 +1,12 @@
 package com.it.springbootdemo.mapper;
 
+import com.it.springbootdemo.model.Book;
 import com.it.springbootdemo.model.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Mapper
 @Repository
@@ -32,6 +35,9 @@ public interface UserMapper {
 
     @Select("select password from user where tele=#{tele}")
     String getPasswordByTele(@Param("tele") String tele);
+
+    @Select("select * from user where flag=1")
+    List<User> getLibrarians();
 
 
 }

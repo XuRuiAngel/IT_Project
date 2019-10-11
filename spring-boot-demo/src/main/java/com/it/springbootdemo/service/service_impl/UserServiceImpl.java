@@ -3,12 +3,17 @@ package com.it.springbootdemo.service.service_impl;
 
 
 import com.it.springbootdemo.mapper.UserMapper;
+import com.it.springbootdemo.model.Book;
 import com.it.springbootdemo.model.User;
 import com.it.springbootdemo.service.UserService;
 import com.it.springbootdemo.utils.EmailUtils;
 import com.it.springbootdemo.utils.TimeUtil;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -91,5 +96,24 @@ public class UserServiceImpl implements UserService {
         }
         else  return 2;
 
+    }
+
+    @Override
+    public JSONObject getLibrarians() {
+        List<User> users=null;
+        users=userMapper.getLibrarians();
+        JSONObject jsonObject = new JSONObject();
+        JSONArray jsonArray=new JSONArray();
+        for(User user:users)
+        {
+            JSONObject result=new JSONObject();
+            result.put("username",user.getUsername());
+            result.put("id",user.getUserId());
+            result.put("tele",user.getTele());
+            result.put("e_mail",user.getE_mail());
+            jsonArray.add(result);
+        }
+        jsonObject.put("result",jsonArray);
+        return jsonObject;
     }
 }

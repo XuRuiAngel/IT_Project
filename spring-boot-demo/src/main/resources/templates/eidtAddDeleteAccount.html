@@ -8,12 +8,13 @@
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min1.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
 
+    <script type="text/javascript" src="../static/js/eidtAddDeleteAccount.js"></script>
     <script src="../static/js/jquery.min1.js"></script>
     <script src="../static/js/bootstrap.min1.js" type="text/javascript" charset="utf-8"></script>
     <script src="../static/js/bootbox.min.js"></script>
 
 </head>
-<body>
+<body onload="getLibrarians()">
 <div class="box">
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
@@ -98,6 +99,7 @@
             </tr>
             </thead>
             <tbody id="show_tbody">
+            <!--one user-->
             <tr>
                 <td>焦晨阳</td>
                 <td>1</td>
@@ -108,6 +110,7 @@
                     <a href="#" class="del">Delete</a>
                 </td>
             </tr>
+            <!--one user-->
             <tr>
                 <td>jcy</td>
                 <td>2</td>

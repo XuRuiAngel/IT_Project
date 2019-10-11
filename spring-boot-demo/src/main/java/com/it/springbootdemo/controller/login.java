@@ -1,6 +1,7 @@
 package com.it.springbootdemo.controller;
 
 import com.it.springbootdemo.service.UserService;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -83,6 +84,12 @@ public class login {
         else {
             return "Error e_mail!";
         }
+     }
+
+     @GetMapping("/getLibrarians")
+    @ResponseBody
+    public JSONObject getLibrarians(){
+        return userService.getLibrarians();
      }
 
 }
