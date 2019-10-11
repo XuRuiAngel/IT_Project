@@ -116,4 +116,19 @@ public class UserServiceImpl implements UserService {
         jsonObject.put("result",jsonArray);
         return jsonObject;
     }
+
+    @Override
+    public int editLibrarians(String username,int id, String tele, String e_mail) {
+
+        User testUser=null;
+        testUser=userMapper.login(tele);
+        if(testUser!=null&&!tele.equals(testUser.getTele())){
+            return 0;
+        }
+        else {
+            userMapper.editLibrarians(username,id,tele,e_mail);
+            return 1;
+        }
+
+    }
 }

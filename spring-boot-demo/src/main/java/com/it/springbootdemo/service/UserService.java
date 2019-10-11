@@ -23,4 +23,6 @@ public interface UserService {
 
     public JSONObject getLibrarians();
 
+    public int editLibrarians(String username,int id,String tele,String e_mail);
+
 }

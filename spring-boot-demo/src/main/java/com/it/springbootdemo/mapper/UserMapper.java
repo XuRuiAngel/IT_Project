@@ -39,5 +39,10 @@ public interface UserMapper {
     @Select("select * from user where flag=1")
     List<User> getLibrarians();
 
+    @Update("update user set username=#{username}, tele=#{tele} ,e_mail=#{e_mail} where id=#{id}")
+    void editLibrarians(@Param("username") String username,
+                        @Param("id") int id,
+                        @Param("tele") String tele,
+                        @Param("e_mail") String e_mail);
 
 }

@@ -92,4 +92,18 @@ public class login {
         return userService.getLibrarians();
      }
 
+
+     @PostMapping("/editLibrarians")
+    @ResponseBody
+    public String editLibrarians(@RequestParam("username") String username,
+                                 @RequestParam("id") int id,
+                                 @RequestParam("tele")String tele,
+                                 @RequestParam("e_mail") String e_mail){
+       int result= userService.editLibrarians(username,id,tele,e_mail);
+       if(result==0){
+           return "The account already exists!Fails!";
+       }
+       else return "success";
+     }
+
 }
