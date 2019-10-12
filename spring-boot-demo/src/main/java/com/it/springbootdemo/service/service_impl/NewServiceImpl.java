@@ -44,4 +44,10 @@ public class NewServiceImpl implements NewsService {
         newsMapper.deleteNews(newsId);
         return 1;
     }
+
+    @Override
+    public int editNews(String newsId, String title, String content) {
+        newsMapper.editNews(newsId,title,content);
+        return 1;
+    }
 }

@@ -122,7 +122,7 @@ public class UserServiceImpl implements UserService {
 
         User testUser=null;
         testUser=userMapper.login(tele);
-        if(testUser!=null&&!tele.equals(testUser.getTele())){
+        if(testUser!=null&&id!=testUser.getUserId()){
             return 0;
         }
         else {
@@ -130,5 +130,11 @@ public class UserServiceImpl implements UserService {
             return 1;
         }
 
+    }
+
+    @Override
+    public int deleteLibrarians(int id) {
+        userMapper.deleteLibrarians(id);
+        return 1;
     }
 }

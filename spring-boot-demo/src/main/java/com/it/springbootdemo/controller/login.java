@@ -106,4 +106,11 @@ public class login {
        else return "success";
      }
 
+
+    @PostMapping("/deleteLibrarians")
+    @ResponseBody
+    public void deleteLibrarians(@RequestParam("id") int id){
+       userService.deleteLibrarians(id);
+
+    }
 }

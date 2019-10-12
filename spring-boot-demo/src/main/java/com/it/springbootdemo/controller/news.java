@@ -39,4 +39,13 @@ public class news {
         else return "error!";
     }
 
+    @PostMapping("/editNews")
+    @ResponseBody
+    public String editNews(@RequestParam("newsId") String newsId,
+                           @RequestParam("title") String title,
+                           @RequestParam("content") String content){
+        newsService.editNews(newsId,title,content);
+        return "success!";
+    }
+
 }

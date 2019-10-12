@@ -45,4 +45,8 @@ public interface UserMapper {
                         @Param("tele") String tele,
                         @Param("e_mail") String e_mail);
 
+
+    @Delete("delete from user where id=#{id}")
+    void deleteLibrarians(@Param("id") int id);
+
 }

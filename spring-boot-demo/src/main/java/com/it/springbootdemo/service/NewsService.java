@@ -13,4 +13,6 @@ public interface NewsService {
 
     public  int deleteNews(String newsId);
 
+    public int editNews(String newsId,String title,String content);
+
 }

@@ -25,4 +25,6 @@ public interface UserService {
 
     public int editLibrarians(String username,int id,String tele,String e_mail);
 
+    public int deleteLibrarians(int id);
+
 }
