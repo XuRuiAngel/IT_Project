@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface BookService {
+    public int getBookOrder(int bookId);
+
     public int deleteBook(int bookId);
 
     public JSONObject searchBook(String key,String text);

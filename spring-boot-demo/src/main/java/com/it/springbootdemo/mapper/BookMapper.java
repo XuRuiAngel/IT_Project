@@ -27,4 +27,7 @@ public interface BookMapper {
 
     @Delete("delete from book where bookId=#{bookId}")
     void deleteBook(@Param("bookId") int bookId);
+
+    @Select("select copyNumbers from book where bookId=#{bookId}")
+    int getBookOrder(@Param("bookId") int bookId);
 }

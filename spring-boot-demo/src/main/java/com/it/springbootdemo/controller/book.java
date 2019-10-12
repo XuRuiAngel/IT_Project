@@ -55,11 +55,17 @@ public class book {
 
     }
 
-
     @PostMapping("/deleteBook")
     @ResponseBody
     public String deleteBook(@RequestParam("bookId" ) int bookId){
         bookService.deleteBook(bookId);
         return "success!";
+    }
+
+    @GetMapping("/getBookOrder")
+    @ResponseBody
+    public int getBookOrder(@RequestParam("bookId") int bookId){
+        return bookService.getBookOrder(bookId);
+
     }
 }
