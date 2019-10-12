@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>获取当前的时间</title>
+</head>
+<style>
+        #adata{
+            height: 30px;
+            width: 330px;
+            border: brown 3px solid;
+        }
+    </style>
+
+<body>
+<div id="adata"></div>
+</body>
+
+</html>
+<script language="JavaScript" type="text/javascript">
+
+    window.onload = function() {
+        window.setInterval("Systime(adata)", 1000);
+    }
+
+    function Systime(adata) {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+        var data = now.getDate();
+        var day = now.getDay();
+        var hour = now.getHours();
+        var minu = now.getMinutes();
+        var sec = now.getSeconds();
+        month = month + 1;
+        var arr_week = new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Saturday");
+        var week = arr_week[day];
+        var time = year + "-" + month + "-" + data + "   " +  week + "      " + hour + ":" + minu + sec;
+        adata.innerHTML = "  + time;
+    }
+</script>
