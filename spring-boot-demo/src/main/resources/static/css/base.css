@@ -17,12 +17,13 @@ body
 }
 .news{
  border-style:groove;
- border-color: #F58400;
+ border-color: #F5F5F5;
  float:right;
-  /*width: 500px;*/
- height: 168px;
+ width: 300px;
+ height: 679px;
  text-align: center;
- border-width: thin;
+ margin-top:-200px;
+ margin-right:10px;
 
 }
 
@@ -65,26 +66,32 @@ a:hover{color:#0E4470;text-decoration: none;}
 }
 #yejiao
 {
- margin-left:30px;
+ margin-left:400px;
+ margin-bottom:-80px;
+
 }
 
 .search{
  margin-top: 25px;
+ margin-left: -1000px;
 }
 table,th,td{
  color: white;
- border: 1px lightblue solid;
+ border: 0.3px lightblue solid;
  border-collapse: collapse;
 }
 .table{
  padding-top: 25px;
- width:50%;
- margin: 0px auto;
  position:absolute;
- right:0px;
+ right:450px;
+ width:70%;
+ margin-bottom: 20px;
 }
 th,td{
  padding: 10px;
+}
+.search.radius6{
+ margin-bottom: 15px;
 }
 tr{
  background-color: #4f3b35;
@@ -102,5 +109,5 @@ tr{
 }
 #log_in_button
 {
- margin-left: 1500px;
+ margin-left: 1400px;
 }

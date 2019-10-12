@@ -4,11 +4,11 @@
 <title>jQuer</title>
 
 <link href="../static/css/base.css" type="text/css" rel="stylesheet" />
-	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<!--	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">-->
 
 <style type="text/css">
 /* search */
-.search{border:2px solid #f58400;height:35px;margin:40px auto 0 auto;width:525px;}
+.search{border:2px solid #f58400;height:35px;margin:40px auto 0 auto;width:525px;margin-left:-1100px;}
 /*.search select{display:none;}*/
 .search .select_box{font-size:12px;color:#999999;width:100px;line-height:35px;float:left;position:relative;}
 .search .select_showbox{height:35px;background:url(../static/images/search_ico.png) no-repeat 80px center;text-indent:1.5em;}
@@ -29,23 +29,15 @@
 
 <body onload="myFunction()">
 
-<div id="middle">
+<body id="middle">
 <br><br>
-<<<<<<< HEAD
 <img src="../static/images/logo1.png" id="mandarinlogo" width="300">
     <div id="log_in_button">
 		<a href="ALogin"><input type="button" value="AdminLogin"/></a> <br><br><br>
 		<a href="RLLogin"> <input type="button" value="Login"/></a>
-=======
-<img src="../static/images/mandarinlogo.png" id="mandarinlogo" width="300">
-    <div id="log_in_button">
-<button>admin log in</button><br><br><br>
-    <button>log in</button>
->>>>>>> 7a6118317e48492176e216be43ca001b57fad86a
-    </div>
+
 <!--<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>-->
 <br><br>
-
 
 
 
@@ -69,34 +61,33 @@
 	</form>
 </div>
 
-	<body>
+
 	<div class="mainDiv">
 		<table class="table" width="50%">
 			<th width="100">BookId</th>
-			<th width="100">ISBN</th>
-			<th width="170">Price</th>
-			<th width="170">Location</th>
-			<th width="170">BookName</th>
-			<th width="170">Author</th>
+			<th width="150">ISBN</th>
+			<th width="100">Price</th>
+			<th width="200">Location</th>
+			<th width="200">BookName</th>
+			<th width="200">Author</th>
 
-			<th width="170">Description</th>
+			<th width="300">Description</th>
 
 
-			<th width="50">CopyNumbers</th>
+			<th width="100">CopyNumbers</th>
+			<th width="150">status</th>
 			<tbody id="tbody">
             </tbody>
 		</table>
 		<div id="pagerDiv"></div>
 	</div>
-	</body>
+
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class=news>
-<<<<<<< HEAD
-        <h2 id="bg">NEWS</h2>
-=======
-        <h2 id="bg">最新公告</h2>
->>>>>>> 7a6118317e48492176e216be43ca001b57fad86a
+
+        <h1 id="bg">NEWS</h1>
+
         <hr size="1px" noshade=true />
         <table id="box"></table>
 
@@ -114,5 +105,5 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
 <script src="../static/js/getnewsdata.js"></script>
 <script src="../static/js/pager.js"></script>
-<script type="text/javascript" src="../static/js/shua.js"></script>
+<script type="text/javascript" src="../static/js/shua2.js"></script>
 </html>
