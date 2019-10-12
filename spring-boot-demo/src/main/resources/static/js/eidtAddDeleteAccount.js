@@ -17,7 +17,7 @@ function getLibrarians(){
                      var id=result[i].id;
                      var tele=result[i].tele;
                      var e_mail=result[i].e_mail;
-                     var html=           " <tr id='"+id+"\ ' onclick='getid(this.id)'>\n"+
+                     var html=           " <tr>\n"+
                                              " <td>"+username+"</td>\n"+
                                              " <td>"+id+"</td>\n"+
                                           "    <td>"+tele+"</td>\n"+
@@ -31,27 +31,4 @@ function getLibrarians(){
                  }
              }
          })
-}
-
-function editLibrarians(){
-    var username=$('#username').val();
-    var id=$('#id').val();
-    var tele=$('#tele').val();
-    var e_mail=$('#e_mail').val();
-    $.ajax({
-        type:"POST",
-        url:"/editLibrarians?username="+username+"&id="+id+"&tele="+tele+"&e_mail="+e_mail,
-        data:{},
-        dataType:"String",
-        async:false,
-        success:function(msg) {
-          alert(msg);
-        }
-    })
-
-
-}
-
-function  getid(id) {
-
 }

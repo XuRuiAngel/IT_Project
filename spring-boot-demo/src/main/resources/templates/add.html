@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<title>Enquiry Form Flat Responsive widget Template :: xmoban.cn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- css files -->
+<link href="../static/css/style1.css" rel='stylesheet' type='text/css' media="all" />
+<link href="../static/css/myUIstyle.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/font1.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/font2.css" rel="stylesheet" type="text/css" />
+<!-- css files -->
+<!-- js files -->
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="../static/js/jquery.validate.min.js"></script>
+<script src="../static/js/base.js"></script>
+<script src="../static/js/smt.js"></script>
+	<script src="../static/js/JsBarcode.all.min.js"></script>
+	<script src="../static/js/addbook.js"></script>
+	<script>
+		window.onload=function(){createId();get();}
+		function createId(){
+			var count=2;
+			var originalArray=new Array;
+			for(var i=0;i<count;i++){
+				originalArray[i]=i+1;
+			}
+			originalArray.sort(function(){return 0.5-Math.random();});
+			document.getElementById('bid').value=('0000000000000'+originalArray[0]).substr(-13);
+		}
+	</script>
+	<script>
+		function createBarcode(){
+			var barcode = document.getElementById('barcode'),
+					str = document.getElementById('bid').value,
+
+					options = {
+						format: "CODE128",
+						displayValue: true,
+						fontSize: 18,
+						height: 100
+					};
+			JsBarcode(barcode, str, options);
+		}
+	</script>
+<!-- js files -->
+<!--测试浏览器是否支持localStorage
+<script>
+window.onload=function(){test();}
+function test(){
+	if(!window.localStorage){
+            alert("浏览器不支持localstorage");
+            return false;
+        }else{
+            alert("浏览器支持localstorage")
+        }
+}
+</script>
+-->
+	<script>
+		function store(){
+			window.localStorage.clear();
+			var bookname=document.getElementById('bname').value;
+			var bookauthor=document.getElementById('bauthor').value;
+			var bookpress=document.getElementById('bpress').value;
+			var bookprice=document.getElementById('bprice').value;
+			var booklocation=document.getElementById('bloc').value;
+			window.localStorage.setItem("bookname",bookname);
+			window.localStorage.setItem("bookauthor",bookauthor);
+			window.localStorage.setItem("bookpress",bookpress);
+			window.localStorage.setItem("bookprice",bookprice);
+			window.localStorage.setItem("booklocation",booklocation);
+		}
+	</script>
+</head>
+<body>
+
+
+
+<div class="neirong" style="margin-left:18%;">
+
+	<h1 class="header-agileits w3 w3l agile-info">Add Book</h1>
+	<p class="header-agileits wthree w3-agileits">Librarians can use this page to add books.</p>
+
+	<div class="content-w3ls">
+		<div class="form-w3layouts">
+			<form >
+				<div class="form-control">
+
+					<label class="header">Book Name <span>:</span></label>
+					<input type="text" id="bname" name="bname" placeholder="Book Name" title="Please enter Book Name" required>
+
+
+					<div class="form-control">
+						<label class="header">Author <span>:</span></label>
+						<input type="text" id="bauthor" name="bauthor" placeholder="Author" title="Please enter Author Name" required>
+					</div>
+
+					<div class="form-control">
+						<label class="header">Press <span>:</span></label>
+						<input type="text" id="bpress" name="bpress" placeholder="Book's Press" title="Please enter Book's Press" required>
+					</div>
+
+					<div class="form-control">
+						<label class="header">Price <span>:</span></label>
+						<input type="text" id="bprice" name="bprice" placeholder="Book's Price" title="Please enter Book's Price" required>
+					</div>
+
+					<div class="form-control">
+						<label class="header">Location <span>:</span></label>
+						<input type="text" id="bloc" name="bloc" placeholder="Book's Location" title="Please enter Book's Location" required>
+					</div>
+					<br>
+					<label style="color:#dcdcdc;">Category :</label>
+					<select id="bookCategory" name="bookCategory" style="width:300px;">
+						<option>fiction</option>
+						<option>history</option>
+					</select>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<div class="form-control">
+						<input type="reset" class="reset" style="text-align: center;" value="Reset">
+						<input id="btn_addbook"   class="register" value="Submit" onclick="addBook()">
+
+						<div class="clear"></div>
+					</div>
+				</div>
+		</form>
+		</div>
+	</div>
+
+	<p class="idview" style="position:absolute;
+			left:500px;
+			top:875px;
+			font-size:26px;
+			color:#dcdcdc;">Book ID:</p>
+	<input type="text" id="bid" name="bid" value="" style="position:absolute;
+			left:500px;
+			top:930px;
+			font-size:26px;
+			color:#dcdcdc;" disabled></input>
+	<button class="erwei" onClick="createBarcode();" style="position:absolute;
+			left:500px;
+			top:985px;
+			text-align:center;
+			width:200px;">The Bar Code</button>
+	<div class="tiaoxing" style="position:absolute;
+			left:500px;
+			top:1030px;
+			width:200px;
+			height:100px;">
+		<img id="barcode" style="height:100px;width:200px;border:none" /></div>
+
+	<address>
+		<p class="copyright agileits-w3layouts agile w3-agile">© 2019 All Rights Reserved | Design by <a href="mailto:352384669@qq.com" target="_blank">NPUERS</a></p>
+	</address>
+
+</div>
+
+</body>
+</html>
