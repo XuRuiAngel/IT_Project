@@ -1,0 +1,102 @@
+<!--A Design by xmoban.cn
+
+-->
+<!doctype html>
+<html>
+<head>
+    <title>Enquiry Form Flat Responsive widget Template :: xmoban.cn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="text/javascript" src="../static/js/functions.js"></script>
+    <!-- css files -->
+    <link href="../static/css/lendBook.css" rel='stylesheet' type='text/css' media="all" />
+    <!-- /css files -->
+    <!-- font files -->
+    <link href="../static/css/CreateReader_font1.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/CreateReader_font2.css" rel="stylesheet" type="text/css" />
+    <!-- /font files -->
+    <script type="text/javascript">
+function disp_alert()
+{
+alert("Lend books successfully")
+}
+</script>
+
+    <script type="text/javascript">
+/*本段函数控制小时、分钟、秒数的双位表示*/
+function checkTime(i) {
+if (i<10)
+{i="0"+i}
+return i
+}
+</script>
+    <script type="text/javascript">
+function GetTime() {
+var d = new Date() //新建一个Date对象
+var year = d.getFullYear() //获取年份
+var month = d.getMonth()+1 //获取月份
+var day = d.getDate() //获取日期
+var hour = d.getHours() //获取小时
+var min = d.getMinutes() //获取分钟
+var sec = d.getSeconds() //获取秒数
+document.getElementById('usrtel').value=(year+"-"+month+"-"+day+" "+checkTime(hour)+":"+checkTime(min)+":"+checkTime(sec))
+}
+</script>
+</head>
+<body>
+<h1 class="header-agileits w3 w3l agile-info">Lend Books</h1>
+<p class="header-agileits wthree w3-agileits">Librarians use this page to help readers borrow books.</p>
+
+<div class="content-w3ls">
+    <div class="form-w3layouts">
+        <form action="#" method="post">
+            <div class="form-control">
+                <label class="header">Reader ID<span>:</span></label>
+                <input type="text" id="name" name="name" placeholder="Type the reader's id here"  >
+            </div>
+
+            <div class="form-control">
+                <label class="header">Book ID<span>:</span></label>
+                <input  id="email" name="email" placeholder="Type the book's id here"  >
+            </div>
+
+
+
+            <div class="form-control">
+                <label class="header">Borrow Time<span>:</span></label>
+                <input type="tel" id="usrtel" name="usrtel" placeholder="Type the time here" >
+                <input type="button"  class="reset"   value="Get Time" onclick="GetTime()">
+            </div>
+
+
+
+            <div class="form-control">
+                <input type="submit" class="register" value="Submit" onclick="disp_alert()">
+                <div class="clear"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!--A
+
+<script type="text/javascript">
+	function lCreate(){
+		var username=$('#name').val();
+		var email=$('#email').val();
+		var tel= $('#tel').val();
+		 registerR(tel,username,email);
+	}
+</script>
+-->
+
+
+
+<p class="copyright agileits-w3layouts agile w3-agile">© 2019  All Rights Reserved | Design by <a href="https://www.xmoban.cn/" target="_blank">NPUERS</a></p>
+</body>
+</html>
