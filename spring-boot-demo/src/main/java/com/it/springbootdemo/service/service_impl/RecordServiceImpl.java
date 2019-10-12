@@ -1,11 +1,16 @@
 package com.it.springbootdemo.service.service_impl;
 
-import com.it.springbootdemo.mapper.BookMapper;
+import com.it.springbootdemo.controller.record;
 import com.it.springbootdemo.mapper.RecordMapper;
+import com.it.springbootdemo.model.Record;
 import com.it.springbootdemo.service.RecordService;
 import com.it.springbootdemo.utils.TimeUtil;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -13,21 +18,79 @@ public class RecordServiceImpl implements RecordService {
 
     @Autowired
     RecordMapper recordMapper;
-    BookMapper bookMapper;
+
 
     @Override
     public int borrowBook(int bookId, int id) {
-        int result=0;
+        int result=recordMapper.getBookOrder(bookId);
 
         if(result==0){
         TimeUtil timeUtil = new TimeUtil();
         String nowdate= timeUtil.getFormatDateForFive();
+        recordMapper.updateOrder(2,bookId);
         recordMapper.borrowBook(bookId,id,nowdate);
         return 0;}
         else if(result==1){
+
             return 1;
         }
         else return 2;
 
+    }
+
+    @Override
+    public int returnBook(int recordId) {
+        double  fine=recordMapper.getFine();
+        double perid=recordMapper.getPeriod();
+        double allFine;
+        int num;
+        String borrowTime=recordMapper.getBorrowTime(recordId);
+        TimeUtil timeUtil = new TimeUtil();
+        String nowdate= timeUtil.getFormatDateForFive();
+        int bMonth=((int)borrowTime.charAt(5)-(int)('0'))*10+((int)borrowTime.charAt(6)-(int)('0'));
+        int rMonth=((int)nowdate.charAt(5)-(int)('0'))*10+((int)nowdate.charAt(6)-(int)('0'));
+        int month;
+        if(rMonth>=bMonth){
+            month=rMonth-bMonth;
+        }
+        else month=rMonth+12-bMonth;
+        num=30*month;
+        int bDay=((int)borrowTime.charAt(8)-(int)('0'))*10+((int)borrowTime.charAt(9)-(int)('0'));
+        int rDay=((int)nowdate.charAt(8)-(int)('0'))*10+((int)nowdate.charAt(9)-(int)('0'));
+        int day;
+        if(rDay>=bDay) day=rDay-bDay;
+        else {num-=30;
+             day=rDay+30-bDay;}
+        num+=day;
+        if(num<=perid) allFine=0;
+        else {
+            allFine=(num-perid)*fine;
+        }
+        int bookId=recordMapper.getBookId(recordId);
+        recordMapper.updateOrder(0,bookId);
+        recordMapper.returnBook(recordId,nowdate,allFine);
+        return 0;
+    }
+
+    @Override
+    public JSONObject getRecordByUserId(int userId) {
+        List<Record> records=null;
+        records=recordMapper.getRecordByUserId(userId);
+        JSONObject jsonObject = new JSONObject();
+        JSONArray jsonArray=new JSONArray();
+        for(Record record:records){
+            JSONObject result=new JSONObject();
+            result.put("recordId",record.getRecordId());
+            result.put("userId",record.getUserId());
+            result.put("bookId",record.getBookId());
+            result.put("borrowTime",record.getBorrowTime());
+            result.put("returnTime",record.getReturnTime());
+            result.put("fine",record.getFine());
+            jsonArray.add(result);
+
+        }
+        jsonObject.put("result",jsonArray);
+
+        return jsonObject;
     }
 }
