@@ -16,6 +16,13 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     BookMapper bookMapper;
+
+    @Override
+    public int deleteBook(int bookId) {
+        bookMapper.deleteBook(bookId);
+        return 0;
+    }
+
     @Override
     public JSONObject searchBook(String key, String text) {
         JSONObject jsonObject = new JSONObject();
@@ -54,4 +61,6 @@ public class BookServiceImpl implements BookService {
         bookMapper.insertBookWithISBN(ISBN,price,location,bookname,author,press);
         return 1;
     }
+
+
 }

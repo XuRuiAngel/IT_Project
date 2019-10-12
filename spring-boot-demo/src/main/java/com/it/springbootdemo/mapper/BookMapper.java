@@ -2,10 +2,7 @@ package com.it.springbootdemo.mapper;
 
 
 import com.it.springbootdemo.model.Book;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -27,4 +24,7 @@ public interface BookMapper {
             "insert into book(ISBN,price,location,bookname,author,press) values(#{ISBN},#{price},#{location},#{bookname},#{author},#{press})"
     )
     void insertBookWithISBN(@Param("ISBN")String ISBN,@Param("price")String price, @Param("location")String location,@ Param("bookname") String bookname, @Param("author")String author, @Param("press")String press);
+
+    @Delete("delete from book where bookId=#{bookId}")
+    void deleteBook(@Param("bookId") int bookId);
 }
