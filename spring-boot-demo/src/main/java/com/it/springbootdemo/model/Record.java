@@ -20,6 +20,15 @@ public class Record {
         this.fine = fine;
     }
 
+    public Record( int userId, int bookId, String borrowTime, String returnTime, double fine) {
+
+        this.UserId = userId;
+        this.BookId = bookId;
+        this.BorrowTime = borrowTime;
+        this.ReturnTime = returnTime;
+        this.fine = fine;
+    }
+
     public String getBorrowTime() {
         return this.BorrowTime;
     }
