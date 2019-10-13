@@ -137,4 +137,44 @@ public class UserServiceImpl implements UserService {
         userMapper.deleteLibrarians(id);
         return 1;
     }
+
+    @Override
+    public JSONObject getReaders() {
+        List<User> users=null;
+        users=userMapper.getReaders();
+        JSONObject jsonObject = new JSONObject();
+        JSONArray jsonArray=new JSONArray();
+        for(User user:users)
+        {
+            JSONObject result=new JSONObject();
+            result.put("username",user.getUsername());
+            result.put("id",user.getUserId());
+            result.put("tele",user.getTele());
+            result.put("e_mail",user.getE_mail());
+            jsonArray.add(result);
+        }
+        jsonObject.put("result",jsonArray);
+        return jsonObject;
+    }
+
+    @Override
+    public int editReaders(String username,int id, String tele, String e_mail) {
+
+        User testUser=null;
+        testUser=userMapper.login(tele);
+        if(testUser!=null&&id!=testUser.getUserId()){
+            return 0;
+        }
+        else {
+            userMapper.editLibrarians(username,id,tele,e_mail);
+            return 1;
+        }
+
+    }
+
+    @Override
+    public int deleteReaders(int id) {
+        userMapper.deleteLibrarians(id);
+        return 1;
+    }
 }

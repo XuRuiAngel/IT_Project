@@ -27,4 +27,10 @@ public interface UserService {
 
     public int deleteLibrarians(int id);
 
+    public JSONObject getReaders();
+
+    public int editReaders(String username,int id,String tele,String e_mail);
+
+    public int deleteReaders(int id);
+
 }

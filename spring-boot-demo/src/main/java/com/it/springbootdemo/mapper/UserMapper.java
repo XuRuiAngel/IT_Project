@@ -49,4 +49,18 @@ public interface UserMapper {
     @Delete("delete from user where id=#{id}")
     void deleteLibrarians(@Param("id") int id);
 
+    @Select("select * from user where flag=2")
+    List<User> getReaders();
+
+    @Update("update user set username=#{username}, tele=#{tele} ,e_mail=#{e_mail} where id=#{id}")
+    void editReaders(@Param("username") String username,
+                        @Param("id") int id,
+                        @Param("tele") String tele,
+                        @Param("e_mail") String e_mail);
+
+
+    @Delete("delete from user where id=#{id}")
+    void deleteReaders(@Param("id") int id);
+
+
 }
