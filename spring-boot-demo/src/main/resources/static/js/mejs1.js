@@ -11,6 +11,29 @@ $(function () {
         methods.editHandle(trIndex);
     })
 
+     $('#show_tbody').on('click','.del', function () {
+            trIndex = $('.del', '#show_tbody').index($(this));
+            addEnter = false;
+            var newsId = $(this).parents('tr').children("td:eq(0)").text();
+            var $tr = $(this).parents('tr');
+            $.ajax({
+                type: "post",
+                url: "/deleteNews?newsId="+newsId,
+                //url:"index.json",
+                data:{},
+                contentType : "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "JSON",
+                success: function(data) {            //鎴愬姛鍚庣洿鎺ョЩ闄ゅ綋鍓嶈
+                    //$tr.remove();
+                },
+                error: function() {
+                }
+            });
+            $tr.remove();
+            // $(this).parents('tr').remove();
+            methods.delHandleNews(trIndex);
+        })
+
     $('#search_btn').click(function () {
         methods.seachName();
     })
@@ -62,7 +85,7 @@ var methods = {
                     url:"/registLibrarian?username="+username+"&tele="+tele+"&e_mail="+e_mail,
                     async:false,
                      data:{},
-                    dataType:"String",
+                    dataType:"JSON",
                     success:function(msg) {
                                 if(msg=="success!")  {
                                     alert(msg);
@@ -70,6 +93,7 @@ var methods = {
                                 else  alert("msg");
                             }
                 })
+                window.location.reload();
             }
         }else{
             methods.setStr();

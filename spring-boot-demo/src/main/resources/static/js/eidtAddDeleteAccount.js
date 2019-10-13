@@ -11,7 +11,6 @@ function getLibrarians(){
                 var a=JSON.stringify(data);
                 var b=eval("("+a+")");
                 var result=b.result;
-                alert()
                  for(var i=0;i<result.length;i++){
                      var username=result[i].username;
                      var id=result[i].id;
@@ -134,6 +133,7 @@ function  getRid(id) {
             alert(msg);
         }
     })
+    window.location.reload();
 }
 
 
