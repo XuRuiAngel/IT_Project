@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+    background:url("../images/createReader.jpg");
+    /*background-size:100%;*/
+}
+.welcome
+{
+    margin-top:20px;
+    height:150px;
+    margin-left:500px;
+    font-size:30px;
+    color:white;
+}
+#userid
+{
+    font-size:30px;
+    color:white;
+}
+.info
+{
+    width:50%;
+    margin:auto;
+    background-color:#000000;
+    opacity:0.6;
+    border-radius:5%;
+}
+.s-c
+{
+    font-size:25px;
+    color:white;
+}
+.tele
+{
+    margin-left:95px;
+}
+.e_mail
+{
+    margin-left:64px;
+}
+.balance
+{
+    margin-left:47px;
+}
+.username
+{
+    margin-left:23px;
+}
+.id
+{
+    padding-top:20px;
+    margin-left:114px;
+}
+.registerdate
+{
+    padding-bottom: 20px;
+}

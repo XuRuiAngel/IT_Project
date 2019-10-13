@@ -38,4 +38,12 @@ public class record {
              recordService.returnBook(recordId);
              return "success!";
     }
+
+    @GetMapping("/getRecordByTele")
+    @ResponseBody
+    public JSONObject getRecordByTele(@RequestParam("tele")String tele){
+        return recordService.getRecordBytele(tele);
+    }
+
+
 }
