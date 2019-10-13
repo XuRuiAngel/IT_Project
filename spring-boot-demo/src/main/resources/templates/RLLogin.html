@@ -130,7 +130,7 @@ $(".sec_login_error").Validform({
         <!-- 读者登录开始 -->
         <div>
             <div class="stu_error_box"></div>
-            <form action="/" method="post" class="stu_login_error" onsubmit="rlogin()">
+            <form action="/" method="post" class="stu_login_error" onsubmit="rlogin(); to()">
                 <div id="Rusername">
                     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone:</label>
                     <input class="text" type="text" id="rtele" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" sucmsg="ID verification passed!"/>
@@ -181,7 +181,19 @@ $(".sec_login_error").Validform({
                     }
                 })
             }
+
+            function SetCookie(cookieName,cookieValue)
+            {
+                document.cookie=cookieName+"="+escape(cookieValue);
+            }
+            function to() //这个是点击login触发的函数
+            {
+
+                var idea=$('#rtele').val();
+                SetCookie("rtele",idea);
+            }
         </script>
+
         <!-- 读者登录结束-->
         <!-- 图书管理员登录开始-->
         <div class="hide">
