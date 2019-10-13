@@ -99,4 +99,28 @@ public class RecordServiceImpl implements RecordService {
 
         return jsonObject;
     }
+
+    @Override
+    public JSONObject getRecordBytele(String tele) {
+
+        int userId=recordMapper.getUserIdBytele(tele);
+        List<Record> records=null;
+        records=recordMapper.getRecordByUserId(userId);
+        JSONObject jsonObject = new JSONObject();
+        JSONArray jsonArray=new JSONArray();
+        for(Record record:records){
+            JSONObject result=new JSONObject();
+            result.put("recordId",record.getRecordId());
+            result.put("userId",record.getUserId());
+            result.put("bookId",record.getBookId());
+            result.put("borrowTime",record.getBorrowTime());
+            result.put("returnTime",record.getReturnTime());
+            result.put("fine",record.getFine());
+            jsonArray.add(result);
+
+        }
+        jsonObject.put("result",jsonArray);
+
+        return jsonObject;
+    }
 }
