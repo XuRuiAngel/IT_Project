@@ -17,7 +17,7 @@ function getLibrarians(){
                      var id=result[i].id;
                      var tele=result[i].tele;
                      var e_mail=result[i].e_mail;
-                     var html=           " <tr id='"+id+"\ ' onclick='getid(this.id)'>\n"+
+                     var html=           " <tr id='"+id+"\' onclick='getid(this.id)'>\n"+
                                              " <td>"+username+"</td>\n"+
                                              " <td>"+id+"</td>\n"+
                                           "    <td>"+tele+"</td>\n"+
@@ -120,6 +120,7 @@ function  getid(id) {
     })
 }
 
+
 function  getRid(id) {
 
     $.ajax({
@@ -133,6 +134,7 @@ function  getRid(id) {
         }
     })
 }
+
 
 //function registerR(tel, username, email){
 //    var username=$('#username').val();
