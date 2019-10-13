@@ -23,8 +23,18 @@ $(document).ready(function(){
 });
 </script>
     <script type="text/javascript">
+        function SetCookie(cookieName,cookieValue)
+        {
+            document.cookie=cookieName+"="+escape(cookieValue);
+        }
+        function to()
+        {
+            var idea=document.getElementById("rtele").value;
+            SetCookie("rtele",idea);
+            document.location="/search2";
+        }
 $(function(){
-/*读者登录信息验证*/
+    /*读者登录信息验证*/
 $("#stu_username_hide").focus(function(){
  var username = $(this).val();
  if(username=='Enter ID'){
@@ -157,18 +167,6 @@ $(".sec_login_error").Validform({
             </form>
         </div>
         <script type="text/javascript">
-            function SetCookie(cookieName,cookieValue)
-            {
-                document.cookie=cookieName+"="+escape(cookieValue);
-            }
-            function to()
-            {
-                var idea=document.getElementById("rtele").value;
-                SetCookie("rtele",idea);
-                document.location="/search";
-                // document.location="information.html";
-                //window.location.href="information.html?idea="+idea;
-            }
             function rlogin(){
                 var tele=$('#rtele').val();
                 var password= $('#rpassword').val();
@@ -220,7 +218,7 @@ $(".sec_login_error").Validform({
                     <label>Remember the password</label>
                 </div>
                 <div id="Llogin">
-                    <button type="submit" >Login</button>
+                    <button type="submit" onclick="">Login</button>
                 </div>
             </form>
         </div>
