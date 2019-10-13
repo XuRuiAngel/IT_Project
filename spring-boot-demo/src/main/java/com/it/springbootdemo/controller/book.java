@@ -68,10 +68,4 @@ public class book {
         return bookService.getBookOrder(bookId);
 
     }
-
-    @GetMapping("/getLastBookId")
-    @ResponseBody
-    public int getLastBookId(){
-        return bookService.getLastBookId();
-    }
 }
