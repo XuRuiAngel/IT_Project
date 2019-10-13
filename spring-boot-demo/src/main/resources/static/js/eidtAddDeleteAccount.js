@@ -66,7 +66,7 @@ function  getid(id) {
     })
 }
 
-function registerR(tel, username, email){
+//function registerR(tel, username, email){
 //    var username=$('#username').val();
 //    var tele=$('#tele').val();
 //    var e_mail=$('#e_mail').val();
