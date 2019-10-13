@@ -29,4 +29,6 @@ public interface UserService {
 
     public int changePassword(String tele,String pPassword,String cPassword);
 
+    public JSONObject getReadByTele(String tele);
+
 }

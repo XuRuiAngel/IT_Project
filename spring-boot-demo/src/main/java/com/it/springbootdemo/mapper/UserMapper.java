@@ -53,4 +53,6 @@ public interface UserMapper {
     int changePassword(@Param("tele") String tele,
                        @Param("cPassword") String cPassword);
 
+    @Select("select * from user where tele=#{tele}")
+    List<User> getReadByTele(@Param("tele") String tele);
 }

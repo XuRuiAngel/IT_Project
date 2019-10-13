@@ -148,4 +148,20 @@ public class UserServiceImpl implements UserService {
 
         else return 0;
     }
+
+    @Override
+    public JSONObject getReadByTele(String tele) {
+        JSONObject jsonObject = new JSONObject();
+
+        List<User> users=null;
+        users=userMapper.getReadByTele(tele);
+        for(User user :users){
+        jsonObject.put("id" ,user.getUserId());
+        jsonObject.put("username" ,user.getUsername());
+        jsonObject.put("balance" ,user.getBalance());
+        jsonObject.put("e_mail" ,user.getE_mail());
+        jsonObject.put("tele" ,user.getTele());
+        jsonObject.put("regitherdate" ,user.getRegisterdate());}
+        return jsonObject;
+    }
 }
