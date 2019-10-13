@@ -30,4 +30,7 @@ public interface BookMapper {
 
     @Select("select copyNumbers from book where bookId=#{bookId}")
     int getBookOrder(@Param("bookId") int bookId);
+
+    @Select(("select max(bookId) from book"))
+    int getLastBookId();
 }
