@@ -9,7 +9,7 @@
 
     <script type="text/javascript" src="../static/js/jQuery1.7.js"></script>
     <script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>
+<!--    <script type="text/javascript" src="../static/js/jquery1.42.min.js"></script>-->
     <script type="text/javascript" src="../static/js/jquery.SuperSlide.js"></script>
     <script type="text/javascript" src="../static/js/Validform_v5.3.2_min.js"></script>
     <script type="text/javascript" src="../static/js/functions.js"></script>
@@ -118,12 +118,13 @@ input:focus {
 	<div class="cms_login_text">Change Password</div>
 	<div class="cms_login_table">
 		<form >
-			<div class="divBox"><span class="margin_right10">&nbsp Original Password</span><input type="text" id="opsw" placeholder="Please enter the original password"
+			<div class="divBox"><span class="margin_right10">&nbsp Original Password</span><input type="password" id="opsw" placeholder="Please enter the original password"
 					class="cms_login_ipt"></div>
-			<div class="divBox"><span class="margin_right10">&nbsp New Password</span><input type="text" id="npsw" placeholder="Please enter the new password"
+			<div class="divBox"><span class="margin_right10">&nbsp New Password</span>&nbsp &nbsp &nbsp <input type="password" id="npsw" placeholder="Please enter the new password"
 					class="cms_login_ipt"></div>
-			<div class="divBox"><span class="margin_right10">&nbsp Confirm Password</span><input type="text" id="cpsw" placeholder="Enter the new password again"
+			<div class="divBox"><span class="margin_right10">&nbsp Confirm Password</span><input type="paswword" id="cpsw" placeholder="Enter the new password again"
 					class="cms_login_ipt"></div>
+			<div id="telep"></div>
 		  <div >
 				<input type="button" class="login_btn" onclick="changepsw()" value="Submit"></input>
 			</div>
@@ -133,10 +134,11 @@ input:focus {
 				var opsw=$('#opsw').val();
 				var npsw=$('#npsw').val();
 				var cpsw=$('#cpsw').val();
+				var tele=[[${session.tele}]];
 				var msg;
 				$.ajax({
-					type:"GET",
-					url:"/changePassword?opsw="+opsw+"&npsw="+npsw+"&cpsw="+cpsw,
+					type:"POST",
+					url:"/changePassword?tele="+tele+"&pPassword="+opsw+"&cPassword="+npsw,
 					data:{},
 					datatype:"string",
 					async:false,
@@ -146,8 +148,8 @@ input:focus {
 						else if(cpsw=="") {alert("please input your new password again");}
 						else if(opsw==npsw) {alert("please make sure your new password is different with the old");}
 						else if(npsw!=cpsw) {alert("please make sure your new passwords are same");}
-						else if(msg=="Success") {alert("change password successful");}
 						else if(msg=="Password error!") {alert("Your password is incorrect, please check again!");}
+						else {alert("change password successful");}
 					}
 				})
 			}
