@@ -22,4 +22,10 @@ public class reservation {
         else return "The book has been booked or lent. ";
     }
 
+    @PostMapping("/deleteReservation")
+    @ResponseBody
+    public void deleteReservation(){
+      reservationService.deleteReservation();
+    };
+
 }
