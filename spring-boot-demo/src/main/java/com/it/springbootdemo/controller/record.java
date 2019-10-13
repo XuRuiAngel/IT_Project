@@ -46,4 +46,10 @@ public class record {
     }
 
 
+    @GetMapping("/getRecord")
+    @ResponseBody
+    public JSONObject getRecord(){
+        return recordService.getRecord();
+
+    }
 }
