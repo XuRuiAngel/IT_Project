@@ -34,13 +34,11 @@ public class login {
 
     @PostMapping("/registLibrarian")
     @ResponseBody
-    public String registAdmin(
-//            @RequestParam("tele") String tele,
+    public String registAdmin(@RequestParam("tele") String tele,
                                @RequestParam("username") String username,
-                               @RequestParam("tele") String tele,
                                @RequestParam("e_mail") String e_mail){
         int result;
-        result=userService.registLibrarian(username,tele,e_mail);
+        result=userService.registLibrarian(tele,username,e_mail);
          if(result==0)
          {
              return "The account has been registered!";
@@ -89,13 +87,13 @@ public class login {
      }
 
      @GetMapping("/getLibrarians")
-    @ResponseBody
-    public JSONObject getLibrarians(){
-        return userService.getLibrarians();
+     @ResponseBody
+     public JSONObject getLibrarians(){
+         return userService.getLibrarians();
      }
 
 
-     @PostMapping("/editLibrarians")
+    @PostMapping("/editLibrarians")
     @ResponseBody
     public String editLibrarians(@RequestParam("username") String username,
                                  @RequestParam("id") int id,
@@ -108,11 +106,30 @@ public class login {
        else return "success";
      }
 
+     @PostMapping("/changePassword")
+     @ResponseBody
+     public String changePassword(@RequestParam("tele") String tele,
+                                  @RequestParam("pPassword") String pPassword,
+                                  @RequestParam("cPassword") String cPassword){
+
+        int result=userService.changePassword(tele, pPassword, cPassword);
+        if(result==1)  return "success!";
+        else return "fail!";
+     }
+
+
 
     @PostMapping("/deleteLibrarians")
     @ResponseBody
     public void deleteLibrarians(@RequestParam("id") int id){
        userService.deleteLibrarians(id);
 
+    }
+
+
+    @GetMapping("/getReadByTele")
+    @ResponseBody
+    public JSONObject getReadByTele(@RequestParam("tele") String tele){
+        return userService.getReadByTele(tele);
     }
 }
