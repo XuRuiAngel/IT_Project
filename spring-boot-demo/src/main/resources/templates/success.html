@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<title>Enquiry Form Flat Responsive widget Template :: xmoban.cn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- css files -->
+<link href="css/su.css" rel='stylesheet' type='text/css' media="all" />
+<link href="css/font1.css" rel="stylesheet" type="text/css" />
+<link href="css/font2.css" rel="stylesheet" type="text/css" />
+<!-- css files -->
+<!-- js files -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/JsBarcode.all.min.js"></script>
+<!-- js files -->
+<script>
+window.onload=function(){createId();}
+function createId(){
+	var str,barcode,loc;
+	var count=3000;
+	var originalArray=new Array;
+	for(var i=0;i<count;i++){
+		originalArray[i]=i+1;
+	}
+	originalArray.sort(function(){return 0.5-Math.random();});	
+	start = ('0000000000000'+originalArray[0]).substr(-13);
+	total = document.getElementById('cpn').value;
+	loc = document.getElementById('bloc').value;
+	total = parseInt(total);
+	for(var j=0;j<total+1;j++){
+		str=start+j;
+		barcode = document.getElementById('barcode'+j);
+		options = {
+            format: "CODE128",
+            displayValue: true,
+            fontSize: 18,
+            height: 100,
+			text:str + "\r\n" + loc
+        };
+		JsBarcode(barcode, str, options);
+		}
+}
+
+function back(){
+	window.location.href="index.html";
+}
+</script>
+</head>
+<body>
+
+<div class="neirong" style="margin-left:18%;">
+
+<h1 class="header-agileits w3 w3l agile-info">ADD BOOK SUCCESSFULLY!</h1>
+<p class="header-agileits wthree w3-agileits">It shows book's details.</p>
+
+<div class="content-w3ls" id="nr">
+	<div class="form-w3layouts">
+		<form action="#" method="get">
+
+			<div class="form-control"> 
+				<label class="header">Book Name <span>:</span></label>
+				<input id="bname" name="bname" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+			</div>
+		
+			<div class="form-control">	
+				<label class="header">Author <span>:</span></label>
+				<input id="bauthor" name="bauthor" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+			</div>
+		
+			<div class="form-control">	
+				<label class="header">Press <span>:</span></label>
+				<input id="bpress" name="bpress" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+			</div>
+		
+			<div class="form-control">	
+				<label class="header">Price <span>:</span></label>	
+				<input id="bprice" name="bprice" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+			</div>	
+			
+            <div class="form-control">	
+				<label class="header">Copies' Number <span>:</span></label>	
+				<input id="cpn" name="cpn " disabled style="width:250px;background:#999;border:none;font-size:26px;" value="1">
+			</div>
+            
+            <div class="form-control">	
+				<label class="header">Location <span>:</span></label>	
+				<input id="bloc" name="bloc " disabled style="width:250px;background:#999;border:none;font-size:26px;" value="2 Floor 5 Shelf">
+			</div>
+            
+            <div class="form-control">	
+				<label class="header">Category <span>:</span></label>	
+				<input id="bookCategory" name="bookCategory " disabled style="width:250px;background:#999;border:none;font-size:26px;">
+			</div>
+            			
+			<div class="form-control">
+				<input type="button" class="reset" value="Back" onClick="back();">
+			</div> 
+		</form>
+	</div>
+</div>
+
+<img id="barcode0" style="position:absolute;left:950px;top:250px;height:100px;width:200px;border:none" /></div>
+<img id="barcode1" style="position:absolute;left:1160px;top:250px;height:100px;width:200px;border:none" /></div>
+<img id="barcode2" style="position:absolute;left:950px;top:360px;height:100px;width:200px;border:none" /></div>
+<img id="barcode3" style="position:absolute;left:1160px;top:360px;height:100px;width:200px;border:none" /></div>
+<img id="barcode4" style="position:absolute;left:950px;top:470px;height:100px;width:200px;border:none" /></div>
+<img id="barcode5" style="position:absolute;left:1160px;top:470px;height:100px;width:200px;border:none" /></div>
+
+<address>
+<p class="copyright agileits-w3layouts agile w3-agile">© 2019 All Rights Reserved | Design by <a href="mailto:352384669@qq.com" target="_blank">NPUERS</a></p>
+</address>
+
+</div>
+</body>
+</html>
