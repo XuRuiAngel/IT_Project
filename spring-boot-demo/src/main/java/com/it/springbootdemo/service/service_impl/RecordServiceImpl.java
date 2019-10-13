@@ -99,4 +99,9 @@ public class RecordServiceImpl implements RecordService {
 
         return jsonObject;
     }
+
+    @Override
+    public JSONObject getRecordBytele(String tle) {
+        return null;
+    }
 }
