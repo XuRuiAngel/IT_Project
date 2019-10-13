@@ -50,5 +50,8 @@ public interface RecordMapper {
     @Select("select id from user where tele=#{tele}")
     int getUserIdBytele(@Param("tele") String tele);
 
+    @Select("select * from Record ")
+    List<Record> getRecord();
+
 
 }

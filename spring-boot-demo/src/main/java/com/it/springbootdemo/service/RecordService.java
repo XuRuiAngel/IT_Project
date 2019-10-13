@@ -14,4 +14,6 @@ public interface RecordService {
     public JSONObject getRecordByUserId(int userId);
 
     public JSONObject getRecordBytele(String tle);
+
+    public JSONObject getRecord();
 }
