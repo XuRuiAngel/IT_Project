@@ -31,7 +31,6 @@ $(document).ready(function(){
         {
             var idea=document.getElementById("rtele").value;
             SetCookie("rtele",idea);
-            document.location="/search2";
         }
 $(function(){
     /*读者登录信息验证*/
@@ -185,7 +184,7 @@ $(".sec_login_error").Validform({
                         else{
                             if(yzm=="fail") alert("the valid code is wrong!");
                             else if(msg==1) alert("please use Librarian window to login!");
-                            else if(msg==2) alert("Reader is developing.");
+                            else if(msg==2) window.location.href="reader";
                             else if(msg==0) alert("please use Admin window to login!");
                             else alert(msg);}
                     }
