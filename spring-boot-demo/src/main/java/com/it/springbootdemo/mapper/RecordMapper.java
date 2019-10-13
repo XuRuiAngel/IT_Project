@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface RecordMapper {
 
-    @Insert("insert into Record(UserId,bookId,BorrowTime,ReturnTime,Fine) values(#{userId},#{bookId},#{borrowTime},-1,-1)")
+    @Insert("insert into Record(UserId,bookId,BorrowTime) values(#{userId},#{bookId},#{borrowTime})")
     void borrowBook(@Param("bookId") int bookId, @Param("userId") int userId, @Param("borrowTime") String borrowTime);
 
     @Select("select copyNumbers from book where bookId=#{bookId}")

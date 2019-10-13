@@ -18,11 +18,6 @@ public class BookServiceImpl implements BookService {
     BookMapper bookMapper;
 
     @Override
-    public int getLastBookId() {
-        return bookMapper.getLastBookId();
-    }
-
-    @Override
     public int getBookOrder(int bookId) {
         return bookMapper.getBookOrder(bookId);
     }
