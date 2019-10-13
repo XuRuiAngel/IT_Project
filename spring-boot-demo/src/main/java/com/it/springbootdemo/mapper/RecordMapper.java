@@ -46,4 +46,9 @@ public interface RecordMapper {
 
     @Select("select * from Record where userId=#{userId}")
     List<Record> getRecordByUserId(@Param("userId")int userId);
+
+    @Select("select id from user where tele=#{tele}")
+    int getUserIdBytele(@Param("tele") String tele);
+
+
 }

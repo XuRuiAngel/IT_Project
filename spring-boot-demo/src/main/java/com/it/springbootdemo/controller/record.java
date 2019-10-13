@@ -41,7 +41,7 @@ public class record {
 
     @GetMapping("/getRecordByTele")
     @ResponseBody
-    public JSONObject getRecordByTele(@RequestParam("tele")int tele){
+    public JSONObject getRecordByTele(@RequestParam("tele")String tele){
         return recordService.getRecordBytele(tele);
     }
 
