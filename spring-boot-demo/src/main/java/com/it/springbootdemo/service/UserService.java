@@ -27,4 +27,6 @@ public interface UserService {
 
     public int deleteLibrarians(int id);
 
+    public int changePassword(String tele,String pPassword,String cPassword);
+
 }
