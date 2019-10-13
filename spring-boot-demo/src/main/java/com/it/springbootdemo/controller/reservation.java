@@ -15,9 +15,11 @@ public class reservation {
 
     @PostMapping("/addReservation")
     @ResponseBody
-    public int addReservation(@RequestParam("userId") int userId,
+    public String addReservation(@RequestParam("userId") int userId,
                               @RequestParam("bookId") int bookId){
-        return reservationService.addReservation(userId,bookId);
+        int result= reservationService.addReservation(userId,bookId);
+        if(result==1) return "success";
+        else return "The book has been booked or lent. ";
     }
 
 }

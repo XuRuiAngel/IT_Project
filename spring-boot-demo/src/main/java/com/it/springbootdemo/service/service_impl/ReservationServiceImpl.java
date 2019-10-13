@@ -16,9 +16,15 @@ public class ReservationServiceImpl implements ReservationService {
     ReservationMapper  reservationMapper;
     @Override
     public int addReservation(int userId, int bookId) {
+        int result=reservationMapper.getBookOrder(bookId);
+        if(result==0){
         TimeUtil timeUtil = new TimeUtil();
         String nowdate= timeUtil.getFormatDateForFive();
+        reservationMapper.updateOrder(1,bookId);
          reservationMapper.addReservation(userId,bookId,nowdate);
-         return 1;
+            return 1;
+        }
+        else return 0;
+
     }
 }
