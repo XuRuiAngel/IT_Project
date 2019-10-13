@@ -31,6 +31,9 @@ public interface RecordMapper {
     @Select("select bookId from Record where recordId=#{recordId}")
     int getBookId(@Param("recordId") int recordId);
 
+    @Select("select userId from Reservation where bookId=#{bookId}")
+    int getUserId(@Param("bookId") int bookId);
+
 
     @Select("select fine from changes")
     double getFine();

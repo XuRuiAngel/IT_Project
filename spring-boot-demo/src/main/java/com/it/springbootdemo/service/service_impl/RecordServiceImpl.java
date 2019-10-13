@@ -31,8 +31,14 @@ public class RecordServiceImpl implements RecordService {
         recordMapper.borrowBook(bookId,id,nowdate);
         return 0;}
         else if(result==1){
-
-            return 1;
+            if(id==recordMapper.getUserId(bookId)){
+                TimeUtil timeUtil = new TimeUtil();
+                String nowdate= timeUtil.getFormatDateForFive();
+                recordMapper.updateOrder(2,bookId);
+                recordMapper.borrowBook(bookId,id,nowdate);
+                return 0;
+            }
+            else return 1;
         }
         else return 2;
 
