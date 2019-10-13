@@ -65,3 +65,22 @@ function  getid(id) {
         }
     })
 }
+
+//function registerR(tel, username, email){
+//    var username=$('#username').val();
+  //  var tele=$('#tele').val();
+    //var e_mail=$('#e_mail').val();
+//    $.ajax({
+//        type:"POST",
+//        url:"/registLibrarian?username="+username+"&tele="+tele+"&e_mail="+e_mail,
+//        async:false,
+  //       data:{},
+//        dataType:"String",
+//        success:function(msg) {
+//            if(msg=="success!")  {
+//                alert(msg);
+//            }
+//            else  alert("msg");
+//        }
+//    })
+//}
