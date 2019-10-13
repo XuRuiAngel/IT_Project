@@ -53,5 +53,15 @@ function editLibrarians(){
 }
 
 function  getid(id) {
-
+    var id=$('#id').val();
+    $.ajax({
+        type:"POST",
+        url:"/deleteLibrarians?&id="+id+",
+        data:{},
+        dataType:"String",
+        async:false,
+        success:function(msg) {
+          alert(msg);
+        }
+    })
 }

@@ -11,6 +11,29 @@ $(function () {
         methods.editHandle(trIndex);
     })
 
+    $('#show_tbody').on('click','.del', function () {
+        trIndex = $('.del', '#show_tbody').index($(this));
+        addEnter = false;
+        var newsId = $(this).parents('tr').children("td:eq(0)").text();
+        var $tr = $(this).parents('tr');
+        $.ajax({
+            type: "post",
+            url: "/deleteNews?newsId="+newsId,
+            //url:"index.json",
+            data:{},
+            contentType : "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "JSON",
+            success: function(data) {            //鎴愬姛鍚庣洿鎺ョЩ闄ゅ綋鍓嶈
+                //$tr.remove();
+            },
+            error: function() {
+            }
+        });
+        $tr.remove();
+        // $(this).parents('tr').remove();
+        methods.delHandleNews(trIndex);
+    })
+
     $('#search_btn').click(function () {
         methods.seachName();
     })
@@ -18,10 +41,6 @@ $(function () {
     $('#back_btn').click(function () {
         $('#Ktext').val(' ');
         methods.resectList();
-    })
-
-    $('.del').click(function () {
-        $(this).parents('tr').remove();
     })
 
     $('#renyuan').on('hide.bs.modal',function() {
@@ -46,17 +65,36 @@ var addEnter = true,
 var methods = {
 
     addHandle: function (the_index) {
+        var newsId=$('.userName').val();
+        var newsTitle=$('.jobNum').val();
+        var newsContent=$('.phoneNum').val();
         hasNullMes = false;
         methods.checkMustMes();
         if (hasNullMes) {
             return;
         }
         if (addEnter) {
-            methods.checkRepeat();
+            //methods.checkRepeat();
             if (noRepeat) {
-                methods.setStr();
-                $('#show_tbody').append('<tr>' + tdStr + '</tr>');
-                $('#renyuan').modal('hide');
+                $.ajax({
+                    type: "get",
+                    url: "/addNews?title="+newsTitle+"&content="+newsContent,
+                    //url:"index.json",
+                    // data:{},
+                    // contentType : "application/x-www-form-urlencoded; charset=utf-8",
+                    // dataType: "JSON",
+                    success: function(index) {            //鎴愬姛鍚庢坊鍔犺琛?
+                        // methods.setStr();
+                        // $('#show_tbody').append('<tr>' + tdStr + '</tr>');
+                        // $('#renyuan').modal('hide');
+                        window.location.reload();
+                    },
+                    error: function() {
+                    }
+                });
+                // methods.setStr();
+                // $('#show_tbody').append('<tr>' + tdStr + '</tr>');
+                // $('#renyuan').modal('hide');
             }
         }else{
             methods.setStr();
@@ -64,10 +102,31 @@ var methods = {
             $('#renyuan').modal('hide');
         }
     },
-    editHandle: function (the_index) {
 
+    delHandleNews: function(){
+    },
+
+    editHandle: function (the_index) {
+        // var newsId=$('.userName').val();
+        // var newsTitle=$('.jobNum').val();
+        // var newsContent=$('.phoneNum').val();
         var tar = $('#show_tbody tr').eq(the_index);
         var nowConArr = [];
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/editNews?newsId="+newsId+"&title="+newsTitle+"&content="+newsContent,
+        //     //url:"index.json",
+        //     // data:{},
+        //     // contentType : "application/x-www-form-urlencoded; charset=utf-8",
+        //     // dataType: "JSON",
+        //     success: function(index) {            //鎴愬姛鍚庢坊鍔犺琛?
+        //         // methods.setStr();
+        //         // $('#show_tbody').append('<tr>' + tdStr + '</tr>');
+        //         // $('#renyuan').modal('hide');
+        //     },
+        //     error: function() {
+        //     }
+        // });
         for (var i=0; i<tar.find('td').length-1;i++) {
             var a = tar.children('td').eq(i).html();
             nowConArr.push(a);
@@ -85,19 +144,35 @@ var methods = {
 
     },
     setStr: function () {
-
+        var newsId=$('.userName').val();
+        var newsTitle=$('.jobNum').val();
+        var newsContent=$('.phoneNum').val();
         tdStr = '';
+        $.ajax({
+            type: "POST",
+            url: "/editNews?newsId="+newsId+"&title="+newsTitle+"&content="+newsContent,
+            //url:"index.json",
+            // data:{},
+            // contentType : "application/x-www-form-urlencoded; charset=utf-8",
+            // dataType: "JSON",
+            success: function(index) {            //鎴愬姛鍚庢坊鍔犺琛?
+                // methods.setStr();
+                // $('#show_tbody').append('<tr>' + tdStr + '</tr>');
+                // $('#renyuan').modal('hide');
+            },
+            error: function() {
+            }
+        });
         for (var a=0; a<tarInp.length; a++) {
             tdStr+= '<td>' + tarInp.eq(a).val() + '</td>'
         }
         for (var b=0; b<tarSel.length; b++) {
             tdStr+= '<td>' + tarSel.eq(b).val() + '</td>'
         }
-        tdStr+= '<td><a href="#" class="edit">Edit</a> <a href="#" class="del">Delete</a></td>';
+        tdStr+= '<td><a href="#" class="edit">edit</a> <a href="#" class="del">delete</a></td>';
 
     },
     seachName: function () {
-
         var a = $('#show_tbody tr');
         var nameVal = $('#Ktext').val().trim();
         var nameStr = '',
@@ -105,8 +180,8 @@ var methods = {
 
         if (nameVal==='') {
             bootbox.alert({
-                title: "Hints",
-                message: "The search cannot be empty",
+                title: "Warning",
+                message: "It shouldn't be empty",
                 closeButton:false
             })
             return;
@@ -129,19 +204,10 @@ var methods = {
     },
     checkMustMes: function () {
 
-        if ($('.userName').val().trim()==='') {
-            bootbox.alert({
-                title: "Hints",
-                message: "The name is required, please fill in",
-                closeButton:false
-            })
-            hasNullMes = true;
-            return
-        }
         if ($('.jobNum').val().trim()==='') {
             bootbox.alert({
-                title: "Hints",
-                message: "The ID is required, please fill in",
+                title: "Warning",
+                message: "NewsId shouldn't be empty",
                 closeButton:false
             })
             hasNullMes = true;
@@ -149,8 +215,8 @@ var methods = {
         }
         if ($('.phoneNum').val().trim()==='') {
             bootbox.alert({
-                title: "Hints",
-                message: "The phone number is required, please fill in",
+                title: "Warning",
+                message: "Title shouldn't be empty",
                 closeButton:false
             })
             hasNullMes = true;
@@ -175,17 +241,8 @@ var methods = {
         if (jobArr.indexOf(jobNum)>-1) {
             noRepeat = false;
             bootbox.alert({
-                title: "Hints",
-                message: "The ID has been repeated. Please enter it again",
-                closeButton:false
-            })
-            return;
-        }
-        if (phoneArr.indexOf(phoneNum)>-1) {
-            noRepeat = false;
-            bootbox.alert({
-                title: "Hints",
-                message: "The phone number has been repeated. Please enter it again",
+                title: "Warning",
+                message: "NewsId is used",
                 closeButton:false
             })
             return;
