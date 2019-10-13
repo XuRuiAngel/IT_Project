@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<title>Enquiry Form Flat Responsive widget Template :: xmoban.cn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- css files -->
+<link href="../static/css/style1.css" rel='stylesheet' type='text/css' media="all" />
+<link href="../static/css/font1.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/font2.css" rel="stylesheet" type="text/css" />
+<!-- css files -->
+<!-- js files -->
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="../static/js/jquery.validate.min.js"></script>
+<script src="../static/js/addbook.js"></script>
+<script>
+function SetCookie(cookieName,cookieValue)
+{
+	document.cookie=cookieName+"="+escape(cookieValue);
+}
+function tosu(){
+	var bookname=document.getElementById('bname').value;
+	var bookauthor=document.getElementById('bauthor').value;
+	var bookpress=document.getElementById('bpress').value;
+	var bookprice=document.getElementById('bprice').value;
+	var bfloor=document.getElementById('floor').value;
+	var bshelf=document.getElementById('Shelf').value;
+	var category=document.getElementById('bookCategory').value;
+	var cpn=document.getElementById('cpn').value;
+	SetCookie("bookname",bookname);
+	SetCookie("bookauthor",bookauthor);
+	SetCookie("bookpress",bookpress);
+	SetCookie("bookprice",bookprice);
+	SetCookie("bfloor",bfloor);
+	SetCookie("bshelf",bshelf);
+	SetCookie("category",category);
+	document.location="success";
+}
+</script>
+</head>
+<body>
+
+
+
+<div class="neirong" style="margin-left:18%;">
+
+	<h1 class="header-agileits w3 w3l agile-info">Add Book</h1>
+	<p class="header-agileits wthree w3-agileits">Librarians can use this page to add books.</p>
+
+	<div class="content-w3ls">
+		<div class="form-w3layouts">
+			<form >
+				<div class="form-control">
+
+					<label class="header">Book Name <span>:</span></label>
+					<input type="text" id="bname" name="bname" placeholder="Book Name" title="Please enter Book Name" required>
+
+
+					<div class="form-control">
+						<label class="header">Author <span>:</span></label>
+						<input type="text" id="bauthor" name="bauthor" placeholder="Author" title="Please enter Author Name" required>
+					</div>
+
+					<div class="form-control">
+						<label class="header">Press <span>:</span></label>
+						<input type="text" id="bpress" name="bpress" placeholder="Book's Press" title="Please enter Book's Press" required>
+					</div>
+
+					<div class="form-control">
+						<label class="header">Price <span>:</span></label>
+						<input type="text"  min="0" id="bprice" name="bprice" placeholder="Book's Price" title="Please enter Book's Price" required>
+					</div>
+                    
+                    <label style="color:#dcdcdc;font-size:22px;">Copies'number :</label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <select id="cpn" name="cpn" style="width:40px;">
+                    	<option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br><br>
+					<label style="color:#dcdcdc;font-size:22px;">Location :</label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						<label style="color:#dcdcdc;">	Floor&nbsp&nbsp:&nbsp&nbsp&nbsp</label>
+                        <select id="floor" name="floor" style="width:100px;">
+                        	<option value="floor1">floor1</option>
+                            <option value="floor2">floor2</option>
+                            <option value="floor3">floor3</option>
+                            <option value="floor4">floor4</option>
+                            <option value="floor5">floor5</option>
+                        </select>
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <label style="color:#dcdcdc;">Shelf&nbsp&nbsp:&nbsp&nbsp&nbsp</label>
+                        <select id="Shelf" name="shelf" style="width:100px;">   
+                        	<option value="Shelf1">Shelf1</option>
+                            <option value="Shelf2">Shelf2</option>
+                            <option value="Shelf3">Shelf3</option>
+                            <option value="Shelf4">Shelf4</option>
+                            <option value="Shelf5">Shelf5</option>
+
+                        </select>
+					<br><br>
+					<label style="color:#dcdcdc;font-size:22px;">Category :</label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<select id="bookCategory" name="bookCategory" style="width:300px;">
+						<option value="fiction">fiction</option>
+						<option value="history">history</option>
+					</select>			
+                    
+					<div class="form-control">
+						<input type="reset" class="reset" style="text-align: center;" value="Reset">
+						<input type="submit" id="btn_addbook"   class="register" value="Submit" onclick="addBook1();tosu();">
+
+						<div class="clear"></div>
+					</div>
+				</div>
+		</form>
+		</div>
+	</div>
+
+	<address>
+		<p class="copyright agileits-w3layouts agile w3-agile">© 2019 All Rights Reserved | Design by <a href="mailto:352384669@qq.com" target="_blank">NPUERS</a></p>
+	</address>
+
+</div>
+
+</body>
+</html>
