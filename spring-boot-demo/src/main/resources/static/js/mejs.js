@@ -54,14 +54,32 @@ var methods = {
         if (addEnter) {
             methods.checkRepeat();
             if (noRepeat) {
+            var username=$('#username').val();
+                var tele=$('#tele').val();
+                var e_mail=$('#e_mail').val();
+                $.ajax({
+                    type:"POST",
+                    url:"/registLibrarian?username="+username+"&tele="+tele+"&e_mail="+e_mail,
+                    async:false,
+                     data:{},
+                    dataType:"JSON",
+                    success:function(msg) {
+                        if(msg=="success!")  {
+                            alert(msg);
+                        }
+                        else  alert("msg");
+                    }
+                })
                 methods.setStr();
                 $('#show_tbody').append('<tr>' + tdStr + '</tr>');
                 $('#renyuan').modal('hide');
+                window.location.reload();
             }
         }else{
             methods.setStr();
-            $('#show_tbody tr').eq(trIndex).empty().append(tdStr);
-            $('#renyuan').modal('hide');
+//            $('#show_tbody tr').eq(trIndex).empty().append(tdStr);
+//            $('#renyuan').modal('hide');
+//                window.location.reload();
         }
     },
     editHandle: function (the_index) {
