@@ -34,11 +34,13 @@ public class login {
 
     @PostMapping("/registLibrarian")
     @ResponseBody
-    public String registAdmin(@RequestParam("tele") String tele,
+    public String registAdmin(
+//            @RequestParam("tele") String tele,
                                @RequestParam("username") String username,
+                               @RequestParam("tele") String tele,
                                @RequestParam("e_mail") String e_mail){
         int result;
-        result=userService.registLibrarian(tele,username,e_mail);
+        result=userService.registLibrarian(username,tele,e_mail);
          if(result==0)
          {
              return "The account has been registered!";

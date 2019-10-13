@@ -29,7 +29,7 @@ public class Record {
         this.fine = fine;
     }
 
-    
+
 
     public String getBorrowTime() {
         return this.BorrowTime;

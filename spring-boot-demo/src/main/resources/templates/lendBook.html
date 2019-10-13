@@ -10,6 +10,8 @@
     <meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script type="text/javascript" src="../static/js/functions.js"></script>
+    <script type="text/javascript" src="../static/js/lendBook.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-1.8.2.min.js"></script>
     <!-- css files -->
     <link href="../static/css/lendBook.css" rel='stylesheet' type='text/css' media="all" />
     <!-- /css files -->
@@ -44,6 +46,8 @@ var sec = d.getSeconds() //获取秒数
 document.getElementById('usrtel').value=(year+"-"+month+"-"+day+" "+checkTime(hour)+":"+checkTime(min)+":"+checkTime(sec))
 }
 </script>
+
+    <script src="../static/js/lendBook.js"></script>
 </head>
 <body>
 <h1 class="header-agileits w3 w3l agile-info">Lend Books</h1>
@@ -51,7 +55,7 @@ document.getElementById('usrtel').value=(year+"-"+month+"-"+day+" "+checkTime(ho
 
 <div class="content-w3ls">
     <div class="form-w3layouts">
-        <form action="#" method="post">
+        <form >
             <div class="form-control">
                 <label class="header">Reader ID<span>:</span></label>
                 <input type="text" id="name" name="name" placeholder="Type the reader's id here"  >
@@ -66,14 +70,13 @@ document.getElementById('usrtel').value=(year+"-"+month+"-"+day+" "+checkTime(ho
 
             <div class="form-control">
                 <label class="header">Borrow Time<span>:</span></label>
-                <input type="tel" id="usrtel" name="usrtel" placeholder="Type the time here" >
-                <input type="button"  class="reset"   value="Get Time" onclick="GetTime()">
+                <input type="tel" id="usrtel" name="usrtel" placeholder="Type the time here" onclick="GetTime()">
             </div>
 
 
 
             <div class="form-control">
-                <input type="submit" class="register" value="Submit" onclick="disp_alert()">
+                <input type="button" class="register" value="Submit" onclick="lendBook()">
                 <div class="clear"></div>
             </div>
         </form>
@@ -87,10 +90,10 @@ document.getElementById('usrtel').value=(year+"-"+month+"-"+day+" "+checkTime(ho
 
 <script type="text/javascript">
 	function lCreate(){
-		var username=$('#name').val();
-		var email=$('#email').val();
-		var tel= $('#tel').val();
-		 registerR(tel,username,email);
+		var readerId=$('#name').val();
+		var bookId =$('#email').val();
+		var lendTime= $('#usrtel').val();
+		 lendBook(readerId,bookId,lendTime);
 	}
 </script>
 -->

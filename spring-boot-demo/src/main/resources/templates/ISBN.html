@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<title>Enquiry Form Flat Responsive widget Template :: xmoban.cn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- css files -->
+<link href="../static/css/su.css" rel='stylesheet' type='text/css' media="all" />
+<link href="../static/css/font1.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/font2.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
+<!-- css files -->
+<script src="../static/js/JsBarcode.all.min.js"></script>
+</head>
+<body>
+
+<div class="neirong" style="margin-left:18%;">
+
+	<h1 class="header-agileits w3 w3l agile-info">Add Book By ISBN</h1>
+	<p class="header-agileits wthree w3-agileits">Librarians can use this page to add books by ISBN.</p>
+
+	<div class="content-w3ls">
+		<div class="form-w3layouts">
+			<form action="success.html" method="post">
+				<div class="form-control">
+
+					<label class="header">Book ISBN <span>:</span></label>
+					<input type="text" id="ISBN" name="ISBN" placeholder="Book ISBN" title="Please enter Book ISBN" >
+
+
+					<div class="form-control">
+						<label class="header">Book Name <span>:</span></label>
+						<input id="bname" name="bname" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+					</div>
+
+					<div class="form-control">
+						<label class="header">Author <span>:</span></label>
+						<input id="bauthor" name="bauthor" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+					</div>
+
+					<div class="form-control">
+						<label class="header">Press <span>:</span></label>
+						<input id="bpress" name="bpress" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+					</div>
+
+					<div class="form-control">
+						<label class="header">Price <span>:</span></label>
+						<input id="bprice" name="bprice" disabled style="width:250px;background:#999;border:none;font-size:26px;">
+					</div>
+
+					<label style="color:#dcdcdc;font-size:22px;">Copies'number :</label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<select id="cpn" name="cpn" style="width:40px;">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<br><br>
+					<label style="color:#dcdcdc;font-size:22px;">Location :</label>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<label style="color:#dcdcdc;">	Floor&nbsp&nbsp:&nbsp&nbsp&nbsp</label>
+					<select id="floor" name="floor" style="width:40px;">
+						<option value="floor1">floor1</option>
+						<option value="floor2">floor2</option>
+						<option value="floor3">floor3</option>
+						<option value="floor4">floor4</option>
+						<option value="floor5">floor5</option>
+					</select>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<label style="color:#dcdcdc;">Shelf&nbsp&nbsp:&nbsp&nbsp&nbsp</label>
+					<select id="Shelf" name="shelf" style="width:40px;">
+						<option value="Shelf1">Shelf1</option>
+						<option value="Shelf2">Shelf2</option>
+						<option value="Shelf3">Shelf3</option>
+						<option value="Shelf4">Shelf4</option>
+						<option value="Shelf5">Shelf5</option>
+                        </select>
+					<br><br>
+					<label style="color:#dcdcdc;font-size:22px;">Category :</label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<select id="bookCategory" name="bookCategory" style="width:300px;">
+						<option>fiction</option>
+						<option>history</option>
+					</select>			
+					<br><br><br><br><br><br>
+					<div class="form-control">
+						<input type="reset" class="reset" value="Reset">
+						<input type="submit" id="btn_addbookbyisbn"  class="register" value="Submit" onclick="addBookByISBN1()">
+
+						<div class="clear"></div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+	<address>
+		<p class="copyright agileits-w3layouts agile w3-agile">© 2019 All Rights Reserved | Design by <a href="mailto:352384669@qq.com" target="_blank">NPUERS</a></p>
+	</address>
+
+</div>
+</body>
+<!-- js files -->
+<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+<script src="../static/js/jquery.validate.min.js"></script>
+<script src="../static/js/base.js"></script>
+<script src="../static/js/ISBN.js"></script>
+<script src="../static/js/addbookbyisbn.js"></script>
+<!-- js files -->
+<!--
+<script>
+function getinfo(){
+	var url='https://api.jisuapi.com/isbn/query?appkey=35f0a6d2d4ac6f5d&isbn='+isbn;
+	type : "GET", //jquey是不支持post方式跨域的
+      url : url, //跨域请求的URL
+      dataType : "JSONP", //传递给请求处理程序，用以获得jsonp回调函数名的参数名(默认为:callback)
+      success :  function(data){
+        // var jsonData = JSON.parse(data);
+        console.log("图书数据成功返回");
+        console.log(data);
+		alert(data);
+        // return data
+		var book=jQuery.parseJSON(data.msg);
+		cansole.log("1");
+      } ,
+      error:function (e) {
+        
+      }
+}
+function showinfo(){
+}
+</script>
+-->
+</html>
