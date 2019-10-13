@@ -32,5 +32,6 @@ public interface UserService {
     public int editReaders(String username,int id,String tele,String e_mail);
 
     public int deleteReaders(int id);
+    public int changePassword(String tele,String pPassword,String cPassword);
 
 }

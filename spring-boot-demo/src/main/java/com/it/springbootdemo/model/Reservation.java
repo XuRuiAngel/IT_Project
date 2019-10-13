@@ -4,48 +4,31 @@ import java.util.Date;
 
 public class Reservation {
 
-    private String RecordId;
-    private String userId;
-    private String ISBN;
-    private Date Time;
-    private String Validity;
+    private int ID;
+    private int userId;
+    private int bookId;
+    private String reserveTime;
 
-    public Reservation(String recordId, String userId, String ISBN, Date time, String validity) {
-        this.RecordId = recordId;
+    public Reservation(int ID, int userId, int bookId, String reserveTime) {
+        this.ID = ID;
         this.userId = userId;
-        this.ISBN = ISBN;
-        this.Time = time;
-        this.Validity = validity;
+        this.bookId = bookId;
+        this.reserveTime = reserveTime;
     }
 
-    public Date getTime() {
-        return this.Time;
+    public String getReserveTime() {
+        return this.reserveTime;
     }
 
-    public String getISBN() {
-        return this.ISBN;
+    public int getUserId() { return this.userId; }
+
+    public int getBookId() {
+        return this.bookId;
     }
 
-    public String getRecordId() {
-        return this.RecordId;
+    public int getID() {
+        return this.ID;
     }
 
-    public String getUserId() {
-        return this.userId;
-    }
 
-    public String getValidity() {
-        return this.Validity;
-    }
-
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "RecordId='" + RecordId + '\'' +
-                ", userId='" + userId + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", Time=" + Time +
-                ", Validity='" + Validity + '\'' +
-                '}';
-    }
 }

@@ -17,7 +17,7 @@ function getLibrarians(){
                      var id=result[i].id;
                      var tele=result[i].tele;
                      var e_mail=result[i].e_mail;
-                     var html=           " <tr id='"+id+"' onclick='getid(this.id)'>\n"+
+                     var html=           " <tr id='"+id+"\ ' onclick='getid(this.id)'>\n"+
                                              " <td>"+username+"</td>\n"+
                                              " <td>"+id+"</td>\n"+
                                           "    <td>"+tele+"</td>\n"+
@@ -124,7 +124,7 @@ function  getRid(id) {
 
     $.ajax({
         type:"POST",
-        url:"/deleteLibrarians?id="+id,
+        url:"/deleteReaders?id="+id,
         data:{},
         dataType:"String",
         async:false,

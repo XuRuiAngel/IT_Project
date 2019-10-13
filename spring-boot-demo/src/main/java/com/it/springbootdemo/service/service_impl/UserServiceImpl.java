@@ -176,5 +176,16 @@ public class UserServiceImpl implements UserService {
     public int deleteReaders(int id) {
         userMapper.deleteLibrarians(id);
         return 1;
+}
+
+    @Override
+    public int changePassword(String tele, String pPassword, String cPassword) {
+        String rPassword=userMapper.getPasswordByTele(tele);
+        if(rPassword.equals(pPassword)){
+        userMapper.changePassword(tele,cPassword);
+        return 1;
+        }
+
+        else return 0;
     }
 }

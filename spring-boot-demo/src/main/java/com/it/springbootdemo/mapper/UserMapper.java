@@ -62,5 +62,8 @@ public interface UserMapper {
     @Delete("delete from user where id=#{id}")
     void deleteReaders(@Param("id") int id);
 
+    @Update("update user set password=#{cPassword} where tele=#{tele}")
+    int changePassword(@Param("tele") String tele,
+                       @Param("cPassword") String cPassword);
 
 }

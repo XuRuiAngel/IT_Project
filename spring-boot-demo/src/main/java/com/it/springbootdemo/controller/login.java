@@ -87,13 +87,13 @@ public class login {
      }
 
      @GetMapping("/getLibrarians")
-    @ResponseBody
-    public JSONObject getLibrarians(){
-        return userService.getLibrarians();
+     @ResponseBody
+     public JSONObject getLibrarians(){
+         return userService.getLibrarians();
      }
 
 
-     @PostMapping("/editLibrarians")
+    @PostMapping("/editLibrarians")
     @ResponseBody
     public String editLibrarians(@RequestParam("username") String username,
                                  @RequestParam("id") int id,
@@ -105,6 +105,18 @@ public class login {
        }
        else return "success";
      }
+
+     @PostMapping("/changePassword")
+     @ResponseBody
+     public String changePassword(@RequestParam("tele") String tele,
+                                  @RequestParam("pPassword") String pPassword,
+                                  @RequestParam("cPassword") String cPassword){
+
+        int result=userService.changePassword(tele, pPassword, cPassword);
+        if(result==1)  return "success!";
+        else return "fail!";
+     }
+
 
 
     @PostMapping("/deleteLibrarians")
