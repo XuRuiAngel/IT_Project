@@ -67,5 +67,10 @@ public class BookServiceImpl implements BookService {
         return 1;
     }
 
+    @Override
+    public int getLastBookId() {
+        return bookMapper.getLastBookId();
+    }
+
 
 }
