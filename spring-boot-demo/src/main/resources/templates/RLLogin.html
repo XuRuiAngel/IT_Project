@@ -152,11 +152,23 @@ $(".sec_login_error").Validform({
                     <label>Remember the password</label>
                 </div>
                 <div id="Rlogin">
-                    <button type="submit">Login</button>
+                    <button type="submit" onclick="to()">Login</button>
                 </div>
             </form>
         </div>
         <script type="text/javascript">
+            function SetCookie(cookieName,cookieValue)
+            {
+                document.cookie=cookieName+"="+escape(cookieValue);
+            }
+            function to()
+            {
+                var idea=document.getElementById("rtele").value;
+                SetCookie("rtele",idea);
+                document.location="/search";
+                // document.location="information.html";
+                //window.location.href="information.html?idea="+idea;
+            }
             function rlogin(){
                 var tele=$('#rtele').val();
                 var password= $('#rpassword').val();

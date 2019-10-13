@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<title>Enquiry Form Flat Responsive widget Template :: xmoban.cn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Enquiry Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- css files -->
+<link href="../static/css/su.css" rel='stylesheet' type='text/css' media="all" />
+<link href="../static/css/myUIstyle.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/font1.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/font2.css" rel="stylesheet" type="text/css" />
+<!-- css files -->
+<!-- js files -->
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="../static/js/jquery.validate.min.js"></script>
+<script src="../static/js/base.js"></script>
+<script src="../static/js/addbooktype.js"></script>
+<script src="../static/js/JsBarcode.all.min.js"></script>
+<!-- js files -->
+<script>
+function createBarcode(){
+	var barcode = document.getElementById('barcode'),
+	str = document.getElementById('bid').value,
+	options = {
+            format: "CODE128",
+            displayValue: true,
+            fontSize: 18,
+            height: 100
+        };
+	JsBarcode(barcode, str, options);
+}
+function back(){
+	window.location.href="index.html";
+}
+</script>
+</head>
+<body>
+
+<div class="top">
+    <div class="dropdown" style="float: right">
+        <button class="dropbtn">Librarian</button>
+        <div class="dropdown-content">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="/adminLogOut">logout</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="neirong" style="margin-left:18%;">
+
+<h1 class="header-agileits w3 w3l agile-info">BOOK TYPES</h1>
+<p class="header-agileits wthree w3-agileits">It shows all book types.</p>
+
+<div class="content-w3ls" id="nr">
+	<div class="form-w3layouts">
+		
+        	<div class="form-control"> 
+            <div>
+				<label class="header">New Book type <span>:</span></label>
+				<input type="text" id="btname" name="btname" placeholder="Book Type" title="Please enter new Book Type" required style="width:250px;font-size:22px;">
+            </div>
+                <label class="header">New Book type ID <span>:</span></label>
+				<input type="text" id="btypeid" name="btypeid" placeholder="Book Type ID" title="Please enter new Book Type ID" required style="width:250px;font-size:22px;">
+                <input type="button" id="bt" name="bt" value="Add" onclick="addBooktype()" style="width:80px;height:40px;margin-left:60px;">
+			</div>
+        			
+            <table class="mt" id="mt" style="background-color:#FFFFFF;">
+            	<thead>
+            		<tr>
+            			<th>id</th>
+            			<th>type</th>
+            			<th>operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                    	<td>0</td>
+                        <td>history</td>
+                        <td>
+                        <input type="button" name="" value="delete" class="btn btn-danger" onclick="del(this)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>        
+                    
+					
+	</div>
+</div>
+
+<address>
+<p class="copyright agileits-w3layouts agile w3-agile">© 2019 All Rights Reserved | Design by <a href="mailto:352384669@qq.com" target="_blank">NPUERS</a></p>
+</address>
+
+</div>
+</body>
+</html>
