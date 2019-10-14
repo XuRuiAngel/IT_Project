@@ -30,6 +30,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/librarian").setViewName("librarian");
                 registry.addViewController("/search1").setViewName("search1");
                 registry.addViewController("/search2").setViewName("search2");
+                registry.addViewController("/search3").setViewName("search3");
                 registry.addViewController("/welcomeAdmin").setViewName("welcomeAdmin");
                 registry.addViewController("/welcomeLi").setViewName("welcomeLi");
                 registry.addViewController("/setFin").setViewName("setFine");
