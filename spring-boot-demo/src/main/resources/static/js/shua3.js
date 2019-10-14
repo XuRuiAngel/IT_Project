@@ -95,7 +95,7 @@ $('#tbody').on('click','.edit', function () {
     trIndex = $('.edit', '#tbody').index($(this));
     addEnter = false;
     var bookId = $(this).parents().children("th:eq(0)").text();
-    var $tr = $(this).parents('tr');
+
 
 	$('#commit').click(function () {
 		editbook(bookId);}
@@ -107,18 +107,18 @@ $('#tbody').on('click','.edit', function () {
             document.getElementById('inputbox').style.display=n?'block':'none';     /* 点击按钮打开/关闭 对话框 */
    }
   function editbook(bookId) {
-    var bn=$("#bN").val();
-    var ba=$("#bA").val();
+
+
     var bd=$("#bD").val();
-    var bp=$("#bP").val();
+
     var bl=$("#floor option:selected").val()+$("#Shelf option:selected").val();
 
 
    $.ajax({
         type: "post",
-        url: "/editbook?bookId="+bookId,
+        url: "/changeBook?bookId="+bookId+"&description="+bd+"&location="+bl,
         success: function(data) {            //成功后直接移除当前行
-            
+            window.location.reload();
         },
         error: function() {
         }
