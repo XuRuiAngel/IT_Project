@@ -74,4 +74,15 @@ public class book {
     public int getLastBookId(){
         return bookService.getLastBookId();
     }
+
+    @PostMapping("/changeBook")
+    @ResponseBody
+    public String changeBook(@RequestParam("bookId") int bookId,
+                             @RequestParam("description") String description,
+                             @RequestParam("location") String location){
+        int result=bookService.changeBook(bookId,description, location);
+        if(result==1)
+        return "success!";
+        else return "error!";
+    }
 }
