@@ -1,3 +1,4 @@
+var id;
 function searchBook() {
     var key=$('#choose').val();
     var text=$('#keyboard').val();
@@ -88,17 +89,68 @@ function ReadCookie(cookieName)
     return unescape(theCookie.substring(ind+cookieName.length+1,ind1));
 };
 
+function getCookie(cookieName) {
+    //获取所有的cookie "psw=1234we; rememberme=true; user=Annie"
+    var totalCookie = document.cookie;
+    //获取参数所在的位置
+    var cookieStartAt = totalCookie.indexOf(cookieName + "=");
+    //判断参数是否存在 不存在直接返回
+    if (cookieStartAt == -1) {
+        return;
+    }
+    //获取参数值的开始位置
+    var valueStartAt = totalCookie.indexOf("=", cookieStartAt) + 1;
+    //以;来获取参数值的结束位置
+    var valueEndAt = totalCookie.indexOf(";", cookieStartAt);
+    //如果没有;则是最后一位
+    if (valueEndAt == -1) {
+        valueEndAt = totalCookie.length;
+    }
+    //截取参数值的字符串
+    var cookieValue = unescape(totalCookie.substring(valueStartAt, valueEndAt));
+    return cookieValue;
+}
+
+
+function searchInformation() {
+    // var key=$('#id').val();
+    //var ide=request.QueryString("idea");
+    var tele=getCookie("rtele");
+    $.ajax({
+        async: false,
+        type: "GET",
+        url:"getReadByTele?tele="+tele,
+        // data:{},
+        dataType: "JSON",
+        success: function (data) {
+            // var result=JSON.stringify(data);
+            var result=data;
+            //var b=eval("("+a+")");
+
+            //var result=a.result;
+
+            //用一个变量来存储json中的数据
+            //  for (i = 0; i < result.length; i++) { //用for循环遍历数组将数据存入html变量中
+
+            id=result.id;
+        }
+
+    })
+}
+
+
+
 
 $('#tbody').on('click','.reserve', function () {
     // window.location.reload();
-    var ide=ReadCookie("rtele");
-    trIndex = $('.reserve', '#tbody').index($(this));
-    addEnter = false;
+    // var ide=ReadCookie("rtele");
+    // trIndex = $('.reserve', '#tbody').index($(this));
+    // addEnter = false;
     var bookId = $(this).parents().children("th:eq(0)").text();
     // var $tr = $(this).parents('tr');
     $.ajax({
         type: "post",
-        url: "/addReservation?userId="+ide+"&bookId="+bookId,
+        url: "/addReservation?userId="+id+"&bookId="+bookId,
         success: function(data) {            //成功后直接移除当前行
             // $tr.remove();
             alert("success！");

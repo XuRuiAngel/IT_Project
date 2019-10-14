@@ -28,9 +28,10 @@ body
 }
 
 *{margin:0;padding:0;}
-input,select{font-size:12px;vertical-align:middle;}
+input{font-size:23px;vertical-align:middle;cursor:pointer;letter-spacing: 2px;}
+select{font-size:13px;vertical-align:middle;cursor:pointer;}
 body div{text-align:left;}
-textarea,input{word-wrap:break-word;word-break:break-all;padding:0px;}
+textarea,input{word-wrap:break-word;word-break:break-all;padding:0px;background-color: orange;color:white;border-radius: 4px;border-color: white}
 li{list-style-type:none;}
 img{border:0 none;}
 a{text-decoration:none;color:#333; }
