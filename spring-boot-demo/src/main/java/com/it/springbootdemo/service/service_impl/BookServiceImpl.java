@@ -72,5 +72,11 @@ public class BookServiceImpl implements BookService {
         return bookMapper.getLastBookId();
     }
 
+    @Override
+    public int changeBook(int bookId, String description, String location) {
+        bookMapper.changeBook(bookId,description,location);
+        return 1;
+    }
+
 
 }

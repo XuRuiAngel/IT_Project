@@ -33,4 +33,7 @@ public interface BookMapper {
 
     @Select("select max(bookId) from book")
     int getLastBookId();
+
+    @Update("update book set description=#{description}, location=#{location} where bookId=#{bookId}")
+    void changeBook(@Param("bookId") int bookId,@Param("description") String description,@Param("location") String location);
 }
