@@ -166,7 +166,7 @@ public class UserServiceImpl implements UserService {
             return 0;
         }
         else {
-            userMapper.editLibrarians(username,id,tele,e_mail);
+            userMapper.editReaders(username,id,tele,e_mail);
             return 1;
         }
 

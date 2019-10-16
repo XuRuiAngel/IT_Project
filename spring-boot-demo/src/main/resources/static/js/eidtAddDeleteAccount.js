@@ -94,7 +94,7 @@ function editReaders(){
     var e_mail=$('#e_mail').val();
     $.ajax({
         type:"POST",
-        url:"/editLibrarians?username="+username+"&id="+id+"&tele="+tele+"&e_mail="+e_mail,
+        url:"/editReaders?username="+username+"&id="+id+"&tele="+tele+"&e_mail="+e_mail,
         data:{},
         dataType:"String",
         async:false,
