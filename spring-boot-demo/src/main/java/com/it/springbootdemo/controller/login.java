@@ -92,6 +92,12 @@ public class login {
          return userService.getLibrarians();
      }
 
+    @GetMapping("/getReaders")
+    @ResponseBody
+    public JSONObject getReaders(){
+        return userService.getReaders();
+    }
+
 
     @PostMapping("/editLibrarians")
     @ResponseBody
@@ -105,6 +111,21 @@ public class login {
        }
        else return "success";
      }
+
+    @PostMapping("/editReaders")
+    @ResponseBody
+    public String editReaders(@RequestParam("username") String username,
+                                 @RequestParam("id") int id,
+                                 @RequestParam("tele")String tele,
+                                 @RequestParam("e_mail") String e_mail){
+        int result= userService.editReaders(username,id,tele,e_mail);
+        if(result==0){
+            return "The account already exists!Fails!";
+        }
+        else return "success";
+    }
+
+
 
      @PostMapping("/changePassword")
      @ResponseBody
@@ -123,6 +144,13 @@ public class login {
     @ResponseBody
     public void deleteLibrarians(@RequestParam("id") int id){
        userService.deleteLibrarians(id);
+
+    }
+
+    @PostMapping("/deleteReaders")
+    @ResponseBody
+    public void deleteReaders(@RequestParam("id") int id){
+        userService.deleteReaders(id);
 
     }
 
