@@ -42,7 +42,7 @@ function returnBook(recordId){
         type:"POST",
         url:"/returnBook?recordId="+recordId,
         data:{},
-        dataType:"String",
+        dataType:"text",
         async:false,
         success:function(msg) {
 
