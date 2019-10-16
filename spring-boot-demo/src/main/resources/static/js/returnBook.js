@@ -45,7 +45,7 @@ function returnBook(recordId){
         async:false,
         success:function(msg) {
 
-        window.location.href="RReturnBook";
+        window.location.href="ReturnBook";
 
           alert(msg);
         }
