@@ -14,7 +14,7 @@
     <script src="../static/js/bootbox.min.js"></script>
 
 </head>
-<body onload="getLibrarians()">
+<body onload="getReaders()">
 <div class="box">
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
@@ -82,7 +82,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
-                            <button id="add_btn" type="button" class="btn btn-secondary" onclick="editLibrarians()">submit</button>
+                            <button id="add_btn" type="button" class="btn btn-secondary" onclick="editReaders()">submit</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +96,7 @@
                 <th>Reader ID</th>
                 <th>Reader Phone Number</th>
                 <th>Email Address</th>
+                <th>Balance</th>
                 <th>Operation</th>
             </tr>
             </thead>

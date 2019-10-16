@@ -82,7 +82,7 @@ var methods = {
             if (noRepeat) {
             $.ajax({
                     type:"POST",
-                    url:"/registReader?username="+username+"&tele="+tele+"&e_mail="+e_mail+"&balance=400",
+                    url:"/registLibrarian?username="+username+"&tele="+tele+"&e_mail="+e_mail,
                     async:false,
                      data:{},
                     dataType:"JSON",

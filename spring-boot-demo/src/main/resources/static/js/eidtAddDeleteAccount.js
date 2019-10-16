@@ -45,20 +45,21 @@ function getReaders(){
             var a=JSON.stringify(data);
             var b=eval("("+a+")");
             var result=b.result;
-
             for(var i=0;i<result.length;i++){
                 var username=result[i].username;
                 var id=result[i].id;
                 var tele=result[i].tele;
                 var e_mail=result[i].e_mail;
-                var html=           " <tr id='"+id+"' onclick='getRid(this.id)'>\n"+
+                var balance= result[i].balance;
+                var html=           " <tr >\n"+
                     " <td>"+username+"</td>\n"+
                     " <td>"+id+"</td>\n"+
                     "    <td>"+tele+"</td>\n"+
                     "  <td>"+e_mail+"</td>\n"+
+                    "  <td>"+balance+"</td>\n"+
                     "    <td>\n"+
                     "   <a href='#' class='edit'>Edit</a>\n"+
-                    " <a href='#' class='del'>Delete</a>\n"+
+                    " <a id='"+id+" ' onclick='getRid(this.id)' href='#' class='del'>Delete</a>\n"+
                     " </td>\n"+
                     "  </tr>\n";
                 document.getElementById("show_tbody").innerHTML = document.getElementById("show_tbody").innerHTML + html;
@@ -94,7 +95,7 @@ function editReaders(){
     var e_mail=$('#e_mail').val();
     $.ajax({
         type:"POST",
-        url:"/editReaders?username="+username+"&id="+id+"&tele="+tele+"&e_mail="+e_mail,
+        url:"/editReaders?username="+username+"&id="+id+"&tele="+tele+"&e_mail="+e_mail+"&balance=400",
         data:{},
         dataType:"String",
         async:false,
