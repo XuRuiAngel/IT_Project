@@ -22,6 +22,7 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public int borrowBook(int bookId, int id) {
+
         int result=recordMapper.getBookOrder(bookId);
 
         if(result==0){
