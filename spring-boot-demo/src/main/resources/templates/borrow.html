@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min1.css"/>
+    <link rel="stylesheet" type ="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../static/js/233.js"></script>
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootbox.min.js"></script>
+
+</head>
+<body  onload="borrow()">
+<div class="box">
+    <div class="title">Librarian view all records</div>
+    <div class="content">
+        <!--表格列表-->
+        <table id="tb" class="table">
+            <tr>
+                <th>RecordID</th>
+                <th>UserID</th>
+                <th>BookID</th>
+                <th>BorrowTime</th>
+                <th>ReturnTime</th>
+                <th>fine</th>
+            <tbody id="show_tbody">
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+<script>
+
+function borrow() {
+    $.ajax({
+        async: false,
+        type: "GET",
+        // data:{},
+        url:"/getRecord",
+        dataType: "JSON",
+        success: function (data) {
+            var a=JSON.stringify(data);
+            var b=eval("("+a+")");
+            var result=b.result;
+            for (i = 0; i < result.length; i++) {
+                var recordId=result[i].recordId;
+                var userId=result[i].userId;
+                var bookid=result[i].bookId;
+                var borrowTime=result[i].borrowTime;
+                var returnTime=result[i].returnTime;
+                var fine=result[i].fine;
+                var html = "\t<th>"+recordId+"</th>\n" +
+                    "\t\t\t<th>"+userId+"</th>\n" +
+                    "\t\t\t<th>"+bookid+"</th>\n" +
+                    "\t\t\t<th>"+borrowTime+"</th>\n" +
+                    "\t\t\t<th>"+returnTime+"</th>\n" +
+                    "\t\t\t<th>"+fine+"</th>";
+                document.getElementById("show_tbody").innerHTML =document.getElementById("show_tbody").innerHTML+ html;
+            }
+
+        }
+
+    })
+}
+</script>
+</html>

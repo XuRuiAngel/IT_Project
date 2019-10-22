@@ -1,0 +1,33 @@
+
+function borrow() {
+alert("12332");
+    $.ajax({
+        async: false,
+        type: "GET",
+        // data:{},
+        url:"/getRecord",
+        dataType: "JSON",
+        success: function (data) {
+            var a=JSON.stringify(data);
+            var b=eval("("+a+")");
+            var result=b.result;
+            for (i = 0; i < result.length; i++) {
+                var recordId=result[i].recordId;
+                var userId=result[i].userId;
+                var bookid=result[i].bookId;
+                var borrowTime=result[i].borrowTime;
+                var returnTime=result[i].returnTime;
+                var fine=result[i].fine;
+                var html = "\t<th>"+recordId+"</th>\n" +
+                    "\t\t\t<th>"+userId+"</th>\n" +
+                    "\t\t\t<th>"+bookid+"</th>\n" +
+                    "\t\t\t<th>"+borrowTime+"</th>\n" +
+                    "\t\t\t<th>"+returnTime+"</th>\n" +
+                    "\t\t\t<th>"+fine+"</th>";
+                document.getElementById("show_tbody").innerHTML =document.getElementById("show_tbody").innerHTML+ html;
+            }
+
+        }
+
+    })
+}
