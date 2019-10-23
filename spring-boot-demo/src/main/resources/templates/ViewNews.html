@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>View News</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min1.css">
+
+    <script src="../static/js/jquery.min1.js"></script>
+    <script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootbox.min.js"></script>
+
+</head>
+<body>
+
+<div class="box">
+    <div class="title"></div>
+    <div class="content">
+        <!--搜索输入框及查询、重置按钮-->
+        <div class="container content_width">
+            <div class="person_search">
+                <div class="search_input">
+                    <div class="input-group mb-3">
+                        <span>NewsId：</span>
+                        <input id="Ktext" type="text" class="form-control" placeholder="Please input NewsId">
+                    </div>
+                </div>
+                <div class="search_input">
+                    <div class="input-group mb-3" hidden>
+                        <span>Title：</span>
+                        <input id="job_num" type="text" class="form-control" placeholder="Please input Title">
+                    </div>
+                </div>
+                <div class="search_input">
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn">search</button>
+                    <button class="btn btn-primary search_btn" type="button" id="back_btn">reset</button>
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+        <!--添加按钮及bootstrap的模态框-->
+        <div class="export">
+            <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
+<!--                <img src="../static/images/add_two.png">-->
+<!--                <span>add</span>-->
+            </button>
+            <div class="modal fade" id="renyuan">
+                <div class="modal-dialog modal-lg modal_position">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">add</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="xztb" class="table">
+                                <!--新修改弹窗的样式-->
+                                <tbody>
+                                <tr>
+                                    <td class="tb_bg"><label for=""><font style="font-size: 14px; color: red;">*</font>NewsId</label>
+                                    </td>
+                                    <td><input class="userName" type="text" placeholder="Please input NewsId"></td>
+                                    <td class="tb_bg"><label for=""><font style="font-size: 14px; color: red;">*</font>Title</label>
+                                    </td>
+                                    <td><input class="jobNum" type="text" placeholder="Please input Title"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_bg"><label for=""><font style="font-size: 14px; color: red;">*</font>Content</label>
+                                    </td>
+                                    <td><input class="phoneNum" type="text" placeholder="Please input Content"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                            <button id="add_btn" type="button" class="btn btn-secondary">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--表格列表-->
+        <table id="tb" class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+            </tr>
+            </thead>
+            <tbody id="show_tbody">
+            </tbody>
+        </table>
+        <div id="pagerDiv"></div>
+    </div>
+</div>
+
+
+<script src="../static/js/changenews.js"></script>
+<script src="../static/js/viewNews.js"></script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    <p>Copyright 2018 Northwestern Polytechnical University All Rights Reserved</p>
+</div>
+</body>
+</html>
