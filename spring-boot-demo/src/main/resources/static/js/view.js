@@ -86,6 +86,7 @@ function viewHistory() {
                 var borrowTime=result[i].borrowTime;
                 var returnTime=result[i].returnTime;
                 var fine=result[i].fine;
+                if(fine==-1) fine="not return";
                 var html = "\t<th>"+recordId+"</th>\n" +
                     "\t\t\t<th>"+userId+"</th>\n" +
                     "\t\t\t<th>"+bookid+"</th>\n" +
