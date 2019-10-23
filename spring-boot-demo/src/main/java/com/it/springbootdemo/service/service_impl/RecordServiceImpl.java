@@ -178,7 +178,7 @@ public class RecordServiceImpl implements RecordService {
         {
             int recordId=record.getRecordId();
             double fine=recordMapper.getFineByRecordId(recordId);
-            if(fine!=-1) continue;;
+            if(fine!=-1) continue;
             double perid=recordMapper.getPeriod();
             int num;
             String borrowTime=recordMapper.getBorrowTime(recordId);

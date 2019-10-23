@@ -38,8 +38,7 @@ public interface RecordMapper {
     @Select("select fine from changes")
     double getFine();
 
-    @Select("select fine from Record where recordId=#{recordId}")
-    double getFineByRecordId();
+
 
     @Select("select period from changes")
     double getPeriod();
