@@ -6,23 +6,23 @@
 <link href="../static/css/base.css" type="text/css" rel="stylesheet" />
 <!--	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">-->
 
-<style type="text/css">
-/* search */
-.search{border:2px solid #f58400;height:35px;margin:40px auto 0 auto;width:525px;margin-left:-1100px;}
-/*.search select{display:none;}*/
-.search .select_box{font-size:12px;color:#999999;width:100px;line-height:35px;float:left;position:relative;}
-.search .select_showbox{height:35px;background:url(../static/images/search_ico.png) no-repeat 80px center;text-indent:1.5em;}
-.search .select_showbox.active{background:url(../static/images/search_ico_hover.png) no-repeat 80px center;}
-.search .select_option{border:2px solid #f58400;border-top:none;display:none;left:-2px;top:35px;position:absolute;z-index:99;background:#fff;}
-.search .select_option li{text-indent:1.5em;width:90px;cursor:pointer;}
-.search .select_option li.selected{background-color:#F3F3F3;color:#999;}
-.search .select_option li.hover{background:#BEBEBE;color:#fff;}
+	<style type="text/css">
+		/* search */
+		.search{border:2px solid white;height:40px;margin:40px auto 0 auto;width:600px;margin-left:-850px;border-radius:4px;}
+		/*.search select{display:none;}*/
+		.search .select_box{font-size:12px;color:#999999;width:100px;line-height:35px;float:left;position:relative;}
+		.search .select_showbox{height:35px;background:url(../static/images/search_ico.png) no-repeat 80px center;text-indent:1.5em;}
+		.search .select_showbox.active{background:url(../static/images/search_ico_hover.png) no-repeat 80px center;}
+		.search .select_option{border:2px solid #f58400;border-top:none;display:none;left:-2px;top:35px;position:absolute;z-index:99;background:#fff;}
+		.search .select_option li{text-indent:1.5em;width:90px;cursor:pointer;}
+		.search .select_option li.selected{background-color:#F3F3F3;color:#999;}
+		.search .select_option li.hover{background:#BEBEBE;color:#fff;}
 
-.search input.inp_srh,.search input.btn_srh{border:none;background:none;height:35px;line-height:35px;float:left;color:white;margin-bottom: 30px;}
-.search input.inp_srh{outline:none;width:365px;}
-.search input.btn_srh{background:#f58400;color:#FFF;font-family:"微软雅黑";font-size:15px;width:60px;}
-	#choose{ width:99.5px;height: 36px;color: white;background-color:#F58400;float: left;text-align: center;border-color:#F58400;border-width:inherit}
-</style>
+		.search input.inp_srh,.search input.btn_srh{border:none;background:none;height:40px;line-height:35px;float:left;color:white;margin-bottom: 30px;}
+		.search input.inp_srh{outline:none;width:400px;}
+		.search input.btn_srh{background:#f58400;color:#FFF;font-size:20px;width:100px;}
+		#choose{ width:100px; height:40px; color:white;background-color:#F58400;float: left;text-align: center;border-color:white;border-radius:2px; border-width:inherit;}
+	</style>
 
 </head>
 
@@ -33,8 +33,8 @@
 <br><br>
 <img src="../static/images/logo1.png" id="mandarinlogo" width="300">
     <div id="log_in_button">
-		<a href="ALogin"><input type="button" value="  AdminLogin   "/></a> <br><br><br>
-		<a href="RLLogin"> <input type="button" value="       Login       "/></a>
+
+		<a href="RLLogin"> <input type="button" value="       Login       " style="margin-left:200px;margin-top:-150px;"/></a>
 
 <!--<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>-->
 <br><br>
@@ -43,7 +43,7 @@
 
 <br><br>
 <div class="search radius6">
-	<form id="iform">
+	<form onsubmit="return false" id="iform" method="post">
 <!--
 		<input name='ecmsfrom' type='hidden' value="9">
 		<input type="hidden" name="show" value="title,newstext">
@@ -60,24 +60,21 @@
 
 	</form>
 </div>
-
-
-	<div class="mainDiv">
-		<table class="table" width="50%">
-			<th width="100">BookId</th>
-			<th width="150">ISBN</th>
-			<th width="100">Price</th>
-			<th width="200">Location</th>
-			<th width="200">BookName</th>
-			<th width="200">Author</th>
-			<th width="300">Description</th>
-			<th width="150">status</th>
-			<tbody id="tbody">
-            </tbody>
-		</table>
-		<div id="pagerDiv"></div>
-	</div>
-
+		<div class="mainDiv">
+			<table class="table" width="50%">
+				<th width="100">BookId</th>
+				<th width="150">ISBN</th>
+				<th width="100">Price</th>
+				<th width="200">Location</th>
+				<th width="200">BookName</th>
+				<th width="200">Author</th>
+				<th width="300">Description</th>
+				<th width="150">Status</th>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+			<div id="pagerDiv"></div>
+		</div>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class=news>
@@ -95,13 +92,11 @@
 
 </div>
 
+
 <br><br><br><br><br><br>
-<footer>
-	<p style="text-align:center">Posted by: SPM Group B3. All Rights Reserved.</p>
-</footer>
 </body>
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
 <script src="../static/js/getnewsdata.js"></script>
 <script src="../static/js/pager.js"></script>
 <script type="text/javascript" src="../static/js/shua2.js"></script>
-</html>
+ </html>
