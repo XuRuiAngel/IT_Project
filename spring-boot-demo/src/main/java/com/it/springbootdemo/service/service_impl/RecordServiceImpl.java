@@ -215,4 +215,10 @@ public class RecordServiceImpl implements RecordService {
     public void addIncome(String time, int type, double money) {
                 recordMapper.addIncome(time,type,money);
     }
+
+    @Override
+    public int getRecordIdByBookId(int bookId) {
+        return recordMapper.getRecordIdByBookId(bookId);
+
+    }
 }

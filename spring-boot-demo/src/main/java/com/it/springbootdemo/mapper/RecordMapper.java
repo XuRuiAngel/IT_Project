@@ -86,4 +86,7 @@ public interface RecordMapper {
     void addIncome(@Param("time")String time,
                    @Param("type")int type,
                    @Param("money")double money);
+
+    @Select("select recordId from Record where fine=-1 AND bookId=#{bookId}")
+    int getRecordIdByBookId(@Param("bookId") int bookId);
 }

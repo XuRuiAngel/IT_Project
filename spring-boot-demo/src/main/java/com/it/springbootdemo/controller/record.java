@@ -39,6 +39,14 @@ public class record {
              return "success!";
     }
 
+    @PostMapping("/returnBookByBookId")
+    @ResponseBody
+    public String returnBookByBookId(@RequestParam("bookId") int bookId){
+        int recordId=recordService.getRecordIdByBookId(bookId);
+        recordService.returnBook(recordId);
+        return "success!";
+    }
+
 
 
     @GetMapping("/getRecordByTele")

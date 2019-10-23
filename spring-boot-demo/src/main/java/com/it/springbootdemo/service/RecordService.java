@@ -23,4 +23,6 @@ public interface RecordService {
     public void tipEmail();
 
     public void addIncome(String time,int type,double money);
+
+    public int getRecordIdByBookId(int bookId);
 }
