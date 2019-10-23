@@ -176,7 +176,9 @@ public class RecordServiceImpl implements RecordService {
         records=recordMapper.getRecord();
         for(Record record:records)
         {
+
             int recordId=record.getRecordId();
+            recordMapper
             double perid=recordMapper.getPeriod();
             int num;
             String borrowTime=recordMapper.getBorrowTime(recordId);
