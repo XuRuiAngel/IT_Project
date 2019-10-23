@@ -70,4 +70,9 @@ public interface RecordMapper {
     void changeBalance(@Param("userId")int userId,
                        @Param("balance") double balance);
 
+    @Select("select e_mail from user where id=#{userId}")
+    String getEmail(@Param("userId") int userId);
+
+    @Select("select bookName from book where bookId=#{bookId}")
+    String getBookName(@Param("bookId") int bookId);
 }
