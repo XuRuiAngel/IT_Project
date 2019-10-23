@@ -54,4 +54,20 @@ public interface RecordMapper {
     List<Record> getRecord();
 
 
+    @Select("select userId from Record where recordId=#{recordId}")
+    int getUserIdByRecordId(@Param("recordId") int recordId);
+
+    @Select("select balance from user where id=#{userId}")
+    int getBalance(@Param("userId") int userId);
+
+    @Select("select fine from Record where recordId=#{recordId}")
+    int getFineByRecordId(@Param("recordId") int recordId);
+
+    @Update("update record set flag=1 where recordId=#{recordId}")
+    void payFine(@Param("recordId")int recordId);
+
+    @Update("update user set balance=#{balance} where id={userId}")
+    void changeBalance(@Param("userId")int userId,
+                       @Param("balance") double balance);
+
 }
