@@ -24,7 +24,7 @@
                 <div class="search_input">
                     <div class="input-group mb-3">
                         <span>Book ID</span>
-                        <input id="readerId" type="text" class="form-control" placeholder="Type the reader's id here">
+                        <input type="text" oninput="OnInput (event)" onpropertychange="OnPropChanged (event)" id="ei" class="form-control" placeholder="Type the reader's id here">
                     </div>
                 </div>
                 <div class="search_input">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn" onclick="searchRecord()">search</button>
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn" onclick="document.getElementById('ei').value='' ">clear</button>
                 </div>
             </div>
             <div class="line"></div>

@@ -1,18 +1,18 @@
-function checkTime(i) {
-if (i<10)
-{i="0"+i}
-return i
-}
-</script> 
-<script type="text/javascript"> 
-var d = new Date() //新建一个Date对象 
-var year = d.getFullYear() //获取年份 
-var month = d.getMonth()+1 //获取月份 
-var day = d.getDate() //获取日期 
-var hour = d.getHours() //获取小时 
-var min = d.getMinutes() //获取分钟 
-var sec = d.getSeconds() //获取秒数 
-document.write(year+"-"+month+"-"+day+" "+checkTime(hour)+":"+checkTime(min)+":"+checkTime(sec)) 
+<html>
+<body>
+<script type="text/javascript">
+    // Firefox, Google Chrome, Opera, Safari, Internet Explorer from version 9
+    function OnInput (event) {
+        if(event.target.value.length==8)alert(document.getElementById("ei").value);
+    }
+    // Internet Explorer
+    function OnPropChanged (event) {
+        if (event.propertyName.toLowerCase () == "value") {
+            alert ("The new content: " + event.srcElement.value);
+        }
+    }
 </script>
+<input type="text" oninput="OnInput (event)" onpropertychange="OnPropChanged (event)" id="ei" />
+
 </body>
 </html>

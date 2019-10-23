@@ -94,3 +94,13 @@ function getRecord(){
              }
          })
 }
+
+function OnInput (event) {
+    if(event.target.value.length==8)alert(document.getElementById("ei").value);
+}
+// Internet Explorer
+function OnPropChanged (event) {
+    if (event.propertyName.toLowerCase () == "value") {
+        alert ("The new content: " + event.srcElement.value);
+    }
+}
