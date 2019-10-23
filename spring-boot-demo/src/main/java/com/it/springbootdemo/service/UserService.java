@@ -36,4 +36,6 @@ public interface UserService {
 
     public JSONObject getReadByTele(String tele);
 
+    public double getDeposit();
+
 }

@@ -19,4 +19,8 @@ public interface BookService {
     public int getLastBookId();
 
     public int changeBook(int bookId,String description,String location);
+
+    public int addDeletionReacord(int bookId,int userId,String reason);
+
+    public JSONObject  getDeletionRecord();
 }

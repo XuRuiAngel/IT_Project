@@ -93,6 +93,7 @@ public class RecordServiceImpl implements RecordService {
             result.put("borrowTime",record.getBorrowTime());
             result.put("returnTime",record.getReturnTime());
             result.put("fine",record.getFine());
+            result.put("flag",record.getFlag());
             jsonArray.add(result);
 
         }

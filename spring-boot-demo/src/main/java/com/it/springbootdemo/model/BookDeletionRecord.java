@@ -7,11 +7,13 @@ public class BookDeletionRecord {
     private int BookId;
     private String time;
     private int UserId;
+    private String reason;
 
-    public BookDeletionRecord(int bookId, String time, int userId) {
+    public BookDeletionRecord(int bookId,int userId,String time,String reason) {
         this.BookId = bookId;
         this.time = time;
         this.UserId = userId;
+        this.reason=reason;
     }
 
     public int getUserId() {
@@ -25,6 +27,8 @@ public class BookDeletionRecord {
     public String getTime() {
         return this.time;
     }
+
+    public String getReason(){return this.reason;}
 
     @Override
     public String toString() {
