@@ -59,6 +59,11 @@ public interface UserMapper {
                         @Param("e_mail") String e_mail);
 
 
+    @Update("update user set username=#{username} ,e_mail=#{e_mail} where id=#{id}")
+    void editInformation(@Param("username") String username,
+                        @Param("id") int id,
+                        @Param("e_mail") String e_mail);
+
     @Delete("delete from user where id=#{id}")
     void deleteReaders(@Param("id") int id);
 
@@ -76,4 +81,6 @@ public interface UserMapper {
     void addIncome(@Param("time")String time,
                    @Param("type")int type,
                    @Param("money")double money);
+
+
 }

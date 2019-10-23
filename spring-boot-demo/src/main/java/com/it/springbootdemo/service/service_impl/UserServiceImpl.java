@@ -215,4 +215,10 @@ public class UserServiceImpl implements UserService {
        return userMapper.getDeposit();
 
     }
+
+    @Override
+    public int editInformation(String username, int id, String e_mail) {
+        userMapper.editInformation(username,id,e_mail);
+        return 0;
+    }
 }

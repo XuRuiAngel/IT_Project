@@ -40,4 +40,6 @@ public interface UserService {
 
     public double getDeposit();
 
+    public int editInformation(String username,int id,String e_mail);
+
 }
