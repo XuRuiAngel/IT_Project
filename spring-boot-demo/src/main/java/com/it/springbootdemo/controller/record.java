@@ -59,8 +59,15 @@ public class record {
     {
         int result=recordService.payFine(recordId);
         if(result==0) return "Insufficient Balance";
-        else return "success!";
+        else if(result==1) return "success!";
+        else return "Fine has been paid!";
 
+    }
+
+    @GetMapping("/tipEmail")
+    @ResponseBody
+    public void tipEmail(){
+        recordService.tipEmail();
     }
 
 }

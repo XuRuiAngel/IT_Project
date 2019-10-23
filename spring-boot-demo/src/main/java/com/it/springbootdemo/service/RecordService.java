@@ -18,4 +18,6 @@ public interface RecordService {
     public JSONObject getRecord();
 
     public int payFine(int recordId);
+
+    public void tipEmail();
 }

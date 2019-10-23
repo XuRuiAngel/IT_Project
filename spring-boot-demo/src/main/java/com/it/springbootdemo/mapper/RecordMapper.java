@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface RecordMapper {
 
-    @Insert("insert into Record(UserId,bookId,BorrowTime,returnTime,fine) values(#{userId},#{bookId},#{borrowTime},-1,-1)")
+    @Insert("insert into Record(UserId,bookId,BorrowTime,returnTime,fine,flag) values(#{userId},#{bookId},#{borrowTime},-1,-1,0)")
     void borrowBook(@Param("bookId") int bookId, @Param("userId") int userId, @Param("borrowTime") String borrowTime);
 
     @Select("select copyNumbers from book where bookId=#{bookId}")
@@ -63,11 +63,19 @@ public interface RecordMapper {
     @Select("select fine from Record where recordId=#{recordId}")
     int getFineByRecordId(@Param("recordId") int recordId);
 
-    @Update("update record set flag=1 where recordId=#{recordId}")
+    @Update("update Record set flag=1 where recordId=#{recordId}")
     void payFine(@Param("recordId")int recordId);
 
-    @Update("update user set balance=#{balance} where id={userId}")
+    @Select("select flag from Record where recordId=#{recordId}")
+    int getFlag(@Param("recordId")int recordId);
+
+    @Update("update user set balance=#{balance} where id=#{userId}")
     void changeBalance(@Param("userId")int userId,
                        @Param("balance") double balance);
 
+    @Select("select e_mail from user where id=#{userId}")
+    String getEmail(@Param("userId") int userId);
+
+    @Select("select bookName from book where bookId=#{bookId}")
+    String getBookName(@Param("bookId") int bookId);
 }
