@@ -71,6 +71,7 @@ public class Record {
                 ", BorrowTime=" + BorrowTime +
                 ", ReturnTime=" + ReturnTime +
                 ", fine=" + fine +
+                ", flag=" + flag +
                 '}';
     }
 }

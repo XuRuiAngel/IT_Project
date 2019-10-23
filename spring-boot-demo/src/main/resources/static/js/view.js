@@ -87,12 +87,16 @@ function viewHistory() {
                 var returnTime=result[i].returnTime;
                 var fine=result[i].fine;
                 if(fine==-1) fine="not return";
+                var flag=result[i].flag;
+                if(flag==1) flag="not paid";
+                else flag="paid";
                 var html = "\t<th>"+recordId+"</th>\n" +
                     "\t\t\t<th>"+userId+"</th>\n" +
                     "\t\t\t<th>"+bookid+"</th>\n" +
                     "\t\t\t<th>"+borrowTime+"</th>\n" +
                     "\t\t\t<th>"+returnTime+"</th>\n" +
-                    "\t\t\t<th>"+fine+"</th>";
+                    "\t\t\t<th>"+fine+"</th>"+
+                    "\t\t\t<th>"+flag+"</th>";
                 document.getElementById("tbody").innerHTML =document.getElementById("tbody").innerHTML+ html;
             }
 
