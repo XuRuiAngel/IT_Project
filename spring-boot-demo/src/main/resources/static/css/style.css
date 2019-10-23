@@ -3,7 +3,7 @@
 body,h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ol,ul,li,form,table,th,td,a,img,span,strong,var,em,input,textarea,select,option{margin: 0; padding: 0;}
 html,body{font-family:"Microsoft YaHei","SimSun","Arail","Tabhoma";text-align: left;}
 ul,ol{list-style: none;}
-body{background: url("../images/background.jpg");}
+body{background: ;}
 img{border: 0 none;}
 input,select,textarea{outline:0;}
 textarea{resize:none; overflow: auto;}
