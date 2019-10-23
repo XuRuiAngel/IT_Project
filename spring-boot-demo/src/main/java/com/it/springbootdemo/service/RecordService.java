@@ -16,4 +16,6 @@ public interface RecordService {
     public JSONObject getRecordBytele(String tle);
 
     public JSONObject getRecord();
+
+    public int payFine(int recordId);
 }

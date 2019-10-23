@@ -52,4 +52,15 @@ public class record {
         return recordService.getRecord();
 
     }
+
+    @PostMapping("/payFine")
+    @ResponseBody
+    public String payFine(@RequestParam("recordId") int recordId)
+    {
+        int result=recordService.payFine(recordId);
+        if(result==0) return "Insufficient Balance";
+        else return "success!";
+
+    }
+
 }

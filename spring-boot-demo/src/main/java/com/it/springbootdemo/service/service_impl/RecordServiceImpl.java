@@ -117,6 +117,7 @@ public class RecordServiceImpl implements RecordService {
             result.put("borrowTime",record.getBorrowTime());
             result.put("returnTime",record.getReturnTime());
             result.put("fine",record.getFine());
+            result.put("flag",record.getFlag());
             jsonArray.add(result);
 
         }
@@ -139,10 +140,29 @@ public class RecordServiceImpl implements RecordService {
             result.put("borrowTime",record.getBorrowTime());
             result.put("returnTime",record.getReturnTime());
             result.put("fine",record.getFine());
+            result.put("flag",record.getFlag());
             jsonArray.add(result);
         }
         jsonObject.put("result",jsonArray);
 
         return jsonObject;
+    }
+
+    @Override
+    public int payFine(int recordId) {
+        int userId=recordMapper.getUserIdByRecordId(recordId);
+        double balance=recordMapper.getBalance(userId);
+        double fine=recordMapper.getFineByRecordId(recordId);
+        if(fine<=balance)
+        {
+            recordMapper.payFine(recordId);
+            recordMapper.changeBalance(userId,balance-fine);
+            return 1;
+        }
+        else {
+            return 0;
+        }
+
+
     }
 }

@@ -58,6 +58,10 @@ public class Record {
         return this.UserId;
     }
 
+    public int getFlag(){
+        return this.flag;
+    }
+
     @Override
     public String toString() {
         return "Record{" +
