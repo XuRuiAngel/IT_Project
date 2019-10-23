@@ -151,6 +151,8 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public int payFine(int recordId) {
+        int flag=recordMapper.getFlag(recordId);
+        if(flag==1) return 2;
         int userId=recordMapper.getUserIdByRecordId(recordId);
         double balance=recordMapper.getBalance(userId);
         double fine=recordMapper.getFineByRecordId(recordId);
