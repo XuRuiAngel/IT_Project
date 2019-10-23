@@ -64,4 +64,10 @@ public class record {
 
     }
 
+    @GetMapping("/tipEmail")
+    @ResponseBody
+    public void tipEmail(){
+        recordService.tipEmail();
+    }
+
 }

@@ -4,6 +4,7 @@ import com.it.springbootdemo.controller.record;
 import com.it.springbootdemo.mapper.RecordMapper;
 import com.it.springbootdemo.model.Record;
 import com.it.springbootdemo.service.RecordService;
+import com.it.springbootdemo.utils.EmailUtils;
 import com.it.springbootdemo.utils.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -167,5 +168,41 @@ public class RecordServiceImpl implements RecordService {
         }
 
 
+    }
+
+    @Override
+    public void tipEmail() {
+        List<Record> records=null;
+        records=recordMapper.getRecord();
+        for(Record record:records)
+        {
+            int recordId=record.getRecordId();
+            double perid=recordMapper.getPeriod();
+            int num;
+            String borrowTime=recordMapper.getBorrowTime(recordId);
+            TimeUtil timeUtil = new TimeUtil();
+            String nowdate= timeUtil.getFormatDateForFive();
+            int bMonth=((int)borrowTime.charAt(5)-(int)('0'))*10+((int)borrowTime.charAt(6)-(int)('0'));
+            int rMonth=((int)nowdate.charAt(5)-(int)('0'))*10+((int)nowdate.charAt(6)-(int)('0'));
+            int month;
+            if(rMonth>=bMonth){
+                month=rMonth-bMonth;
+            }
+            else month=rMonth+12-bMonth;
+            num=30*month;
+            int bDay=((int)borrowTime.charAt(8)-(int)('0'))*10+((int)borrowTime.charAt(9)-(int)('0'));
+            int rDay=((int)nowdate.charAt(8)-(int)('0'))*10+((int)nowdate.charAt(9)-(int)('0'));
+            int day;
+            if(rDay>=bDay) day=rDay-bDay;
+            else {num-=30;
+                day=rDay+30-bDay;}
+            num+=day;
+            if((num-perid)<=2){
+                String e_mail=recordMapper.getEmail(recordMapper.getUserIdByRecordId(recordId));
+                String bookName=recordMapper.getBookName(recordMapper.getBookId(recordId));
+                String content=bookName+"\nThe book you borrowed is about to expire. Please remember to return it in time to avoid any penalty.";
+                EmailUtils.sendEmail("Tips for book expiration.", e_mail, null, "<h3>"+content+"</h3>", null);
+            }
+        }
     }
 }
