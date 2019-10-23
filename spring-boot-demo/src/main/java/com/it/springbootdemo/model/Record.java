@@ -10,23 +10,26 @@ public class Record {
     private String BorrowTime;
     private String ReturnTime;
     private double fine;
+    public int flag;
 
-    public Record(int recordId, int userId, int bookId, String borrowTime, String returnTime, double fine) {
+    public Record(int recordId, int userId, int bookId, String borrowTime, String returnTime, double fine,int flag) {
         this.RecordId = recordId;
         this.UserId = userId;
         this.BookId = bookId;
         this.BorrowTime = borrowTime;
         this.ReturnTime = returnTime;
         this.fine = fine;
+        this.flag=flag;
     }
 
-    public Record( int userId, int bookId, String borrowTime, String returnTime, double fine) {
+    public Record( int userId, int bookId, String borrowTime, String returnTime, double fine,int flag) {
 
         this.UserId = userId;
         this.BookId = bookId;
         this.BorrowTime = borrowTime;
         this.ReturnTime = returnTime;
         this.fine = fine;
+        this.flag=flag;
     }
 
     
