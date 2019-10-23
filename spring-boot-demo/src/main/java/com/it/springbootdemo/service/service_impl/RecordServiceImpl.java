@@ -159,6 +159,9 @@ public class RecordServiceImpl implements RecordService {
         double fine=recordMapper.getFineByRecordId(recordId);
         if(fine<=balance)
         {
+            TimeUtil timeUtil = new TimeUtil();
+            String nowdate = timeUtil.getFormatDateForFive();
+            recordMapper.addIncome(nowdate,1,fine);
             recordMapper.payFine(recordId);
             recordMapper.changeBalance(userId,balance-fine);
             return 1;
@@ -176,7 +179,9 @@ public class RecordServiceImpl implements RecordService {
         records=recordMapper.getRecord();
         for(Record record:records)
         {
+
             int recordId=record.getRecordId();
+
             double perid=recordMapper.getPeriod();
             int num;
             String borrowTime=recordMapper.getBorrowTime(recordId);
@@ -204,5 +209,16 @@ public class RecordServiceImpl implements RecordService {
                 EmailUtils.sendEmail("Tips for book expiration.", e_mail, null, "<h3>"+content+"</h3>", null);
             }
         }
+    }
+
+    @Override
+    public void addIncome(String time, int type, double money) {
+                recordMapper.addIncome(time,type,money);
+    }
+
+    @Override
+    public int getRecordIdByBookId(int bookId) {
+        return recordMapper.getRecordIdByBookId(bookId);
+
     }
 }

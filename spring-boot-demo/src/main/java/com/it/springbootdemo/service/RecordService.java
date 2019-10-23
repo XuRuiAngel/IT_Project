@@ -11,6 +11,7 @@ public interface RecordService {
 
     public int returnBook(int recordId);
 
+
     public JSONObject getRecordByUserId(int userId);
 
     public JSONObject getRecordBytele(String tle);
@@ -20,4 +21,8 @@ public interface RecordService {
     public int payFine(int recordId);
 
     public void tipEmail();
+
+    public void addIncome(String time,int type,double money);
+
+    public int getRecordIdByBookId(int bookId);
 }

@@ -36,6 +36,10 @@ public interface UserService {
 
     public JSONObject getReadByTele(String tele);
 
+    public void addIncome(String time,int type,double money);
+
     public double getDeposit();
+
+    public int editInformation(String username,int id,String e_mail);
 
 }

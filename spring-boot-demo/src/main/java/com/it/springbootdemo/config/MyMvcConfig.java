@@ -54,6 +54,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/incomeRecord").setViewName("incomeRecord");
 
                 registry.addViewController("/1").setViewName("1");
+                registry.addViewController("/ViewNews").setViewName("ViewNews");
             }
         };
         return adapter;

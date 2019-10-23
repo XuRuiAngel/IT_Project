@@ -206,8 +206,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void addIncome(String time, int type, double money) {
+        userMapper.addIncome(time,type,money);
+    }
+
+    @Override
     public double getDeposit() {
        return userMapper.getDeposit();
 
+    }
+
+    @Override
+    public int editInformation(String username, int id, String e_mail) {
+        userMapper.editInformation(username,id,e_mail);
+        return 0;
     }
 }

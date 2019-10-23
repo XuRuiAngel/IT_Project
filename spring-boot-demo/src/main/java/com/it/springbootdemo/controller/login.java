@@ -1,6 +1,7 @@
 package com.it.springbootdemo.controller;
 
 import com.it.springbootdemo.service.UserService;
+import com.it.springbootdemo.utils.TimeUtil;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -66,7 +67,12 @@ public class login {
                     {
                         return "The account has been registered!";
                     }
-                    else return "success!";
+                    else {
+                        TimeUtil timeUtil = new TimeUtil();
+                        String nowdate = timeUtil.getFormatDateForFive();
+                        userService.addIncome(nowdate,0,deposit);
+                        return "success!";
+                    }
                 }
                 }
 
@@ -163,4 +169,12 @@ public class login {
     }
 
 
+    @PostMapping("/editInformation")
+    @ResponseBody
+    public String editInformation(@RequestParam("username") String username,
+                                  @RequestParam("id")int id,
+                                  @RequestParam("e_mail")String e_mail){
+        userService.editInformation(username,id,e_mail);
+        return "success!";
+    }
 }
