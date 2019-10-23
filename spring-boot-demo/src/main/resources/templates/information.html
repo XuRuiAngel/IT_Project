@@ -2,8 +2,12 @@
 <html><head>
     <meta charset="utf-8">
     <link href="../static/css/information.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/bootstrap.min1.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
     <script src="../static/js/jquery.js"></script>
     <script type="text/javascript" src="../static/js/information.js"></script>
+    <script type="text/javascript" src="../static/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min1.js"></script>
     <title>information</title>
 </head>
 
@@ -38,6 +42,47 @@
             <font class="s-c"> registerdate:</font><input type="text" style="background-color:transparent; border:none; color:white; font-size:30px;" id="registerdate" value="" readonly>
         </div>
     </div>
+    <!--添加按钮及bootstrap的模态框-->
+    <div class="export">
+        <button id="edit" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
+            <span>edit</span>
+        </button>
+        <div class="modal fade" id="renyuan">
+            <div class="modal-dialog modal-lg modal_position">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">edit</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <table id="xztb" class="table">
+                            <!--新修改弹窗的样式-->
+                            <tbody>
+                            <tr>
+                                <td class="tb_bg"><label for=""><font style="font-size: 14px; color: red;">*</font>Name</label>
+                                </td>
+                                <td><input class="userName" type="text" placeholder="Please input Name"></td>
+                                <td class="tb_bg"><label for=""><font style="font-size: 14px; color: red;">*</font>Email</label>
+                                </td>
+                                <td><input class="jobNum" type="text" placeholder="Please input Email"></td>
+                            </tr>
+                            <tr>
+                                <td class="tb_bg"><label for=""><font style="font-size: 14px; color: red;">*</font>Tel</label>
+                                </td>
+                                <td><input class="phoneNum" type="text" placeholder="Please input Tel"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button id="add_btn" type="button" class="btn btn-secondary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>

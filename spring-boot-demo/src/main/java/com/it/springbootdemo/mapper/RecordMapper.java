@@ -63,10 +63,13 @@ public interface RecordMapper {
     @Select("select fine from Record where recordId=#{recordId}")
     int getFineByRecordId(@Param("recordId") int recordId);
 
-    @Update("update record set flag=1 where recordId=#{recordId}")
+    @Update("update Record set flag=1 where recordId=#{recordId}")
     void payFine(@Param("recordId")int recordId);
 
-    @Update("update user set balance=#{balance} where id={userId}")
+    @Select("select flag from Record where recordId=#{recordId}")
+    int getFlag(@Param("recordId")int recordId);
+
+    @Update("update user set balance=#{balance} where id=#{userId}")
     void changeBalance(@Param("userId")int userId,
                        @Param("balance") double balance);
 
