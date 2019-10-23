@@ -152,15 +152,6 @@ var methods = {
             hasNullMes = true;
             return
         }
-        if ($('.phoneNum').val().trim()==='') {
-            bootbox.alert({
-                title: "Warning",
-                message: "Tel shouldn't be empty",
-                closeButton:false
-            })
-            hasNullMes = true;
-            return
-        }
 
     },
 }
