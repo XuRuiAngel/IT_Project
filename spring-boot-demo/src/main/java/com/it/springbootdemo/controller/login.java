@@ -66,7 +66,10 @@ public class login {
                     {
                         return "The account has been registered!";
                     }
-                    else return "success!";
+                    else {
+
+                        return "success!";
+                    }
                 }
                 }
 

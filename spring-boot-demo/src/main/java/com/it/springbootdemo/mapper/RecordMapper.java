@@ -38,6 +38,8 @@ public interface RecordMapper {
     @Select("select fine from changes")
     double getFine();
 
+
+
     @Select("select period from changes")
     double getPeriod();
 
