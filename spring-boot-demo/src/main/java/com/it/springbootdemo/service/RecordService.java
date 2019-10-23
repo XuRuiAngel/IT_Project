@@ -21,4 +21,6 @@ public interface RecordService {
     public int payFine(int recordId);
 
     public void tipEmail();
+
+    public void addIncome(String time,int type,double money);
 }

@@ -71,4 +71,9 @@ public interface UserMapper {
 
     @Select("select deposit from changes")
     double getDeposit();
+
+    @Insert("insert into Income(time,type,money) values(#{time},#{type},#{money})")
+    void addIncome(@Param("time")String time,
+                   @Param("type")int type,
+                   @Param("money")double money);
 }

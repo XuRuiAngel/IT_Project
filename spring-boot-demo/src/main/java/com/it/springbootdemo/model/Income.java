@@ -10,7 +10,7 @@ public class Income {
         this.money=money;
     }
 
-    String getTime(){return this.time;}
-    int getType(){return this.type;}
-    double getMoney(){return this.money;}
+    public  String getTime(){return this.time;}
+    public int getType(){return this.type;}
+    public double getMoney(){return this.money;}
 }

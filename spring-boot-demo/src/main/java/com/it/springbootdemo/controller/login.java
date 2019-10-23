@@ -1,6 +1,7 @@
 package com.it.springbootdemo.controller;
 
 import com.it.springbootdemo.service.UserService;
+import com.it.springbootdemo.utils.TimeUtil;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,7 +68,9 @@ public class login {
                         return "The account has been registered!";
                     }
                     else {
-
+                        TimeUtil timeUtil = new TimeUtil();
+                        String nowdate = timeUtil.getFormatDateForFive();
+                        userService.addIncome(nowdate,0,deposit);
                         return "success!";
                     }
                 }

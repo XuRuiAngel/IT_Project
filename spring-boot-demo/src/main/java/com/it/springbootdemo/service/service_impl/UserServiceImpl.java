@@ -206,6 +206,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void addIncome(String time, int type, double money) {
+        userMapper.addIncome(time,type,money);
+    }
+
+    @Override
     public double getDeposit() {
        return userMapper.getDeposit();
 

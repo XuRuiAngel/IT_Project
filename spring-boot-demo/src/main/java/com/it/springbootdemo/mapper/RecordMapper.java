@@ -80,4 +80,10 @@ public interface RecordMapper {
 
     @Select("select bookName from book where bookId=#{bookId}")
     String getBookName(@Param("bookId") int bookId);
+
+
+    @Insert("insert into Income(time,type,money) values(#{time},#{type},#{money})")
+    void addIncome(@Param("time")String time,
+                   @Param("type")int type,
+                   @Param("money")double money);
 }
