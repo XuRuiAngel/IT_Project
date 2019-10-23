@@ -67,7 +67,7 @@ public class record {
     @GetMapping("/tipEmail")
     @ResponseBody
     public void tipEmail(){
-        RecordService.tipEmail();
+        recordService.tipEmail();
     }
 
 }
