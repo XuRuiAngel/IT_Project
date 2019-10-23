@@ -96,7 +96,22 @@ function getRecord(){
 }
 
 function OnInput (event) {
-    if(event.target.value.length==8)alert(document.getElementById("ei").value);
+    if(event.target.value.length==8){
+        var bookId=$('#ei').val();
+        $.ajax({
+            async : false,
+            type : "POST",
+            url : "/returnBookByBookId?bookId="+bookId,
+            data :{},
+            success : function(data) {
+                alert(data);
+            },
+            error : function(data) {
+                alert("fail");
+            }
+        });
+        location.reload();
+    };
 }
 // Internet Explorer
 function OnPropChanged (event) {
