@@ -68,4 +68,7 @@ public interface UserMapper {
 
     @Select("select * from user where tele=#{tele}")
     List<User> getReadByTele(@Param("tele") String tele);
+
+    @Select("select deposit from changes")
+    double getDeposit();
 }

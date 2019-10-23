@@ -3,7 +3,9 @@ package com.it.springbootdemo.service.service_impl;
 
 import com.it.springbootdemo.mapper.BookMapper;
 import com.it.springbootdemo.model.Book;
+import com.it.springbootdemo.model.BookDeletionRecord;
 import com.it.springbootdemo.service.BookService;
+import com.it.springbootdemo.utils.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +78,34 @@ public class BookServiceImpl implements BookService {
     public int changeBook(int bookId, String description, String location) {
         bookMapper.changeBook(bookId,description,location);
         return 1;
+    }
+
+    @Override
+    public int addDeletionReacord(int bookId, int userId, String reason) {
+        TimeUtil timeUtil = new TimeUtil();
+        String nowdate= timeUtil.getFormatDateForFive();
+        bookMapper.addDeletionReacord(bookId,userId,nowdate,reason);
+        return 0;
+    }
+
+    @Override
+    public JSONObject getDeletionRecord() {
+       List<BookDeletionRecord> bookDeletionRecords=null;
+       bookDeletionRecords= bookMapper.getDeletionRecord();
+        JSONObject jsonObject = new JSONObject();
+        JSONArray jsonArray=new JSONArray();
+        for(BookDeletionRecord bookDeletionRecord:bookDeletionRecords)
+        {
+            JSONObject result=new JSONObject();
+            result.put("bookId",bookDeletionRecord.getBookId());
+            result.put("userId",bookDeletionRecord.getUserId());
+            result.put("time",bookDeletionRecord.getTime());
+            result.put("reason",bookDeletionRecord.getReason());
+            jsonArray.add(result);
+        }
+
+        jsonObject.put("result",jsonArray);
+        return jsonObject;
     }
 
 

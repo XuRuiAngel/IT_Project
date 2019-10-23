@@ -57,8 +57,11 @@ public class book {
 
     @PostMapping("/deleteBook")
     @ResponseBody
-    public String deleteBook(@RequestParam("bookId" ) int bookId){
+    public String deleteBook(@RequestParam("bookId" ) int bookId,
+                             @RequestParam("userId")int userId,
+                             @RequestParam("reason") String reason){
         bookService.deleteBook(bookId);
+        bookService.addDeletionReacord(bookId,userId,reason);
         return "success!";
     }
 
@@ -85,4 +88,11 @@ public class book {
         return "success!";
         else return "error!";
     }
+
+    @GetMapping("/getDeletionRecord")
+    @ResponseBody
+    public JSONObject getDeletionRecord(){
+        return bookService.getDeletionRecord();
+    }
+
 }

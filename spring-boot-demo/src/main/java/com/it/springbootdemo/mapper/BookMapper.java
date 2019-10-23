@@ -2,6 +2,7 @@ package com.it.springbootdemo.mapper;
 
 
 import com.it.springbootdemo.model.Book;
+import com.it.springbootdemo.model.BookDeletionRecord;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -36,4 +37,11 @@ public interface BookMapper {
 
     @Update("update book set description=#{description}, location=#{location} where bookId=#{bookId}")
     void changeBook(@Param("bookId") int bookId,@Param("description") String description,@Param("location") String location);
+
+    @Insert("insert into BookDeletionRecord(BookId,UserId,time,reason) values(#{bookId},#{userId},#{time},#{reason})")
+    void addDeletionReacord(@Param("bookId") int bookId,@Param("userId") int userId,@Param("time")String time,@Param("reason")String reason);
+
+    @Select("select * from BookDeletionRecord")
+    List<BookDeletionRecord> getDeletionRecord();
+
 }

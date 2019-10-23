@@ -204,4 +204,10 @@ public class UserServiceImpl implements UserService {
         jsonObject.put("regitherdate" ,user.getRegisterdate());}
         return jsonObject;
     }
+
+    @Override
+    public double getDeposit() {
+       return userMapper.getDeposit();
+
+    }
 }
