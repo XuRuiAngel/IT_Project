@@ -88,7 +88,7 @@ function viewHistory() {
                 var fine=result[i].fine;
                 if(fine==-1) fine="not return";
                 var flag=result[i].flag;
-                if(flag==1) flag="not paid";
+                if(flag==0) flag="not paid";
                 else flag="paid";
                 var html = "\t<th>"+recordId+"</th>\n" +
                     "\t\t\t<th>"+userId+"</th>\n" +
