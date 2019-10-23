@@ -9,7 +9,7 @@ body
 {
     margin-top:20px;
     height:150px;
-    margin-left:500px;
+    margin-left:800px;
     font-size:30px;
     color:white;
 }
@@ -55,4 +55,16 @@ body
 .registerdate
 {
     padding-bottom: 20px;
+}
+#edit
+{
+    color: white;
+    border-style: hidden;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 650px;
+    margin-top: 20px;
+    background-color: #5695e4;
+    border-radius: 10px;
 }
