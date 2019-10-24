@@ -10,11 +10,12 @@
 
     <script type="text/javascript" src="../static/js/incomeRecord.js"></script>
     <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.4.1.js"></script>
     <script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../static/js/bootbox.min.js"></script>
 
 </head>
-<body  onload="getRecord()">
+<body  onload="getIncomeRecord()">
 <div class="box">
     <div class="title">Libraians use this page to see the income Record</div>
     <div class="content">
@@ -23,8 +24,8 @@
 
                 <div class="search_input">
                     <button class="btn btn-primary search_btn" type="button" id="search_btn" onclick="DailyRecord()">Daily</button>
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn" onclick="MonthlyRecord()">Monthly</button>
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn" onclick="WeeklyRecord()">Weekly</button>
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn1" onclick="MonthlyRecord()">Monthly</button>
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn2" onclick="WeeklyRecord()">Weekly</button>
                 </div>
             </div>
             <div class="line"></div>
@@ -91,11 +92,10 @@
         <table id="tb" class="table">
             <thead>
             <tr>
-                <th>RecordID</th>
-                <th>UserID</th>
-                <th>BookID</th>
-                <th>BorrowTime</th>
-                <th>Opertaion</th>
+                <th>Time</th>
+                <th>Type</th>
+                <th>income</th>
+
             </tr>
             </thead>
             <tbody id="show_tbody">
