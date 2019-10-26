@@ -17,9 +17,9 @@ public interface BookMapper {
     List<Book>  searchBook(@Param("key") String key,@Param("text") String text);
 
     @Insert(
-           "insert into book(price,location,bookname,author,press) values(#{price},#{location},#{bookname},#{author},#{press})"
+           "insert into book(ISBN,price,location,bookname,author,press,description,publishYear,textLanguage,copyNumbers) values(#{ISBN},#{price},#{location},#{bookname},#{author},#{press},#{description},#{publishYear},#{textLanguage},#{copyNumbers})"
     )
-    void insertBookWithoutISBN(@Param("price")String price, @Param("location")String location,@ Param("bookname") String bookname, @Param("author")String author, @Param("press")String press);
+    void insertBookWithoutISBN(@Param("ISBN")String ISBN,@Param("price")String price, @Param("location")String location,@Param("bookname") String bookname, @Param("author")String author, @Param("press")String press, @Param("description")String description, @Param("publishYear")String publishYear, @Param("textLanguage")String textLanguage, @Param("copyNumbers")int copyNumbers);
 
     @Insert(
             "insert into book(ISBN,price,location,bookname,author,press) values(#{ISBN},#{price},#{location},#{bookname},#{author},#{press})"

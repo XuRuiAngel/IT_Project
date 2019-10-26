@@ -1,16 +1,20 @@
 function addBook1(){
-    var num=$("#cpn").val();
-    var bn=$("#bname").val();
-    var ba=$("#bauthor").val();
-    var bp1=$("#bpress").val();
-    var bp=$("#bprice").val();
+    var num=blank($("#cpn").val());
+    var bn=blank($("#bname").val());
+    var ba=blank($("#bauthor").val());
+    var bp1=blank($("#bpress").val());
+    var bp=blank($("#bprice").val());
     var bl=$("#floor option:selected").val()+$("#Shelf option:selected").val();
+    var b=$("#bookCategory option:selected").val();
+    var c="/";
+    var d="/";
+    var a=0;
     tosu();
     for(var i=0;i<num;i++){
         $.ajax({
             async : false,
             type : "GET",
-            url : "/insertBookWithoutISBN?price="+bp+"&location="+bl+"&bookname="+bn+"&author="+ba+"&press="+bp1,
+            url : "/insertBookWithoutISBN?ISBN="+"/"+"&price="+bp+"&location="+bl+"&bookname="+bn+"&author="+ba+"&press="+bp1+"&description="+c+"&publishYear="+d+"&textLanguage="+b+"&copyNumbers="+a,
             data :{},
             success : function(data) {
 
@@ -23,4 +27,14 @@ function addBook1(){
 
 
 
+
+}
+function blank(a)
+{
+    if(a==null){
+        return "/";
+    }
+    else {
+        return a;
+    }
 }
