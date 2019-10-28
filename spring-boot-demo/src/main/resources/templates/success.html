@@ -43,6 +43,7 @@ function createId() {
                 for(var j=0;j<total;j++){
                     str=start+j;
                     barcode = document.getElementById('barcode'+j);
+                    str=("00000000"+str).substr(-8);
                     options = {
                         format: "CODE128",
                         displayValue: true,
@@ -50,6 +51,7 @@ function createId() {
                         height: 100,
                         text:str + "\r\n" + loc
                     };
+
                     JsBarcode(barcode, str, options);
                 }
             },

@@ -10,6 +10,7 @@ function searchBook() {
         data:{},
         dataType: "JSON",
         success: function (data) {
+        $("#tbody").html("");
             var i;
             var a=JSON.stringify(data);
             var b=eval("("+a+")");
