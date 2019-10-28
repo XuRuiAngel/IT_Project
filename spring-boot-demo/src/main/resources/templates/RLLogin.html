@@ -220,7 +220,7 @@ $(".sec_login_error").Validform({
                     <label>Remember the password</label>
                 </div>
                 <div id="Llogin">
-                    <button type="submit" >Login</button>
+                    <button type="submit" onclick="to1()">Login</button>
                 </div>
             </form>
         </div>
@@ -253,6 +253,12 @@ $(".sec_login_error").Validform({
             })
         }
 
+        function to1() //这个是点击login触发的函数
+        {
+
+            var idea=$('#tele').val();
+            SetCookie("tele",idea);
+        }
 </script>
 <div class="bottom"><a href="##################">Return to the home page</a></div>
 <div class="screenbg">
