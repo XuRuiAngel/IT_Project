@@ -12,7 +12,7 @@ public interface BookService {
 
     public JSONObject searchBook(String key,String text);
 
-    public  int insertBookWithoutISBN(String price, String location, String bookname, String author, String press);
+    public  int insertBookWithoutISBN(String ISBN,String price, String location, String bookname, String author, String press, String description, String publishYear, String textLanguage, int copyNumbers);
 
     public  int insertBookWithISBN(String ISBN,String price, String location, String bookname, String author, String press);
 

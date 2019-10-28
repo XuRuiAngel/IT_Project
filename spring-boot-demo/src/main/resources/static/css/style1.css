@@ -136,7 +136,7 @@ label.header span {
 	right:15px;
 	top:0;
 }
-input#bname,input#bauthor,input#bpress,input#bprice,input#bloc,textarea#message {
+input#bname,input#bauthor,input#bpress,input#bprice,input#bloc,input#description,input#PublishYear,textarea#message {
 	font-family: 'Exo 2', sans-serif;
     border: 1px solid #fff;
     color: #fff;
@@ -147,7 +147,7 @@ input#bname,input#bauthor,input#bpress,input#bprice,input#bloc,textarea#message 
     font-weight: normal;
     background-color: rgba(82, 56, 76, 0.15);
 }
-input#bname,input#bauthor,input#bpress,input#bprice,input#bloc {
+input#bname,input#bauthor,input#bpress,input#bprice,input#bloc,input#description,input#PublishYear {
 	height:50px;
 	padding:0 15px;
 	width:71.5%;
@@ -273,7 +273,7 @@ p.copyright a:hover {
 .reset {
 	margin-right:1px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc, textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear, textarea#message {
 	width:70%;
 }
 }
@@ -288,7 +288,7 @@ input#bname, input#bauthor, input#bpress, input#bprice, input#bloc, textarea#mes
 	.reset {
     margin-right: 3px;
 }
-	input#bname, input#bauthor, input#bpress, input#bprice, input#bloc, textarea#message {
+	input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear, textarea#message {
     width: 70.8%;
 }
 }
@@ -312,7 +312,7 @@ label.header {
 label.enquiry {
     width: 232px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,  textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear,  textarea#message {
     width: 70.5%;
 }
 }
@@ -333,7 +333,7 @@ p.header-agileits {
 .content-w3ls {
 	margin:0 auto 50px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,  textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear,  textarea#message {
 	font-size:16px;
 	width:60.8%;
 }
@@ -341,7 +341,7 @@ label.enquiry {
     width: 263px;
 	font-size: 16px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc {
+input#bname, input#bauthor, input#bpress, input#bprice,input#description,input#PublishYear, input#bloc {
     height: 45px;
 }
 .reset {
@@ -388,7 +388,7 @@ label.enquiry {
 label.enquiry span {
 	right:20px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,  textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear,  textarea#message {
 	width:61%;
 }
 }
@@ -400,7 +400,7 @@ label.header {
 label.enquiry {
     width: 213px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,  textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear,  textarea#message {
     width: 60.8%;
 }
 }
@@ -491,7 +491,7 @@ label.enquiry span {
 }
 
 @media (max-width: 640px) {
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc {
+input#bname, input#bauthor, input#bpress, input#bprice,input#description,input#PublishYear, input#bloc {
     font-size: 16px;
     width: 93%;
 	height:40px;
@@ -521,7 +521,7 @@ label.header {
 }
 
 @media (max-width: 568px) {
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc{
+input#bname, input#bauthor, input#bpress, input#bprice,input#description,input#PublishYear, input#bloc{
 	width:52%;	
 }
 label.header {
@@ -536,7 +536,7 @@ label.header {
 label.enquiry span {
     right: -4px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc, textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear, textarea#message {
     width: 92%;
 }
 }
@@ -546,7 +546,7 @@ h1.header-agileits {
     font-size: 30px;
     padding-top: 18px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc {
+input#bname, input#bauthor, input#bpress, input#bprice,input#description,input#PublishYear, input#bloc {
     width: 91.5%;
 }
 label.enquiry {
@@ -581,7 +581,7 @@ label.header,label.enquiry {
 label.enquiry span {
     right: -1px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,  textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear,  textarea#message {
     width: 88%;
 	font-size:15px;
 }
@@ -631,7 +631,7 @@ h1.header-agileits {
 label.header span {
     right: -2px;
 }
-input#bname, input#bauthor, input#bpress, input#bprice, input#bloc, textarea#message {
+input#bname, input#bauthor, input#bpress, input#bprice, input#bloc,input#description,input#PublishYear, textarea#message {
     width: 85%;
     font-size: 14px;
 }
@@ -644,4 +644,4 @@ input#bname, input#bauthor, input#bpress, input#bprice, input#bloc, textarea#mes
 }
 .reset {
     margin-right: 1px;
-}
+}}

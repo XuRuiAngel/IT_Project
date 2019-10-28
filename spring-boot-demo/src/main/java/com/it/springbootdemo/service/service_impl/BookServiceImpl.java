@@ -58,8 +58,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public int insertBookWithoutISBN(String price, String location, String bookname, String author, String press) {
-        bookMapper.insertBookWithoutISBN(price,location,bookname,author,press);
+    public int insertBookWithoutISBN(String ISBN,String price, String location, String bookname, String author, String press, String description, String publishYear, String textLanguage, int copyNumbers) {
+        bookMapper.insertBookWithoutISBN(ISBN,price,location,bookname,author,press,description,publishYear,textLanguage,copyNumbers);
         return 1;
     }
 

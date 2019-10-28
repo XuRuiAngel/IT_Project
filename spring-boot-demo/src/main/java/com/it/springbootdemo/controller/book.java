@@ -3,6 +3,7 @@ package com.it.springbootdemo.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.it.springbootdemo.service.BookService;
 import com.it.springbootdemo.utils.EmailUtils;
+import org.hibernate.validator.constraints.ISBN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework. stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -32,13 +33,18 @@ public class book {
 
     @GetMapping("/insertBookWithoutISBN")
     @ResponseBody
-    public int insertBookWithoutISBN(@RequestParam("price")String price,
+    public int insertBookWithoutISBN(@RequestParam("ISBN") String ISBN,
+                                     @RequestParam("price")String price,
                                      @RequestParam("location")String location,
                                      @RequestParam("bookname") String bookname,
                                      @RequestParam("author")String author,
-                                     @RequestParam("press")String press
+                                     @RequestParam("press")String press,
+                                     @RequestParam("description")String description,
+                                     @RequestParam("publishYear")String publishYear,
+                                     @RequestParam("textLanguage")String textLanguage,
+                                     @RequestParam("copyNumbers")int copyNumbers
                                      ){
-        return bookService.insertBookWithoutISBN(price,location,bookname,author,press);
+        return bookService.insertBookWithoutISBN(ISBN,price,location,bookname,author,press,description,publishYear,textLanguage,copyNumbers);
 
     }
 
