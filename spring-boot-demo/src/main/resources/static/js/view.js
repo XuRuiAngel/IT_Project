@@ -64,7 +64,6 @@ function viewHistory() {
         url:"/getRecordByUserId?userId="+id,
         dataType: "JSON",
         success: function (data) {
-            var total=0;
             var a=JSON.stringify(data);
             var b=eval("("+a+")");
             var result=b.result;
@@ -87,19 +86,10 @@ function viewHistory() {
                 var borrowTime=result[i].borrowTime;
                 var returnTime=result[i].returnTime;
                 var fine=result[i].fine;
+                if(fine==-1) fine="not return";
                 var flag=result[i].flag;
-                if(fine==-1){
-                    flag="not return";
-                    fine="";
-                    returnTime="";
-                }
-                else if(fine==0||flag==1){
-                    flag="paid";
-                }
-                else {
-                    flag="not paid";
-                    total=total+fine;
-                }
+                if(flag==0) flag="not paid";
+                else flag="paid";
                 var html = "\t<th>"+recordId+"</th>\n" +
                     "\t\t\t<th>"+userId+"</th>\n" +
                     "\t\t\t<th>"+bookid+"</th>\n" +
@@ -109,7 +99,6 @@ function viewHistory() {
                     "\t\t\t<th>"+flag+"</th>";
                 document.getElementById("tbody").innerHTML =document.getElementById("tbody").innerHTML+ html;
             }
-            alert("Total amount of fine to pay: "+total);
 
         }
 

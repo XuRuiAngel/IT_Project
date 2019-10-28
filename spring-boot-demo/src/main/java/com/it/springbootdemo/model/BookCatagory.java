@@ -3,16 +3,16 @@ package com.it.springbootdemo.model;
 import org.hibernate.validator.constraints.ISBN;
 
 public class BookCatagory {
-    private int categoryID;
+    private String ISBN;
     private String TypeName;
-    public BookCatagory(int categoryID,String TypeName)
+    public BookCatagory(String ISBN,String TypeName)
     {
-        this.categoryID=categoryID;
+        this.ISBN=ISBN;
         this.TypeName=TypeName;
     }
 
-    public int getCategoryID() {
-        return this.categoryID;
+    public String getISBN() {
+        return this.ISBN;
     }
 
     public String getTypeName() {
