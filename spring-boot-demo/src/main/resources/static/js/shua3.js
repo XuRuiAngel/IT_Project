@@ -1,3 +1,24 @@
+function getCookie(cookieName) {
+    //获取所有的cookie "psw=1234we; rememberme=true; user=Annie"
+    var totalCookie = document.cookie;
+    //获取参数所在的位置
+    var cookieStartAt = totalCookie.indexOf(cookieName + "=");
+    //判断参数是否存在 不存在直接返回
+    if (cookieStartAt == -1) {
+        return;
+    }
+    //获取参数值的开始位置
+    var valueStartAt = totalCookie.indexOf("=", cookieStartAt) + 1;
+    //以;来获取参数值的结束位置
+    var valueEndAt = totalCookie.indexOf(";", cookieStartAt);
+    //如果没有;则是最后一位
+    if (valueEndAt == -1) {
+        valueEndAt = totalCookie.length;
+    }
+    //截取参数值的字符串
+    var cookieValue = unescape(totalCookie.substring(valueStartAt, valueEndAt));
+    return cookieValue;
+}
 function searchBook() {
 
     var key=$('#choose').val();
@@ -80,7 +101,8 @@ $('#tbody').on('click','.del', function () {
     addEnter = false;
     var bookId = parseInt($(this).parents().children("th:eq(0)").text());
     var $tr = $(this).parents('tr');
-    var userId=1334;
+    var userId=getCookie("tele");
+
 
     $('#commit1').click(function () {
         var deletionreason=blank($("#Reason").val());
