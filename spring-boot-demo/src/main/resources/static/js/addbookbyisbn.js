@@ -5,7 +5,7 @@ function addBookByISBN1(){
     var ba=blank($("#bauthor").val());
     var bp1=blank($("#bpress").val());
     var bp=blank($("#bprice").val());
-    var bl=$("#floor option:selected").val()+$("#Shelf option:selected").val();
+    var bl=$("#bookLocation option:selected").val();
     var b=$("#bookCategory option:selected").val();
     var a=0;
     tosu();
@@ -54,6 +54,23 @@ function getbt2() {
             for(var i=0;i<result.length;i++){
                 var btname=result[i].Typename;
                 unitObj.options.add(new Option(btname,btname));
+            }
+        }
+    })
+    $.ajax({
+        type:"GET",
+        url:"/getBookLocation",
+        data:{},
+        dataType:"JSON",
+        async:false,
+        success:function(data) {
+            var unitObj1=document.getElementById("bookLocation"); //页面上的<html:select>元素
+            var a=JSON.stringify(data);
+            var b=eval("("+a+")");
+            var result=b.result;
+            for(var i=0;i<result.length;i++){
+                var btname1="floor"+result[i].FloorNo+"shelf"+result[i].ShelfNo;
+                unitObj1.options.add(new Option(btname1,btname1));
             }
         }
     })

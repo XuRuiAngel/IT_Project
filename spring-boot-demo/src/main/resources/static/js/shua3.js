@@ -124,6 +124,23 @@ $('#tbody').on('click','.del', function () {
 
 $('#tbody').on('click','.edit', function () {
     msgbox(1);
+    $.ajax({
+        type:"GET",
+        url:"/getBookLocation",
+        data:{},
+        dataType:"JSON",
+        async:false,
+        success:function(data) {
+            var unitObj1=document.getElementById("bookLocation"); //页面上的<html:select>元素
+            var a=JSON.stringify(data);
+            var b=eval("("+a+")");
+            var result=b.result;
+            for(var i=0;i<result.length;i++){
+                var btname1="floor"+result[i].FloorNo+"shelf"+result[i].ShelfNo;
+                unitObj1.options.add(new Option(btname1,btname1));
+            }
+        }
+    })
     trIndex = $('.edit', '#tbody').index($(this));
     addEnter = false;
     var bookId = $(this).parents().children("th:eq(0)").text();
@@ -146,7 +163,7 @@ function editbook(bookId) {
 
     var bd=$("#bD").val();
 
-    var bl=$("#floor option:selected").val()+$("#Shelf option:selected").val();
+    var bl=$("#bookLocation option:selected").val();
 
 
     $.ajax({
