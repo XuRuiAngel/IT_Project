@@ -25,9 +25,6 @@ function addBook1(){
         });
     }
 
-
-
-
 }
 function blank(a)
 {
@@ -37,4 +34,25 @@ function blank(a)
     else {
         return a;
     }
+}
+
+function getbt1() {
+
+    $.ajax({
+        type:"GET",
+        url:"/getBookCatagory",
+        data:{},
+        dataType:"JSON",
+        async:false,
+        success:function(data) {
+            var unitObj=document.getElementById("bookCategory"); //页面上的<html:select>元素
+            var a=JSON.stringify(data);
+            var b=eval("("+a+")");
+            var result=b.result;
+            for(var i=0;i<result.length;i++){
+                var btname=result[i].Typename;
+                unitObj.options.add(new Option(btname,btname));
+            }
+        }
+    })
 }
