@@ -102,13 +102,34 @@ $('#tbody').on('click','.del', function () {
     var bookId = parseInt($(this).parents().children("th:eq(0)").text());
     var $tr = $(this).parents('tr');
     var userId=getCookie("tele");
+    var a;
+    $.ajax({
+        async: false,
+        type: "GET",
+        url:"getReadByTele?tele="+userId,
+        // data:{},
+        dataType: "JSON",
+        success: function (data) {
+            // var result=JSON.stringify(data);
+            var result=data;
+            //var b=eval("("+a+")");
 
+            //var result=a.result;
+
+            //用一个变量来存储json中的数据
+            //  for (i = 0; i < result.length; i++) { //用for循环遍历数组将数据存入html变量中
+
+            a=result.id;
+        }
+
+    })
+;
 
     $('#commit1').click(function () {
         var deletionreason=blank($("#Reason").val());
         $.ajax({
             type: "post",
-            url : "/deleteBook?bookId="+bookId+"&userId="+userId+"&reason="+deletionreason,
+            url : "/deleteBook?bookId="+bookId+"&userId="+a+"&reason="+deletionreason,
             success: function() {
                 //成功后直接移除当前行
 
