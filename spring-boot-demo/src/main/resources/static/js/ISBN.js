@@ -17,8 +17,10 @@ $().ready(function(){
 		        // return data
 		document.getElementById('bname').value=data.result.title;
 		document.getElementById('bauthor').value=data.result.author;
-		document.getElementById('bpress').value=data.result.publisher;
+		document.getElementById('bpress').value=data.result.pubdate;
 		document.getElementById('bprice').value=data.result.price;
+
+		console.log(data.result.title);
 
       } ,
       error:function (e) {

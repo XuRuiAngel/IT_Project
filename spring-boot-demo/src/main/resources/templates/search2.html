@@ -5,7 +5,7 @@
 
 <link href="../static/css/base.css" type="text/css" rel="stylesheet" />
 <!--	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">-->
-
+	<link href="../static/css/style2.css" type="text/css" rel="stylesheet" />
 	<style type="text/css">
 		/* search */
 		.search{border:2px solid white;height:40px;margin:40px auto 0 auto;width:600px;margin-left:-850px;border-radius:4px;}
@@ -30,11 +30,17 @@
 <body onload="searchInformation();myFunction()">
 
 <body id="middle">
+<div id="templatemo_menu_wrapper">
+
+    <h>Welcome to Mandarin Library Automation</h>
+
+
+</div>
 <br><br>
 <img src="../static/images/logo1.png" id="mandarinlogo" width="300">
     <div id="log_in_button">
 
-		<a href="RLLogin"> <input type="button" value="       Login       " style="margin-left:200px;margin-top:-150px;"/></a>
+		<a href="RLLogin"> <input type="button"  id="Rll"value="       Login       " style="margin-left:200px;margin-top:-150px;"/></a>
 
 <!--<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>-->
 <br><br>
@@ -85,15 +91,52 @@
         <table id="box"></table>
 
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br>
 <script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
 <!--<script type="text/javascript" src="../static/js/jquery.select.js"></script>-->
 
 
 </div>
+<footer>
+
+	<ul>
+		<li>
+			<p class="home">Home</p>
+			<a class="logo" href="#">Team B3 <i>&copy; 2019</i></a>
+		</li>
+		<li>
+			<p class="services">Services</p>
+
+			<ul>
+				<li><a href="#">Web development</a></li>
+				<li><a href="#">Mobile development</a></li>
+				<li><a href="#">Web &amp; Print Design</a></li>
+			</ul>
+		</li>
+		<li>
+			<p class="reachus">Reach us</p>
+
+			<ul>
+				<li><a href="#">Email</a></li>
+				<li><a href="#">QQ</a></li>
+				<li><a href="#">We Chat</a></li>
+				<li>555-123456789</li>
+			</ul>
+		</li>
+		<li>
+			<p class="clients">Clients</p>
+
+			<ul>
+				<li><a href="#">Login Area</a></li>
+				<li><a href="#">Support Center</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</li>
+	</ul>
+
+</footer>
 
 
-<br><br><br><br><br><br>
 </body>
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
 <script src="../static/js/getnewsdata.js"></script>

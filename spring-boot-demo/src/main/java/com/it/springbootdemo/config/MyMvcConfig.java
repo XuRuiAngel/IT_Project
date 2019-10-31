@@ -52,9 +52,11 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/borrow").setViewName("borrow");
                 registry.addViewController("/fineRecord").setViewName("fineRecord");
                 registry.addViewController("/incomeRecord").setViewName("incomeRecord");
-                registry.addViewController("/viewDeletionRecord").setViewName("viewDeletionRecord");
+                registry.addViewController("/ViewDeletionRecord").setViewName("ViewDeletionRecord");
                 registry.addViewController("/1").setViewName("1");
                 registry.addViewController("/ViewNews").setViewName("ViewNews");
+                registry.addViewController("/booktype").setViewName("booktype");
+                registry.addViewController("/bookLocation").setViewName("bookLocation");
             }
         };
         return adapter;

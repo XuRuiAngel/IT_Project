@@ -59,12 +59,15 @@ body
 #edit
 {
     color: white;
-    border-style: hidden;
+    border-style: solid;
     width: 100px;
     height: 40px;
     font-size: 30px;
-    margin-left: 650px;
     margin-top: 20px;
-    background-color: white;
+    margin-left:500px;
+    background-color: #2b7eb7;
     border-radius: 10px;
+}
+#edit span{
+
 }

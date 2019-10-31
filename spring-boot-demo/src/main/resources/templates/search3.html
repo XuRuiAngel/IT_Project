@@ -1,38 +1,38 @@
 ﻿<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuer</title>
 
-<link href="../static/css/base.css" type="text/css" rel="stylesheet" />
-<!--	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../static/css/base.css" type="text/css" rel="stylesheet" />
+    <!--	<link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">-->
 
-<style type="text/css">
-/* search */
-.search{border:2px solid #f58400;height:35px;margin:40px auto 0 auto;width:525px;margin-left:-900px;}
-/*.search select{display:none;}*/
-.search .select_box{font-size:12px;color:#999999;width:100px;line-height:35px;float:left;position:relative;}
-.search .select_showbox{height:35px;background:url(../static/images/search_ico.png) no-repeat 80px center;text-indent:1.5em;}
-.search .select_showbox.active{background:url(../static/images/search_ico_hover.png) no-repeat 80px center;}
-.search .select_option{border:2px solid #f58400;border-top:none;display:none;left:-2px;top:35px;position:absolute;z-index:99;background:#fff;}
-.search .select_option li{text-indent:1.5em;width:90px;cursor:pointer;}
-.search .select_option li.selected{background-color:#F3F3F3;color:#999;}
-.search .select_option li.hover{background:#BEBEBE;color:#fff;}
+    <style type="text/css">
+        /* search */
+        .search{border:2px solid #f58400;height:35px;margin:40px auto 0 auto;width:525px;margin-left:-900px;}
+        /*.search select{display:none;}*/
+        .search .select_box{font-size:12px;color:#999999;width:100px;line-height:35px;float:left;position:relative;}
+        .search .select_showbox{height:35px;background:url(../static/images/search_ico.png) no-repeat 80px center;text-indent:1.5em;}
+        .search .select_showbox.active{background:url(../static/images/search_ico_hover.png) no-repeat 80px center;}
+        .search .select_option{border:2px solid #f58400;border-top:none;display:none;left:-2px;top:35px;position:absolute;z-index:99;background:#fff;}
+        .search .select_option li{text-indent:1.5em;width:90px;cursor:pointer;}
+        .search .select_option li.selected{background-color:#F3F3F3;color:#999;}
+        .search .select_option li.hover{background:#BEBEBE;color:#fff;}
 
-.search input.inp_srh,.search input.btn_srh{border:none;background:none;height:35px;line-height:35px;float:left;color:white;margin-bottom: 30px;}
-.search input.inp_srh{outline:none;width:365px;}
-.search input.btn_srh{background:#f58400;color:#FFF;font-family:"微软雅黑";font-size:15px;width:60px;}
-	#choose{ width:99.5px;height: 36px;color: white;background-color:#F58400;float: left;text-align: center;border-color:#F58400;border-width:inherit}
-</style>
-<style>
-.box{
-    width:50%; margin-top:10%;  padding:28px;float: right;
-    height:350px; border:1px #111 solid;
-    display:none;            /* 默认对话框隐藏 */
-}
-.box.show{display:block;} 
-.box .x{ font-size:18px; text-align:right; display:block;}
-.box input{width:80%; font-size:18px; margin-top:18px;}
-</style>
+        .search input.inp_srh,.search input.btn_srh{border:none;background:none;height:35px;line-height:35px;float:left;color:white;margin-bottom: 30px;}
+        .search input.inp_srh{outline:none;width:365px;}
+        .search input.btn_srh{background:#f58400;color:#FFF;font-family:"微软雅黑";font-size:15px;width:60px;}
+        #choose{ width:99.5px;height: 36px;color: white;background-color:#F58400;float: left;text-align: center;border-color:#F58400;border-width:inherit}
+    </style>
+    <style>
+        .box{
+            width:50%; margin-top:10%;  padding:28px;float: right;
+            height:350px; border:1px #111 solid;
+            display:none;            /* 默认对话框隐藏 */
+        }
+        .box.show{display:block;}
+        .box .x{ font-size:18px; text-align:right; display:block;}
+        .box input{width:80%; font-size:18px; margin-top:18px;}
+    </style>
 </head>
 
 
@@ -41,101 +41,96 @@
 <body id="middle">
 <br><br>
 <img src="../static/images/logo1.png" id="mandarinlogo" width="300">
-    <div id="log_in_button">
-		
-
-<!--<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>-->
-<br><br>
+<div id="log_in_button">
 
 
+    <!--<h1><a href="http://www.baidu.com" id="log_in_button">Log in</a></h1>-->
+    <br><br>
 
-<br><br>
-<div class="search radius6">
-	<form id="iform">
-<!--
-		<input name='ecmsfrom' type='hidden' value="9">
-		<input type="hidden" name="show" value="title,newstext">
--->
-		<select name="classid" id="choose"   >
-			<option value="bookname">Book Name</option>
-			<option value="ISBN">ISBN</option>
-			<option value="bookid">BookID</option>
-			<option value="author">Author</option>
-<!--			<option value="5">Type</option>-->
-		</select>
-		<input class="inp_srh" name="keyboard"  id="keyboard" type="text" placeholder="Please input..." value="" >
-		<input class="btn_srh" type="button" name="submit" id="btn" value="Search" onClick="searchBook()">
 
-	</form>
-    
-</div>
 
-<div id='inputbox' class="box">
-        <a class='x' href=''; onclick="msgbox(0); return false;">back</a>
+    <br><br>
+    <div class="search radius6">
+        <form id="iform">
+            <!--
+                    <input name='ecmsfrom' type='hidden' value="9">
+                    <input type="hidden" name="show" value="title,newstext">
+            -->
+            <select name="classid" id="choose"   >
+                <option value="bookname">Book Name</option>
+                <option value="ISBN">ISBN</option>
+                <option value="bookid">BookID</option>
+                <option value="author">Author</option>
+                <!--			<option value="5">Type</option>-->
+            </select>
+            <input class="inp_srh" name="keyboard"  id="keyboard" type="text" placeholder="Please input..." value="" >
+            <input class="btn_srh" type="button" name="submit" id="btn" value="Search" onClick="searchBook()">
+
+        </form>
+
+    </div>
+
+    <div id='inputbox' class="box">
+        <a class='x' href=''; onClick="msgbox(0); return false;">back</a>
 
         <div>
-        <label class="header"><span>Location:</span></label>
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-						<label style="color:#dcdcdc;">Floor</label>
-                        <select id="floor" name="floor" style="width:100px;">
-                        	<option value="floor1">floor1</option>
-                            <option value="floor2">floor2</option>
-                            <option value="floor3">floor3</option>
-                            <option value="floor4">floor4</option>
-                            <option value="floor5">floor5</option>
-                        </select>
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        <label style="color:#dcdcdc;">Shelf&nbsp&nbsp:&nbsp&nbsp&nbsp </label>
-                        <select id="Shelf" name="shelf" style="width:100px;">   
-                        	<option value="Shelf1">Shelf1</option>
-                            <option value="Shelf2">Shelf2</option>
-                            <option value="Shelf3">Shelf3</option>
-                            <option value="Shelf4">Shelf4</option>
-                            <option value="Shelf5">Shelf5</option>
+            <label class="header"><span>Location:</span></label>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-                        </select>
-         </div>
+            <select id="bookLocation" name="bookLocation" style="width:100px;">
+
+            </select>
+
+        </div>
 
 
         <div>
-        <label class="header"> <span>DESCRIPTION:</span></label>
-        <input type="text" id="bD" name="bD">
+            <label class="header"> <span>DESCRIPTION:</span></label>
+            <input type="text" id="bD" name="bD">
         </div>
         <input id=commit type="button" value="COMMIT">
-     </div>
-	<div class="mainDiv">
-		<table class="table" width="50%">
-			<th width="100">BookId</th>
-			<th width="150">ISBN</th>
-			<th width="100">Price</th>
-			<th width="200">Location</th>
-			<th width="200">BookName</th>
-			<th width="200">Author</th>
-            
-			<th width="300">Description</th>
-          
-            
-			
-			<th width="150">operation</th>
-			<tbody id="tbody">
+    </div>
+    <div id='inputbox1' class="box">
+        <a class='x' href=''; onClick="msgbox1(0); return false;">back</a>
+
+        <div>
+            <label class="header"> <span>REASON:</span></label>
+            <input type="text" id="Reason" name="Reason">
+        </div>
+        <input id=commit1 type="button" value="COMMIT">
+    </div>
+    <div class="mainDiv">
+        <table class="table" width="50%">
+            <th width="100">BookId</th>
+            <th width="150">ISBN</th>
+            <th width="100">Price</th>
+            <th width="200">Location</th>
+            <th width="200">BookName</th>
+            <th width="200">Author</th>
+
+            <th width="300">Description</th>
+
+
+
+            <th width="150">operation</th>
+            <tbody id="tbody">
             </tbody>
-		</table>
-		<div id="pagerDiv"></div>
-	</div>
+        </table>
+        <div id="pagerDiv"></div>
+    </div>
 
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
-<!--<script type="text/javascript" src="../static/js/jquery.select.js"></script>-->
+    <script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+    <!--<script type="text/javascript" src="../static/js/jquery.select.js"></script>-->
 
 
 </div>
 
 <img src="../static/images/yejiao.png" width="400" id="yejiao">
 <br><br><br><br><br><br>
-
 </body>
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
 <script src="../static/js/getnewsdata.js"></script>

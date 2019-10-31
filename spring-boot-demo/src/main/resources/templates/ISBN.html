@@ -22,16 +22,16 @@ function tosu(){
 	var bookauthor=document.getElementById('bauthor').value;
 	var bookpress=document.getElementById('bpress').value;
 	var bookprice=document.getElementById('bprice').value;
-	var bfloor=document.getElementById('floor').value;
-	var bshelf=document.getElementById('Shelf').value;
+	var blocation=document.getElementById('bookLocation').value;
+
 	var category=document.getElementById('bookCategory').value;
 	var cpn=document.getElementById('cpn').value;
 	SetCookie("bookname",bookname);
 	SetCookie("bookauthor",bookauthor);
 	SetCookie("bookpress",bookpress);
 	SetCookie("bookprice",bookprice);
-	SetCookie("bfloor",bfloor);
-	SetCookie("bshelf",bshelf);
+	SetCookie("blocation",blocation);
+
 	SetCookie("category",category);
 	SetCookie("cpn",cpn);
 	document.location="success";
@@ -39,7 +39,7 @@ function tosu(){
 </script>
 
 </head>
-<body>
+<body onload="getbt2()">
 
 <div class="neirong" style="margin-left:18%;">
 
@@ -66,7 +66,7 @@ function tosu(){
 					</div>
 
 					<div class="form-control">
-						<label class="header">Press <span>:</span></label>
+						<label class="header">Pubdate <span>:</span></label>
 						<input id="bpress" name="bpress" disabled style="width:250px;background:#999;border:none;font-size:26px;">
 					</div>
 
@@ -86,30 +86,14 @@ function tosu(){
 					</select>
 					<br><br>
 					<label style="color:#dcdcdc;font-size:22px;">Location :</label>
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<label style="color:#dcdcdc;">	Floor&nbsp&nbsp:&nbsp&nbsp&nbsp</label>
-					<select id="floor" name="floor" style="width:100px;">
-						<option value="floor1">floor1</option>
-						<option value="floor2">floor2</option>
-						<option value="floor3">floor3</option>
-						<option value="floor4">floor4</option>
-						<option value="floor5">floor5</option>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<select id="bookLocation" name="bookLocation" style="width:300px;">
 					</select>
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<label style="color:#dcdcdc;">Shelf&nbsp&nbsp:&nbsp&nbsp&nbsp</label>
-					<select id="Shelf" name="shelf" style="width:100px;">
-						<option value="Shelf1">Shelf1</option>
-						<option value="Shelf2">Shelf2</option>
-						<option value="Shelf3">Shelf3</option>
-						<option value="Shelf4">Shelf4</option>
-						<option value="Shelf5">Shelf5</option>
-                        </select>
+
 					<br><br>
 					<label style="color:#dcdcdc;font-size:22px;">Category :</label>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<select id="bookCategory" name="bookCategory" style="width:300px;">
-						<option value="fiction">fiction</option>
-						<option value="history">history</option>
 					</select>			
 					<br><br><br><br><br><br>
 					<div class="form-control">
