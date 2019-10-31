@@ -25,7 +25,24 @@ body
  margin-right:10px;
 
 }
+#templatemo_menu_wrapper{
 
+ background: -moz-linear-gradient(top, #686868 20%, #8a6d3b 80%) ;
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00a09d), color-stop(100%,#008985))  ;
+ background: -webkit-linear-gradient(top, #533f03 20%, #8a6d3b 80%) ;
+ background: -o-linear-gradient(top, #00a09d 0%,#008985 100%) ;
+ background: -ms-linear-gradient(top, #00a09d 0%,#008985 100%) ;
+
+ /*position: absolute;*/
+ /*height: 0px;*/
+
+}
+#templatemo_menu_wrapper h{
+ text-align: center;
+ font-size: 30px;
+color: white;
+ font-family: 华文中宋;
+}
 *{margin:0;padding:0;}
 input{font-size:23px;vertical-align:middle;cursor:pointer;letter-spacing: 2px;}
 select{font-size:14px;vertical-align:middle;cursor:pointer;}
@@ -46,7 +63,7 @@ a:hover{color:#0E4470;text-decoration: none;}
 {
  background:url('../images/book.jpg') no-repeat fixed;
  background-size:100% 100%;
- margin-top: 70px;
+ margin-top: 0px;
 }
 #mandarinlogo
 {
@@ -64,7 +81,9 @@ a:hover{color:#0E4470;text-decoration: none;}
  color:#F3F3F3;
 
 }
-
+#Rll{
+ height:45px;
+}
 
 .search{
  margin-top: 25px;
