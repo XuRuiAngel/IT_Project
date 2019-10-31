@@ -14,7 +14,8 @@ function lendBook() {
             alert(data);
         },
         error : function(data) {
-                alert("fail");
+            if(book1Id=="") ;
+            else alert("fail");
         }
     });
     $.ajax({
@@ -26,7 +27,8 @@ function lendBook() {
             alert(data);
         },
         error : function(data) {
-            alert("fail");
+            if(book2Id=="") ;
+            else alert("fail");
         }
     });
     $.ajax({
@@ -38,7 +40,8 @@ function lendBook() {
             alert(data);
         },
         error : function(data) {
-            alert("fail");
+            if(book3Id=="") ;
+            else alert("fail");
         }
     });
 

@@ -133,7 +133,7 @@ $(".sec_login_error").Validform({
             <form action="/" method="post" class="stu_login_error" onsubmit="rlogin(); to()">
                 <div id="Rusername">
                     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone:</label>
-                    <input class="text" type="text" id="rtele" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" sucmsg="ID verification passed!"/>
+                    <input class="text" type="text" id="rtele" maxlength="11" name="username" placeholder="Enter ID" nullmsg="ID cannot be empty!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
                 <div id="Rpassword">
@@ -201,7 +201,7 @@ $(".sec_login_error").Validform({
             <form action="/" method="post" class="sec_login_error" onsubmit="logins()">
                 <div id="Lusername">
                     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:</label>
-                    <input class="text" type="text" id="tele" name="username" placeholder="Enter Telephone" nullmsg="Phone No. cannot be empty!" sucmsg="ID verification passed!"/>
+                    <input class="text" type="text" id="tele" maxlength="11" name="username" placeholder="Enter Telephone" nullmsg="Phone No. cannot be empty!" sucmsg="ID verification passed!"/>
                     <!--ajaxurl="demo/valid.jsp"-->
                 </div>
                 <div id="Lpassword">
