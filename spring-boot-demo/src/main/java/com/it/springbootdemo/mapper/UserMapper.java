@@ -59,10 +59,12 @@ public interface UserMapper {
                         @Param("e_mail") String e_mail);
 
 
-    @Update("update user set username=#{username} ,e_mail=#{e_mail} where id=#{id}")
+    @Update("update user set username=#{username} ,tele=#{tele} ,e_mail=#{e_mail} ,balance=#{balance} where id=#{id}")
     void editInformation(@Param("username") String username,
-                        @Param("id") int id,
-                        @Param("e_mail") String e_mail);
+                         @Param("id") int id,
+                         @Param("tele") String tele,
+                        @Param("e_mail") String e_mail,
+                        @Param("balance") double balance);
 
     @Delete("delete from user where id=#{id}")
     void deleteReaders(@Param("id") int id);

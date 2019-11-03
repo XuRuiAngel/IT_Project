@@ -173,8 +173,10 @@ public class login {
     @ResponseBody
     public String editInformation(@RequestParam("username") String username,
                                   @RequestParam("id")int id,
-                                  @RequestParam("e_mail")String e_mail){
-        userService.editInformation(username,id,e_mail);
+                                  @RequestParam("tele")String tele,
+                                  @RequestParam("e_mail")String e_mail,
+                                    @RequestParam("balance")double balance){
+        userService.editInformation(username,id,tele,e_mail,balance);
         return "success!";
     }
 }

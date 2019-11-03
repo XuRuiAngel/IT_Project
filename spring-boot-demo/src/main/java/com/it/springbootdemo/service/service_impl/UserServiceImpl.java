@@ -217,8 +217,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int editInformation(String username, int id, String e_mail) {
-        userMapper.editInformation(username,id,e_mail);
+    public int editInformation(String username, int id,String tele, String e_mail, double balance) {
+        userMapper.editInformation(username,id,tele,e_mail,balance);
         return 0;
     }
 }

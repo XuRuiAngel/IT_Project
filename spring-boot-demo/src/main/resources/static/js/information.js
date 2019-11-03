@@ -95,6 +95,8 @@ var methods = {
     addHandle: function (the_index) {
         var Name=$('.userName').val();
         var Email=$('.jobNum').val();
+        var tel=$('.userTel').val();
+        var bal=$('.userBalance').val();
         hasNullMes = false;
         methods.checkMustMes();
         if (hasNullMes) {
@@ -105,14 +107,14 @@ var methods = {
             if (noRepeat) {
                 $.ajax({
                     type: "post",
-                    url: "/editInformation?username="+Name+"&id="+id+"&e_mail="+Email,
+                    url: "/editInformation?username="+Name+"&id="+id+"&tele="+tel+"&e_mail="+Email+"&balance="+bal,
                     //url:"index.json",
                     success: function(index) {            //成功后添加该行
                         // methods.setStr();
                         // $('#show_tbody').append('<tr>' + tdStr + '</tr>');
                         // $('#renyuan').modal('hide');
-                        // window.open("RLLogin")
-                        window.location.reload();
+                        window.open("RLLogin")
+                        // window.location.reload();
                     },
                     error: function() {
                     }
