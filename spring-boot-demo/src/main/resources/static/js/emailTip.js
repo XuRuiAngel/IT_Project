@@ -10,3 +10,16 @@ function emailTip() {
         }
     })
 }
+
+function deleteReservation() {
+    $.ajax({
+        type:"GET",
+        url:"/deleteReservation",
+        data:{},
+        dataType:"text",
+        async:false,
+        success:function(data) {
+
+        }
+    })
+}

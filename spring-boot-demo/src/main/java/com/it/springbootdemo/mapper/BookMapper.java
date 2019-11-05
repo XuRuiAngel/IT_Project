@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface BookMapper {
 
-    @Select("select * from book where ${key}=#{text}")
+    @Select("select * from book where ${key} like '%${text}%'")
     List<Book>  searchBook(@Param("key") String key,@Param("text") String text);
 
     @Insert(
