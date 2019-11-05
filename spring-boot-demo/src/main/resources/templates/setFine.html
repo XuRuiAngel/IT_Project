@@ -121,7 +121,7 @@
                                                                                          class="cms_login_ipt"></div>
 
                 <div >
-                    <input type="button" class="login_btn" onclick="setFine()" value="confirm" ></input>
+                    <input type="button" class="login_btn" onclick="setFine()" value="confirm" οninput="value=value.replace(/[^\d]/g,'')"></input>
                 </div>
             </form>
 
